@@ -72,126 +72,149 @@ header h1 {
   /* line 17, ../sass/screen.scss */
   header h1 a {
     color: white;
-    font-weight: bolder; }
+    font-weight: bolder;
+    border: none; }
 
-/* line 24, ../sass/screen.scss */
+/* line 25, ../sass/screen.scss */
 .user {
-  width: 28.57143%;
+  width: 38.77551%;
   float: right;
   margin-right: 0;
   *margin-left: -1em;
   display: inline; }
 
-/* line 27, ../sass/screen.scss */
+/* line 28, ../sass/screen.scss */
 .userSpace {
-  width: 28.57143%;
+  width: 21.05263%;
   float: left;
-  margin-right: 7.14286%;
-  display: inline; }
+  margin-right: 5.26316%;
+  display: inline;
+  border-right: 0.3em solid white;
+  box-sizing: border-box; }
 
-/* line 31, ../sass/screen.scss */
+/* line 34, ../sass/screen.scss */
 .userConnexion {
-  width: 64.28571%;
+  width: 73.68421%;
   float: right;
   margin-right: 0;
   *margin-left: -1em;
   display: inline;
   position: relative;
-  color: white; }
-  /* line 35, ../sass/screen.scss */
-  .userConnexion a {
-    color: white; }
+  color: black; }
   /* line 38, ../sass/screen.scss */
+  .userConnexion a {
+    color: black;
+    font-size: 0.8em;
+    margin-top: 0.4em; }
+  /* line 43, ../sass/screen.scss */
+  .userConnexion input {
+    width: 85.71429%;
+    float: left;
+    margin-right: 7.14286%;
+    display: inline;
+    box-sizing: border-box; }
+  /* line 47, ../sass/screen.scss */
   .userConnexion h3 {
+    color: white;
     display: inline-block;
-    padding: 0.3em; }
-  /* line 42, ../sass/screen.scss */
+    padding: 0.3em;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em; }
+  /* line 54, ../sass/screen.scss */
   .userConnexion h3:hover + form, .userConnexion form:hover {
     opacity: 1;
     height: auto;
     display: block; }
-  /* line 48, ../sass/screen.scss */
+  /* line 60, ../sass/screen.scss */
   .userConnexion form {
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 0.3em;
+    background-color: white;
+    padding: 0.6em;
     position: absolute;
     display: none;
     opacity: 0;
     transition: display  0.5s; }
 
-/* line 58, ../sass/screen.scss */
+/* line 70, ../sass/screen.scss */
 [type="text"], [type="password"] {
   background-color: transparent;
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 0.2em;
   padding: 0.4em;
-  margin-top: 0.3em;
-  color: silver; }
+  margin-top: 0.6em;
+  color: black; }
 
-/* line 67, ../sass/screen.scss */
+/* line 79, ../sass/screen.scss */
 input:focus {
   border: 1px solid #FF7C00; }
 
-/* line 72, ../sass/screen.scss */
+/* line 84, ../sass/screen.scss */
 .userConnexion:hover > h3 {
-  background-color: rgba(0, 0, 0, 0.8); }
+  background-color: white;
+  cursor: default;
+  color: black; }
 
-/* line 77, ../sass/screen.scss */
+/* line 91, ../sass/screen.scss */
 html {
-  font-family: Verdana, Geneva, sans-serif; }
-  /* line 79, ../sass/screen.scss */
+  font-family: Verdana, Geneva, sans-serif;
+  line-height: 1.5em; }
+  /* line 94, ../sass/screen.scss */
   html a {
     color: black;
-    text-decoration: none; }
+    text-decoration: none;
+    border-bottom: 1px dotted black; }
+  /* line 99, ../sass/screen.scss */
+  html a:hover {
+    color: #5DC8CD; }
 
-/* line 85, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 nav {
   width: 100%;
   float: left;
   margin-right: 2.04082%;
   display: inline; }
-  /* line 87, ../sass/screen.scss */
+  /* line 106, ../sass/screen.scss */
   nav ul {
     margin-top: 1em; }
-    /* line 91, ../sass/screen.scss */
+    /* line 110, ../sass/screen.scss */
     nav ul li {
       display: inline-block; }
-      /* line 93, ../sass/screen.scss */
+      /* line 112, ../sass/screen.scss */
       nav ul li a {
         color: white;
         display: inline-block;
         padding: 0.8em;
-        width: auto; }
-      /* line 100, ../sass/screen.scss */
+        width: auto;
+        border: none; }
+      /* line 120, ../sass/screen.scss */
       nav ul li a:hover {
         background-color: red;
         color: black; }
 
-/* line 108, ../sass/screen.scss */
+/* line 128, ../sass/screen.scss */
 h1 {
   font-size: 2em; }
 
-/* line 109, ../sass/screen.scss */
+/* line 129, ../sass/screen.scss */
 h2 {
   font-size: 1.5em; }
 
-/* line 110, ../sass/screen.scss */
+/* line 130, ../sass/screen.scss */
 h3 {
   font-size: 1.17em; }
 
-/* line 111, ../sass/screen.scss */
+/* line 131, ../sass/screen.scss */
 h4 {
   font-size: 1em; }
 
-/* line 112, ../sass/screen.scss */
+/* line 132, ../sass/screen.scss */
 h5 {
   font-size: 0.83em; }
 
-/* line 113, ../sass/screen.scss */
+/* line 133, ../sass/screen.scss */
 h6 {
   font-size: 0.75em; }
 
-/* line 115, ../sass/screen.scss */
+/* line 135, ../sass/screen.scss */
 .content {
   *zoom: 1;
   max-width: 49em;
@@ -200,43 +223,133 @@ h6 {
   padding-right: 1em;
   margin-left: auto;
   margin-right: auto;
-  width: 900px;
-  margin: 0 auto;
-  padding: 2em 0 0; }
+  padding-top: 2em; }
   /* line 38, ../../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
   .content:after {
     content: "";
     display: table;
     clear: both; }
   @media (min-width: 24em) {
-    /* line 115, ../sass/screen.scss */
+    /* line 135, ../sass/screen.scss */
     .content {
       max-width: 24em; } }
-  @media (min-width: 39em) {
-    /* line 115, ../sass/screen.scss */
+  @media (min-width: 44em) {
+    /* line 135, ../sass/screen.scss */
     .content {
-      max-width: 39em; } }
+      max-width: 44em; } }
   @media (min-width: 55em) {
-    /* line 115, ../sass/screen.scss */
+    /* line 135, ../sass/screen.scss */
     .content {
       max-width: 59em; } }
   @media (min-width: 65em) {
-    /* line 115, ../sass/screen.scss */
+    /* line 135, ../sass/screen.scss */
     .content {
       max-width: 69em; } }
 
-/* line 123, ../sass/screen.scss */
+/* line 141, ../sass/screen.scss */
 .findRace {
   background-color: rgba(0, 0, 0, 0.8);
   padding: 0.5em;
-  color: white; }
+  color: white;
+  margin-bottom: 15em; }
 
-/* line 130, ../sass/screen.scss */
+/* line 148, ../sass/screen.scss */
 [type="submit"] {
-  background-color: #00C12B;
+  background-color: #FF7600;
   border: none;
-  cursor: pointer; }
+  cursor: pointer;
+  padding: 0.3em 0.5em 0.3em;
+  font-size: 1.1em;
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  transition: box-shadow 0.5s;
+  color: white;
+  text-shadow: 0 1px 1px black; }
 
-/* line 136, ../sass/screen.scss */
+/* line 160, ../sass/screen.scss */
+[type="submit"]:hover {
+  box-shadow: 0 0.5em 0 #01938A; }
+
+/* line 164, ../sass/screen.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif; }
+
+/* line 171, ../sass/screen.scss */
+h2 {
+  margin-left: -0.6em;
+  border-left: 0.6em solid #FF7600;
+  padding: 0.5em 0; }
+
+/* line 178, ../sass/screen.scss */
+.racesList h3 {
+  background-color: #01939A;
+  color: white;
+  text-align: center;
+  padding: 0.6em;
+  margin: 1em 0 0.5em; }
+/* line 185, ../sass/screen.scss */
+.racesList ul a {
+  border: none;
+  padding: 0.6em;
+  box-sizing: border-box;
+  color: white;
+  margin-bottom: 2.04082%;
+  background-color: black;
+  height: 100px;
+  transition: background-color 0.5s; }
+  /* line 194, ../sass/screen.scss */
+  .racesList ul a h4 {
+    text-align: center; }
+/* line 198, ../sass/screen.scss */
+.racesList ul a:hover {
+  background-color: #FF7600; }
+
+/* line 204, ../sass/screen.scss */
+.sevenFirst a:first-child {
+  width: 38.77551%;
+  float: left;
+  margin-right: 2.04082%;
+  display: inline;
+  height: 222px; }
+/* line 209, ../sass/screen.scss */
+.sevenFirst a {
+  width: 18.36735%;
+  float: left;
+  margin-right: 2.04082%;
+  display: inline; }
+  /* line 211, ../sass/screen.scss */
+  .sevenFirst a:nth-child(3n) {
+    float: right;
+    margin-right: 0;
+    *margin-left: -1em;
+    display: inline; }
+
+/* line 217, ../sass/screen.scss */
+.others a:nth-child(4) {
+  width: 38.77551%;
+  float: left;
+  margin-right: 2.04082%;
+  display: inline;
+  height: 222px; }
+/* line 222, ../sass/screen.scss */
+.others a {
+  width: 18.36735%;
+  float: left;
+  margin-right: 2.04082%;
+  display: inline; }
+  /* line 224, ../sass/screen.scss */
+  .others a:nth-child(4n) {
+    float: right;
+    margin-right: 0;
+    *margin-left: -1em;
+    display: inline; }
+
+/* line 229, ../sass/screen.scss */
+.month:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+/* line 235, ../sass/screen.scss */
+section {
+  margin-bottom: 3em; }

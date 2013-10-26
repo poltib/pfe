@@ -11,17 +11,17 @@
         <div class="content">
             <div id="logo"><h1>{{ link_to_route('home','Run Belgium') }}</h1></div>
             <div class="user">
-                <div class="userSpace">{{ HTML::image('img/user.gif'); }}</div>
+                <div class="userSpace"><a href="{{ route('showUser') }}">{{ HTML::image('img/user.gif'); }}</a></div>
                 <div class="userConnexion">
                     <h3>Mon compte &darr;</h3>
                     <form action="#">
                         <fieldset>
                             <legend>Connexion</legend>
-                            <input type="text" name="login" id="login" value="identifiant">
-                            <input type="password" name="pwd" id="pwd" value="mot de passe">
-                            <a href="#">Mot de passe oublié?</a>
+                            <input type="text" name="login" id="login" placeholder="identifiant">
+                            <input type="password" name="pwd" id="pwd" placeholder="mot de passe">
+                            <a href="#">Mot de passe oublié?</a> | 
                             <input type="submit" value="connexion">
-                            <h3>S'inscrire</h3>
+                            <h3>{{ link_to_route('register','S‘inscrire') }}</h3>
                         </fieldset>
                     </form>
                 </div>
@@ -38,18 +38,16 @@
             </nav>
         </div>
     </header>
-    <section class="content">
-        <form class="findRace" action="#">
-            <fieldset>
-                <h3>Trouver une course</h3>
-                <label for="pays">Pays</label>
-                <label for="distance">Distance</label>
-                
-            </fieldset>
-        </form>
-    
-    @yield('container')
-    </section>
+    <div class="content">
+        <section>
+            @yield('container')
+        </section>
+    </div>
+    <footer>
+        <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, ipsam, libero magni quam rem numquam illum explicabo repellendus nulla iste mollitia fugit totam doloremque maxime voluptas deserunt quas veniam labore.</p>
+        </div>
+    </footer>
     {{ HTML::script('js/script.css'); }}
 </body>
 </html>

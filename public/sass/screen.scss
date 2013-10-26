@@ -17,27 +17,39 @@ header{
         a{
             color:white;
             font-weight: bolder;
+            border:none;
         }
     }
 }
 
 .user{
-    @include span-columns(3 omega,10);
+    @include span-columns(4 omega,10);
 }
 .userSpace{
-    @include span-columns(1,3);
+    @include span-columns(1,4);
+    border-right: 0.3em solid white;
+    box-sizing: border-box;
 }
 
 .userConnexion{
-    @include span-columns(2 omega,3);
+    @include span-columns(3 omega,4);
     position:relative;
-    color:white;
+    color:black;
     a{
-        color:white;
+        color:black;
+        font-size: 0.8em;
+        margin-top: 0.4em;
+    }
+    input{
+        @include span-columns(2.5,3);
+        box-sizing: border-box;
     }
     h3{
+        color:white;
         display:inline-block;
         padding:0.3em;
+        border-top-left-radius: 0.5em;
+        border-top-right-radius: 0.5em;
     }
     h3:hover+form, form:hover{
         opacity:1;
@@ -46,8 +58,8 @@ header{
     }
 
     form{
-        background-color: rgba(0,0,0,0.8);
-        padding:0.3em;
+        background-color: white;
+        padding:0.6em;
         position:absolute;
         display: none;
         opacity:0;
@@ -57,11 +69,11 @@ header{
 
 [type="text"],[type="password"]{
     background-color: transparent;
-    border: 1px solid white;
+    border: 1px solid black;
     border-radius: 0.2em;
     padding:0.4em;
-    margin-top: 0.3em;
-    color:silver;
+    margin-top: 0.6em;
+    color:black;
 }
 
 input:focus{
@@ -70,15 +82,22 @@ border: 1px solid #FF7C00;
 
 .userConnexion:hover{
     >h3{
-        background-color: rgba(0,0,0,0.8);
+        background-color: white;
+        cursor: default;
+        color:black;
     }
 }
 
 html{
     font-family: Verdana, Geneva, sans-serif;
+    line-height: 1.5em;
     a{
         color:black;
         text-decoration: none;
+        border-bottom: 1px dotted black;
+    }
+    a:hover{
+        color:#5DC8CD;
     }
 }
 
@@ -95,6 +114,7 @@ nav{
                 display: inline-block;
                 padding: 0.8em;
                 width:auto;
+                border:none;
                 
             }
             a:hover{
@@ -115,22 +135,103 @@ h6      { font-size: 0.75em;}
 .content{
     @include container($total-columns, $mobile, $tablet, $computer, $largeComputer);
     //@include susy-grid-background;
-    width:900px;
-    margin:0 auto;
-    padding: 2em 0 0;
+    padding-top: 2em;
 }
 
 .findRace{
     background-color: rgba(0,0,0,0.8);
     padding: 0.5em;
     color:white;
-
+    margin-bottom: 15em;
 }
 
 [type="submit"]{
-    background-color: #00C12B;
+    background-color: #FF7600;
     border:none;
     cursor: pointer;
+    padding:0.3em 0.5em 0.3em;
+    font-size: 1.1em;
+    border-radius: 0.3em;
+    margin: 0.5em 0;
+    transition: box-shadow 0.5s;
+    color:white;
+    text-shadow: 0 1px 1px black;
+}
+[type="submit"]:hover{
+box-shadow: 0 0.5em 0 #01938A;
 }
 
 h1,h2,h3,h4,h5,h6{font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif; }
+
+
+/////////
+/////////Liste des course
+/////////
+
+h2{
+    margin-left: -0.6em;
+    border-left: 0.6em solid #FF7600;
+    padding: 0.5em 0;
+}
+
+.racesList{
+    h3{
+        background-color: #01939A;
+        color: white;
+        text-align: center;
+        padding:0.6em;
+        margin: 1em 0 0.5em;
+    }
+    ul a{
+        border:none;
+        padding: 0.6em;
+        box-sizing: border-box;
+        color:white;
+        margin-bottom: 2.04082%;
+        background-color: black;
+        height:100px;
+        transition: background-color 0.5s;
+        h4{
+            text-align: center;
+        }
+    }
+    ul a:hover{
+            background-color:#FF7600;
+        }
+}
+
+.sevenFirst{
+    a:first-child{
+        @include span-columns(4,10);
+        height:222px;
+    }
+
+    a{
+        @include span-columns(2,10);
+        &:nth-child(3n) { @include omega; }
+    
+    }
+}
+
+.others{
+    a:nth-child(4){
+        @include span-columns(4,10);
+        height:222px;
+    }
+
+    a{
+        @include span-columns(2,10);
+        &:nth-child(4n) { @include omega; }
+    
+    }
+}
+
+.month:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+section{
+    margin-bottom: 3em;
+}
