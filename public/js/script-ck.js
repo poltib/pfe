@@ -1,0 +1,1 @@
+var connexionTitle=document.getElementById("connect"),connectionForm=document.getElementById("connectionForm");connectionForm.setAttribute("visibility","hidden");
