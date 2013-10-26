@@ -1,0 +1,70 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "base";
+
+header{
+    >img{
+        width: 100%;
+        position:absolute;
+        z-index: -1;
+    }
+    h1{
+        @include span-columns(6,10);
+        a{
+            color:white;
+        }
+    }
+    .connexion{
+        @include span-columns(4 omega,10);
+    }
+
+}
+
+html{
+    a{
+        color:black;
+        text-decoration: none;
+    }
+}
+
+nav{
+    ul{
+    margin-top: 1em;
+
+
+        li{
+            display: inline-block;
+            a{
+                color: white;
+                display: inline-block;
+                padding: 0.8em;
+                
+            }
+            a:hover{
+                background-color: red;
+                color:black;
+            }
+        }
+    }
+}
+
+h1      { font-size: 2em;}
+h2      { font-size: 1.5em;}
+h3      { font-size: 1.17em;}
+h4      { font-size: 1em;}
+h5      { font-size: 0.83em;}
+h6      { font-size: 0.75em;}
+
+.content{
+    @include container($total-columns, $mobile, $tablet, $computer, $largeComputer);
+    @include susy-grid-background;
+    width:900px;
+    margin:0 auto;
+    padding: 2em 0 0;
+}
+
+h1{font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif; }
