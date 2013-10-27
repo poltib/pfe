@@ -16,6 +16,11 @@ Route::get('/', array('as'=>'home', function()
 	return View::make('home.index');
 }));
 
+Route::post('/', array('as'=>'searchRace', function()
+{
+    return View::make('race.search');
+}));
+
 /*--------------------------------Races--------------------------------*/
 
 Route::get('/races', array('as'=>'listRaces', function()
