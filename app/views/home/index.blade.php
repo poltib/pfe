@@ -41,8 +41,9 @@
     </section>
     <section class="races">
     <h2>Courses à venir</h2>
+    <div class="currentMonth">
     <ul class="racesList">
-        <li class="month">
+        <li class="month current">
             <h3>Octobre</h3>
             <ul>
                 <div class="sevenFirst">
@@ -226,6 +227,7 @@
             </ul>
         </li>
     </ul>
+    </div>
     {{ link_to_route('listRaces', 'Voir toutes les courses') }}
     </section>
     <section class="news">

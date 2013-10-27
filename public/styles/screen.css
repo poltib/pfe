@@ -73,22 +73,31 @@ header h1 {
   header h1 a {
     color: white;
     font-weight: bolder;
-    border: none; }
+    border: none;
+    display: inline-block;
+    padding: 1em; }
 
-/* line 25, ../sass/screen.scss */
+/* line 27, ../sass/screen.scss */
 .hidden {
   position: absolute;
   display: none; }
 
-/* line 30, ../sass/screen.scss */
+/* line 32, ../sass/screen.scss */
+.top:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+/* line 38, ../sass/screen.scss */
 .user {
   width: 38.77551%;
   float: right;
   margin-right: 0;
   *margin-left: -1em;
-  display: inline; }
+  display: inline;
+  padding-top: 1em; }
 
-/* line 33, ../sass/screen.scss */
+/* line 42, ../sass/screen.scss */
 .userSpace {
   width: 21.05263%;
   float: left;
@@ -97,7 +106,7 @@ header h1 {
   border-right: 0.3em solid white;
   box-sizing: border-box; }
 
-/* line 39, ../sass/screen.scss */
+/* line 48, ../sass/screen.scss */
 .userConnexion {
   width: 73.68421%;
   float: right;
@@ -106,41 +115,42 @@ header h1 {
   display: inline;
   position: relative;
   color: black; }
-  /* line 43, ../sass/screen.scss */
+  /* line 52, ../sass/screen.scss */
   .userConnexion a {
     color: black;
     font-size: 0.8em;
     margin-top: 0.4em; }
-  /* line 48, ../sass/screen.scss */
+  /* line 57, ../sass/screen.scss */
   .userConnexion input {
     width: 85.71429%;
     float: left;
     margin-right: 7.14286%;
     display: inline;
     box-sizing: border-box; }
-  /* line 52, ../sass/screen.scss */
+  /* line 61, ../sass/screen.scss */
   .userConnexion h3 {
-    color: white;
-    display: inline-block;
+    background-color: white;
+    cursor: default;
+    color: black;
     padding: 0.3em;
-    border-top-left-radius: 0.5em;
-    border-top-right-radius: 0.5em; }
-  /* line 59, ../sass/screen.scss */
+    display: inline-block;
+    border-radius: 0.5em; }
+  /* line 69, ../sass/screen.scss */
   .userConnexion h3:hover + form, .userConnexion form:hover {
     opacity: 1;
     height: auto;
     display: block;
+    padding-left: 12%;
     box-shadow: 0px 0px 8px; }
-  /* line 66, ../sass/screen.scss */
+  /* line 77, ../sass/screen.scss */
   .userConnexion form {
     background-color: white;
     padding: 0.6em;
     position: absolute;
     display: none;
-    opacity: 0;
-    transition: display  0.5s; }
+    opacity: 0; }
 
-/* line 76, ../sass/screen.scss */
+/* line 86, ../sass/screen.scss */
 [type="text"], [type="password"] {
   background-color: transparent;
   border: 1px solid black;
@@ -149,54 +159,55 @@ header h1 {
   margin-top: 0.6em;
   color: black; }
 
-/* line 85, ../sass/screen.scss */
+/* line 95, ../sass/screen.scss */
 input:focus {
   border: 1px solid #FF7C00; }
 
-/* line 90, ../sass/screen.scss */
+/* line 100, ../sass/screen.scss */
 .userConnexion:hover > h3 {
-  background-color: white;
-  cursor: default;
-  color: black; }
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  border-bottom-left-radius: 0em;
+  border-bottom-right-radius: 0em; }
 
-/* line 97, ../sass/screen.scss */
+/* line 108, ../sass/screen.scss */
 html {
   font-family: Verdana, Geneva, sans-serif;
   line-height: 1.5em; }
-  /* line 100, ../sass/screen.scss */
+  /* line 111, ../sass/screen.scss */
   html a {
     color: black;
     text-decoration: none;
     border-bottom: 1px dotted black; }
-  /* line 105, ../sass/screen.scss */
+  /* line 116, ../sass/screen.scss */
   html a:hover {
     color: #5DC8CD; }
 
-/* line 110, ../sass/screen.scss */
+/* line 121, ../sass/screen.scss */
 h1 {
   font-size: 2em; }
 
-/* line 111, ../sass/screen.scss */
+/* line 122, ../sass/screen.scss */
 h2 {
   font-size: 1.5em; }
 
-/* line 112, ../sass/screen.scss */
+/* line 123, ../sass/screen.scss */
 h3 {
   font-size: 1.17em; }
 
-/* line 113, ../sass/screen.scss */
+/* line 124, ../sass/screen.scss */
 h4 {
   font-size: 1em; }
 
-/* line 114, ../sass/screen.scss */
+/* line 125, ../sass/screen.scss */
 h5 {
   font-size: 0.83em; }
 
-/* line 115, ../sass/screen.scss */
+/* line 126, ../sass/screen.scss */
 h6 {
   font-size: 0.75em; }
 
-/* line 117, ../sass/screen.scss */
+/* line 128, ../sass/screen.scss */
 .content {
   *zoom: 1;
   max-width: 49em;
@@ -212,23 +223,23 @@ h6 {
     display: table;
     clear: both; }
   @media (min-width: 24em) {
-    /* line 117, ../sass/screen.scss */
+    /* line 128, ../sass/screen.scss */
     .content {
       max-width: 24em; } }
   @media (min-width: 44em) {
-    /* line 117, ../sass/screen.scss */
+    /* line 128, ../sass/screen.scss */
     .content {
       max-width: 44em; } }
   @media (min-width: 55em) {
-    /* line 117, ../sass/screen.scss */
+    /* line 128, ../sass/screen.scss */
     .content {
       max-width: 59em; } }
   @media (min-width: 65em) {
-    /* line 117, ../sass/screen.scss */
+    /* line 128, ../sass/screen.scss */
     .content {
       max-width: 69em; } }
 
-/* line 123, ../sass/screen.scss */
+/* line 134, ../sass/screen.scss */
 [type="submit"] {
   background-color: #FF7600;
   border: none;
@@ -241,52 +252,57 @@ h6 {
   color: white;
   text-shadow: 0 1px 1px black; }
 
-/* line 135, ../sass/screen.scss */
+/* line 146, ../sass/screen.scss */
 [type="submit"]:hover {
   box-shadow: 0 0.5em 0 #01938A; }
 
-/* line 139, ../sass/screen.scss */
+/* line 150, ../sass/screen.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif; }
 
-/* line 148, ../sass/screen.scss */
+/* line 159, ../sass/screen.scss */
 nav ul {
   color: black;
   width: 100%;
-  float: left;
-  margin-right: 2.04082%;
-  display: inline;
-  margin-top: 3em;
-  color: black; }
-  /* line 155, ../sass/screen.scss */
+  color: black;
+  margin: 1.5em 0; }
+  /* line 165, ../sass/screen.scss */
+  nav ul li:first-child {
+    border: none; }
+  /* line 168, ../sass/screen.scss */
   nav ul li {
     display: inline-block;
-    width: auto;
-    background-color: white; }
-    /* line 159, ../sass/screen.scss */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 16.6666667%;
+    background-color: white;
+    border-left: 0.2em solid #FF7600; }
+    /* line 174, ../sass/screen.scss */
     nav ul li a {
+      text-align: center;
       display: block;
       padding: 0.8em;
       border: none; }
-    /* line 165, ../sass/screen.scss */
+    /* line 181, ../sass/screen.scss */
     nav ul li a:hover {
-      background-color: red;
-      color: black; }
+      background-color: #01938A;
+      color: white; }
 
-/* line 181, ../sass/screen.scss */
+/* line 197, ../sass/screen.scss */
 h2 {
   margin-left: -0.6em;
   border-left: 0.6em solid #FF7600;
   padding: 0.5em 0; }
 
-/* line 188, ../sass/screen.scss */
+/* line 204, ../sass/screen.scss */
 .racesList h3 {
   background-color: #01939A;
   color: white;
   text-align: center;
   padding: 0.6em;
   margin: 1em 0 0.5em; }
-/* line 195, ../sass/screen.scss */
+/* line 211, ../sass/screen.scss */
 .racesList ul a {
   border: none;
   padding: 0.6em;
@@ -298,83 +314,79 @@ h2 {
   background-color: black;
   height: 100px;
   transition: background-color 0.5s; }
-  /* line 204, ../sass/screen.scss */
+  /* line 220, ../sass/screen.scss */
   .racesList ul a h4 {
     text-align: center; }
-/* line 208, ../sass/screen.scss */
+/* line 224, ../sass/screen.scss */
 .racesList ul a:hover {
   background-color: #FF7600; }
 
-/* line 214, ../sass/screen.scss */
+/* line 230, ../sass/screen.scss */
 .sevenFirst a:first-child {
   width: 38.77551%;
   float: left;
   margin-right: 2.04082%;
   display: inline;
   height: 222px; }
-/* line 219, ../sass/screen.scss */
+/* line 235, ../sass/screen.scss */
 .sevenFirst a {
   width: 18.36735%;
   float: left;
   margin-right: 2.04082%;
   display: inline; }
-  /* line 221, ../sass/screen.scss */
+  /* line 237, ../sass/screen.scss */
   .sevenFirst a:nth-child(3n) {
     float: right;
     margin-right: 0;
     *margin-left: -1em;
     display: inline; }
 
-/* line 227, ../sass/screen.scss */
+/* line 243, ../sass/screen.scss */
 .others a:nth-child(4) {
   width: 38.77551%;
   float: left;
   margin-right: 2.04082%;
   display: inline;
   height: 222px; }
-/* line 232, ../sass/screen.scss */
+/* line 248, ../sass/screen.scss */
 .others a {
   width: 18.36735%;
   float: left;
   margin-right: 2.04082%;
   display: inline; }
-  /* line 234, ../sass/screen.scss */
+  /* line 250, ../sass/screen.scss */
   .others a:nth-child(4n) {
     float: right;
     margin-right: 0;
     *margin-left: -1em;
     display: inline; }
 
-/* line 239, ../sass/screen.scss */
+/* line 255, ../sass/screen.scss */
 .month:after {
   content: "";
   display: block;
   clear: both; }
 
-/* line 245, ../sass/screen.scss */
+/* line 261, ../sass/screen.scss */
 section {
   margin-bottom: 3em; }
 
-/* line 254, ../sass/screen.scss */
+/* line 270, ../sass/screen.scss */
 .findRace {
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
-  margin-bottom: 5em;
   padding: 1.5em; }
-  /* line 259, ../sass/screen.scss */
-  .findRace form {
-    padding-left: 10%; }
-  /* line 262, ../sass/screen.scss */
+  /* line 277, ../sass/screen.scss */
   .findRace h2 {
     border: none;
     margin: 0 0 1em;
     padding: 0 0 0.6em;
     text-align: center; }
-  /* line 268, ../sass/screen.scss */
+  /* line 283, ../sass/screen.scss */
   .findRace label {
-    width: 21.05263%;
+    width: 31.81818%;
     float: left;
-    margin-right: 5.26316%;
+    margin-right: 4.54545%;
     display: inline;
     text-align: right;
     padding: 0.3em;
@@ -382,7 +394,7 @@ section {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
-  /* line 275, ../sass/screen.scss */
+  /* line 290, ../sass/screen.scss */
   .findRace select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -391,7 +403,7 @@ section {
     border: none;
     border-radius: 0.5em;
     box-sizing: border-box;
-    width: 73.68421%;
+    width: 63.63636%;
     float: right;
     margin-right: 0;
     *margin-left: -1em;
@@ -399,25 +411,26 @@ section {
     padding: 0.5em;
     background: url(../img/down_arrow_select.jpg) no-repeat right #dddddd;
     margin-bottom: 0.6em; }
-  /* line 288, ../sass/screen.scss */
+  /* line 303, ../sass/screen.scss */
   .findRace input {
-    width: 73.68421%;
+    width: 63.63636%;
     float: right;
     margin-right: 0;
     *margin-left: -1em;
     display: inline;
     margin-top: 0; }
 
-/* line 295, ../sass/screen.scss */
+/* line 310, ../sass/screen.scss */
 .left {
-  width: 38.77551%;
+  width: 48.97959%;
   float: left;
   margin-right: 2.04082%;
   display: inline; }
 
-/* line 299, ../sass/screen.scss */
+/* line 314, ../sass/screen.scss */
 .right {
-  width: 38.77551%;
-  float: left;
-  margin-right: 2.04082%;
+  width: 48.97959%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -1em;
   display: inline; }

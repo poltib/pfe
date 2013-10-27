@@ -9,24 +9,26 @@
     <header>
         {{ HTML::image('img/home1.jpg'); }}
         <div class="content">
-            <div id="logo"><h1>{{ link_to_route('home','Run Belgium') }}</h1></div>
-            <div class="user">
-                <div class="userSpace"><a href="{{ route('showUser') }}">{{ HTML::image('img/user.gif'); }}</a></div>
-                <div class="userConnexion">
-                    <h3>Mon compte &darr;</h3>
-                    <form action="#">
-                        <fieldset>
-                            <legend>Connexion</legend>
-                            <input type="text" name="login" id="login" placeholder="identifiant">
-                            <input type="password" name="pwd" id="pwd" placeholder="mot de passe">
-                            <a href="#">Mot de passe oublié?</a> | 
-                            <input type="submit" value="connexion">
-                            <h3>{{ link_to_route('register','S‘inscrire') }}</h3>
-                        </fieldset>
-                    </form>
+            <div class="top">
+                <div id="logo"><h1>{{ link_to_route('home','Run Belgium') }}</h1></div>
+                <div class="user">
+                    <div class="userSpace"><a href="{{ route('showUser') }}">{{ HTML::image('img/user.gif'); }}</a></div>
+                    <div class="userConnexion">
+                        <h3>Mon compte &darr;</h3>
+                        <form action="#">
+                            <fieldset>
+                                <legend>Connexion</legend>
+                                <input type="text" name="login" id="login" placeholder="identifiant">
+                                <input type="password" name="pwd" id="pwd" placeholder="mot de passe">
+                                <a href="#">Mot de passe oublié?</a> | 
+                                <input type="submit" value="connexion">
+                                <h3>{{ link_to_route('register','S‘inscrire') }}</h3>
+                            </fieldset>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <nav>
+            <nav role="navigation">
                 <h2 class="hidden">Navigation</h2>
                 <ul><!-- 
                      --><li>{{ link_to_route('home','Accueil') }}</li><!-- 

@@ -3,7 +3,7 @@
 @section('container')
     <section class="findRace">
         <h2>Trouver une course</h2>
-        <form action="#">
+        <form action="http://pfe" method="POST">
             <fieldset>
                 <div class="left">
                     <label for="pays">Pays</label>
@@ -40,7 +40,7 @@
         </form>
     </section>
     <section class="races">
-    <h2>Courses à venir</h2>
+    <h2>Liste des courses</h2>
     <ul class="racesList">
         <li class="month">
             <h3>Octobre</h3>
