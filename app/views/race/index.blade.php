@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('container')
-    <section class="findRace">
+    <section class="find race">
         <h2>Trouver une course</h2>
         <form action="http://pfe" method="POST">
             <fieldset>
@@ -34,6 +34,8 @@
                         <option value="semi">Semi-Marathon</option>
                         <option value="marathon">Marathon</option>
                     </select>
+                    <label for="date">Date</label>
+                    <input type="date" id="date" placeholder="jj/mm/aaaa">
                     <input type="submit" value="Rechercher">
                 </div>
             </fieldset>
@@ -41,7 +43,7 @@
     </section>
     <section class="races">
     <h2>Liste des courses</h2>
-    <ul class="racesList">
+    <ul class="races list">
         <li class="month">
             <h3>Octobre</h3>
             <ul>

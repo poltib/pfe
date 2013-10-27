@@ -12,19 +12,17 @@
             <div class="top">
                 <div id="logo"><h1>{{ link_to_route('home','Run Belgium') }}</h1></div>
                 <div class="user">
-                    <div class="userSpace"><a href="{{ route('showUser') }}">{{ HTML::image('img/user.gif'); }}</a></div>
                     <div class="userConnexion">
-                        <h3>Mon compte &darr;</h3>
-                        <form action="#">
-                            <fieldset>
-                                <legend>Connexion</legend>
-                                <input type="text" name="login" id="login" placeholder="identifiant">
-                                <input type="password" name="pwd" id="pwd" placeholder="mot de passe">
-                                <a href="#">Mot de passe oublié?</a> | 
-                                <input type="submit" value="connexion">
-                                <h3>{{ link_to_route('register','S‘inscrire') }}</h3>
-                            </fieldset>
-                        </form>
+                        @if(Auth::check())
+                            <h3>{{ link_to_route('profile', 'Profil' ) }}</h3>
+                            <h3>{{ link_to_route('notification', 'Notif' ) }}</h3>
+                            <h3>{{ link_to_route('logout', 'Déconnexion ('.Auth::user()->username.')') }}</h3>
+                        @else
+                            <h3>{{ link_to_route('login','Se connecter') }} | {{ link_to_route('register','S‘inscrire') }}</h3>
+                        @endif
+                        @if(Session::has('flash_notice'))
+                            <div id="flash_notice"><span>{{ Session::get('flash_notice') }}</span></div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -34,7 +32,7 @@
                      --><li>{{ link_to_route('home','Accueil') }}</li><!-- 
                      --><li>{{ link_to_route('listRaces','Courses') }}</li><!-- 
                      --><li>{{ link_to_route('listClubs','Clubs') }}</li><!-- 
-                     --><li>{{ link_to_route('listUsers','Utilisateurs') }}</li><!-- 
+                     --><li>{{ link_to_route('listUsersGroup','Courir en groupe') }}</li><!-- 
                      --><li>{{ link_to_route('listNews','News') }}</li><!-- 
                      --><li>{{ link_to_route('contact','Contact') }}</li><!-- 
                  --></ul>

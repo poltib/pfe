@@ -18,7 +18,10 @@ Route::get('/', array('as'=>'home', function()
 
 Route::post('/', array('as'=>'searchRace', function()
 {
-    return View::make('race.search');
+    $pays = Input::get('pays');
+    $ville = Input::get('ville');
+    $dist = Input::get('distance'); 
+    return View::make('race.search')->with(array('pays'=>$pays, 'ville'=>$ville, 'distance'=>$dist));
 }));
 
 /*--------------------------------Races--------------------------------*/
@@ -33,6 +36,7 @@ Route::get('/race/show', array('as'=>'showRace', function()
     return View::make('race.show');
 }));
 
+
 /*--------------------------------Clubs--------------------------------*/
 
 Route::get('/clubs', array('as'=>'listClubs', function()
@@ -45,11 +49,26 @@ Route::get('/clubs/show', array('as'=>'showClubs', function()
     return View::make('club.show');
 }));
 
+Route::post('/clubs', array('as'=>'searchClubs', function()
+{
+    return View::make('club.search');
+}));
+
 /*--------------------------------Users--------------------------------*/
 
 Route::get('/users', array('as'=>'listUsers', function()
 {
     return View::make('user.index');
+}));
+
+Route::get('/users/group', array('as'=>'listUsersGroup', function()
+{
+    return View::make('user.group.index');
+}));
+
+Route::get('/users/group/show', array('as'=>'showUsersGroup', function()
+{
+    return View::make('user.group.show');
 }));
 
 Route::get('/user/show', array('as'=>'showUser', function()
@@ -61,6 +80,103 @@ Route::get('/user/register', array('as'=>'register', function()
 {
     return View::make('user.register');
 }));
+
+
+
+Route::post('register', array('as'=>'registerUser', function()
+{
+    $username =  strtolower(Input::get('username'));
+    $email = Input::get('email');
+    User::create([
+            'username' => $username,
+            'email'=>$email,
+            'password' => Hash::make(Input::get('password')),
+            ]);
+
+    $user = User::where('username', '=', $username)->first();
+
+    Auth::login($user);
+
+    if (Auth::attempt($user)) {
+        return Redirect::route('home')
+            ->with('flash_notice', 'Votre connexion s‘est effectuée avec succes.');
+    }
+
+    return Redirect::route('login')
+            ->with('flash_error', 'vérifiez les champs.')
+            ->withInput();
+}));
+
+
+
+Route::post('/users/group', function()
+{
+    return View::make('user.group.searchGroup');
+});
+
+Route::filter('guest', function()
+{
+        if (Auth::check()) 
+                return Redirect::route('home')
+                        ->with('flash_notice', 'Vous etes déjà connecté!');
+});
+
+Route::get('/user/login', array('as'=>'login', function()
+{
+    return View::make('user.login');
+}))->before('guest');
+
+
+
+Route::get('/user/notification', array('as'=>'notification', function()
+{
+    return View::make('user.notification');
+}))->before('auth');
+
+
+
+Route::post('login', function() 
+{
+    $user = array(
+        'username' => Input::get('username'),
+        'password' => Input::get('password')
+    );
+    
+    if (Auth::attempt($user)) {
+        return Redirect::route('home')
+            ->with('flash_notice', 'Votre connexion s‘est effectuée avec succes.');
+    }
+    
+    // authentication failure! lets go back to the login page
+    return Redirect::route('login')
+        ->with('flash_error', 'Votre combinaison nom/mot-de-passe est incorrecte.')
+        ->withInput();
+});
+
+
+
+Route::filter('auth', function()
+{
+        if (Auth::guest())
+                return Redirect::route('login')
+                        ->with('flash_error', 'Vous devez être connecté pour voir cette page!');
+});
+
+
+
+Route::get('logout', array('as' => 'logout', function () 
+{
+    Auth::logout();
+
+    return Redirect::route('home')
+        ->with('flash_notice', 'Votre déconnection est un succes.');
+}))->before('auth');
+
+
+
+Route::get('user/profile', array('as' => 'profile', function () {
+    return View::make('user.profile');
+}))->before('auth');
 
 /*--------------------------------News--------------------------------*/
 
