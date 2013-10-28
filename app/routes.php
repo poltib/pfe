@@ -51,7 +51,10 @@ Route::get('/clubs/show', array('as'=>'showClubs', function()
 
 Route::post('/clubs', array('as'=>'searchClubs', function()
 {
-    return View::make('club.search');
+    $pays = Input::get('pays');
+    $ville = Input::get('ville');
+    $dist = Input::get('entrainement');
+    return View::make('club.search')->with(array('pays'=>$pays, 'ville'=>$ville, 'entrainement'=>$dist));
 }));
 
 /*--------------------------------Users--------------------------------*/

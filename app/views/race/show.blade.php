@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('container')
-    <section class="course">
+    <section class="show">
         <h2>Marathon de Vielsalm | <span>27 octobre 20013</span></h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste cum sed quia quidem odio rerum excepturi deserunt quae minima animi. Facilis, beatae, dolorum inventore commodi voluptatem odio libero et possimus.</p>
         <div class="info">
@@ -113,7 +113,7 @@
             {{ Form::label('message', 'Message') . Form::textarea('message','',array('placeholder' => 'Votre message...')) }}
             {{ $errors->first('message') }}
 
-            {{ Form::submit('Envoyer') }}
+            {{ Form::submit('Poster le commentaire') }}
 
             {{ Form::token() . Form::close() }}
             {{ $errors->first('url','<div class="error">:message</div>') }}

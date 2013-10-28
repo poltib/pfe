@@ -1,12 +1,13 @@
 @extends('layout')
 
 @section('container')
-    <section class="find profil">
+    <section>
         <h2>Profil "{{ Auth::user()->username }}"</h2>
         <p>Nom d'utilisateur: {{ Auth::user()->username }}</p>
         <p>Prénom: {{ Auth::user()->first_name }}</p>
         <p>Email: {{ Auth::user()->email }}</p>
         <p>Records:</p>
+        <a href="#" class="button">Modifier profil</a>
     </section>
     <section>
         <h2>Récentes activitées</h2>

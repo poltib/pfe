@@ -39,4 +39,116 @@
             </fieldset>
         </form>
     </section>
+    <section class="races">
+    <h2>Liste des clubs à proximité</h2>
+    <ul class="races list">
+        <li class="month">
+            <h3>Liège</h3>
+            <ul>
+                <div class="sevenFirst">
+                    <a href="{{ route('showClubs') }}"><li>
+                        <h4>Club de Flémalle</h4>
+                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
+                        <span class="dist">marathon et semi</span>
+                        <span class="pays">Belgique</span> -->
+                    </li></a>
+
+                    <a href="{{ route('showClubs') }}"><li>
+                        <h4>Club de Huy</h4>
+                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
+                        <span class="dist">marathon et semi</span>
+                        <span class="pays">Belgique</span> -->
+                    </li></a>
+
+                    <a href="{{ route('showClubs') }}"><li>
+                        <h4>Club de Amay</h4>
+                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
+                        <span class="dist">marathon et semi</span>
+                        <span class="pays">Belgique</span> -->
+                    </li></a>
+
+                    <a href="{{ route('showClubs') }}"><li>
+                        <h4>Club de Chocquier</h4>
+                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
+                        <span class="dist">marathon et semi</span>
+                        <span class="pays">Belgique</span> -->
+                    </li></a>
+
+                    <a href="{{ route('showClubs') }}"><li>
+                        <h4>Club de Oupeye</h4>
+                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
+                        <span class="dist">marathon et semi</span>
+                        <span class="pays">Belgique</span> -->
+                    </li></a>
+
+                    <a href="{{ route('showClubs') }}"><li>
+                        <h4>Club de Villers</h4>
+                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
+                        <span class="dist">marathon et semi</span>
+                        <span class="pays">Belgique</span> -->
+                    </li></a>
+
+                    <a href="{{ route('showClubs') }}"><li>
+                        <h4>Club de Neuville</h4>
+                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
+                        <span class="dist">marathon et semi</span>
+                        <span class="pays">Belgique</span> -->
+                    </li></a>
+                </div>
+
+                    
+                <div class="others">
+                    <a href="{{ route('showClubs') }}"><li>
+                        <h4>Club de Boutrange</h4>
+                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
+                        <span class="dist">marathon et semi</span>
+                        <span class="pays">Belgique</span> -->
+                    </li></a>
+
+                    <a href="{{ route('showClubs') }}"><li>
+                        <h4>Club de Tiange</h4>
+                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
+                        <span class="dist">marathon et semi</span>
+                        <span class="pays">Belgique</span> -->
+                    </li></a>
+
+                    <a href="{{ route('showClubs') }}"><li>
+                        <h4>Club de Grâce-Hollogne</h4>
+                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
+                        <span class="dist">marathon et semi</span>
+                        <span class="pays">Belgique</span> -->
+                    </li></a>
+
+                    <a href="{{ route('showClubs') }}"><li>
+                        <h4>Club de Nortfluxe</h4>
+                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
+                        <span class="dist">marathon et semi</span>
+                        <span class="pays">Belgique</span> -->
+                    </li></a>
+
+                    <a href="{{ route('showClubs') }}"><li>
+                        <h4>Club de Birtange</h4>
+                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
+                        <span class="dist">marathon et semi</span>
+                        <span class="pays">Belgique</span> -->
+                    </li></a>
+
+                    <a href="{{ route('showClubs') }}"><li>
+                        <h4>Club de Nouvellz</h4>
+                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
+                        <span class="dist">marathon et semi</span>
+                        <span class="pays">Belgique</span> -->
+                    </li></a>
+
+                    <a href="{{ route('showClubs') }}"><li>
+                        <h4>Club de Higsplate</h4>
+                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
+                        <span class="dist">marathon et semi</span>
+                        <span class="pays">Belgique</span> -->
+                    </li></a>
+                </div>
+            </ul>
+        </li>
+    </ul>
+    </section>
 @stop

@@ -93,6 +93,7 @@ h6      { font-size: 0.75em;}
     transition: box-shadow 0.5s;
     color:white;
     text-shadow: 0 1px 1px black;
+    display:inline-block;
 }
 [type="submit"]:hover, .button:hover{
 box-shadow: 0 0.5em 0 #01938A;
@@ -253,7 +254,7 @@ h2{
     border-left: 0.6em solid #FF7600;
     padding: 0.5em 0;
     margin-bottom: 1em;
-    background-color: white;
+    background-color: rgb(200,200,200);
     color: black;
 }
 
@@ -433,6 +434,10 @@ input[type="date"]{
     }
 }
 
+.results li{
+    margin: 0.2em 0 0.5em;
+}
+
 /////////----------------------------------------------------------------------------------
 /////////News -----------------------------------------------------------------------------
 /////////----------------------------------------------------------------------------------
@@ -488,6 +493,21 @@ input[type="date"]{
     clear:both;
 }
 
+.list{
+    .big{
+        @include span-columns(7,10);
+        a, a:nth-child(2){
+            width:auto;
+        }
+    }
+    aside{
+        @include span-columns(3 omega,10);
+        a, a:nth-child(2){
+            width:auto;
+        }
+    }
+}
+
 
 
 
@@ -495,15 +515,25 @@ input[type="date"]{
 /////////voir course ----------------------------------------------------------------------
 /////////----------------------------------------------------------------------------------
 
-.course:after{
+.show:after{
     content:"";
     display:block;
     clear:both;
 }
 
-.course{
+
+
+.show{
     h3,h4{
         margin: 1.4em 0 1em;
+    }
+    .cover{
+        @include span-columns(10,10);
+    }
+    .auth{
+        figure{
+            @include span-columns(2,10);
+        }
     }
 
     figure {
@@ -511,6 +541,7 @@ input[type="date"]{
         img{
             border: 0.3em solid silver;
             width:100%;
+             @include box-sizing(border-box);
         }
     }
     .left{
@@ -554,7 +585,7 @@ input[type="date"]{
     span:first-child{
         text-align: right;
         background-color: #FF7600;
-        @include span-columns(1,6);
+        @include span-columns(1.5,6);
         border-top-left-radius: 0.5em;
         border-bottom-left-radius: 0.5em;
         margin-right:0;

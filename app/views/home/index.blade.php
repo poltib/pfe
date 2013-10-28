@@ -43,7 +43,6 @@
     </section>
     <section class="races">
     <h2>Courses à venir</h2>
-    <div class="currentMonth">
     <ul class="races list">
         <li class="month current">
             <h3>Octobre</h3>
@@ -167,7 +166,6 @@
             </ul>
         </li>
     </ul>
-    </div>
     <a href="{{ route('listRaces') }}" class="button">Voir toutes les courses</a>
     </section>
     <section class="news">
