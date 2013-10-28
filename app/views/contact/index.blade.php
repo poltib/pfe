@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('container')
-    <section class="find login">
+<section class="find login">
     <h2>Formulaire d'envoi de mail</h2>
     <div class="left">
         @if (Session::has('flash_error'))

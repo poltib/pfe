@@ -41,7 +41,7 @@
         </div>
     </header>
     <div class="content">
-        <section>
+        <section class="container">
             <h2 class="hidden">Content</h2>
             @yield('container')
         </section>
