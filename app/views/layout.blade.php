@@ -7,18 +7,19 @@
 </head>
 <body>
     <header>
-        {{ HTML::image('img/home1.jpg'); }}
+        <span class="img">{{ HTML::image('img/home1.jpg'); }}</span>
         <div class="content">
             <div class="top">
-                <div id="logo"><h1>{{ link_to_route('home','Run Belgium') }}</h1></div>
+                <div id="logo"><h1>{{ link_to_route('home','Run Belgium') }} <span>Tout sur la course à pied</span></h1></div>
                 <div class="user">
                     <div class="userConnexion">
                         @if(Auth::check())
-                            <h3>{{ link_to_route('profile', 'Profil' ) }}</h3>
-                            <h3>{{ link_to_route('notification', 'Notif' ) }}</h3>
-                            <h3>{{ link_to_route('logout', 'Déconnexion ('.Auth::user()->username.')') }}</h3>
+                            <h3>{{ link_to_route('profile', 'Profil' ) }}</h3><!-- 
+                             --><h3>{{ link_to_route('notification', 'Notif' ) }}</h3><!-- 
+                             --><h3>{{ link_to_route('logout', 'Déconnexion ('.Auth::user()->username.')') }}</h3>
                         @else
-                            <h3>{{ link_to_route('login','Se connecter') }} | {{ link_to_route('register','S‘inscrire') }}</h3>
+                            <h3>{{ link_to_route('login','Se connecter') }}</h3><!--  
+                             --><h3>{{ link_to_route('register','S‘inscrire') }}</h3>
                         @endif
                         @if(Session::has('flash_notice'))
                             <div id="flash_notice"><span>{{ Session::get('flash_notice') }}</span></div>
