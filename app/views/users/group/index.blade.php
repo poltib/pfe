@@ -42,63 +42,43 @@
         <h2>Liste des groupes d'entrainement</h2>
         <ul class="groups list">
         <li class="month">
-            <h3>Octobre</h3>
+            <h3>A proximité de vous</h3>
             <ul>
                 <div class="sevenFirst">
                     <a href="{{ route('showUsersGroup') }}"><li>
-                        <span class="date"><time>27 octobre 2013</time></span>
-                        <h4>Marathon de Vielsalm</h4>
-                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
-                        <span class="dist">marathon et semi</span>
-                        <span class="pays">Belgique</span> -->
+                        <span class="date">Jemeppe</span>
+                        <h4>Groupe de Jemeppe</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, maxime, consectetur, autem pariatur cu</p>
                     </li></a>
 
                     <a href="{{ route('showUsersGroup') }}"><li>
-                        <span class="date"><time>27 octobre 2013</time></span>
-                        <h4>Marathon de Vielsalm</h4>
-                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
-                        <span class="dist">marathon et semi</span>
-                        <span class="pays">Belgique</span> -->
+                        <span class="date">Flémalle</span>
+                        <h4>Groupe de Flémalle</h4>
                     </li></a>
 
                     <a href="{{ route('showUsersGroup') }}"><li>
-                        <span class="date"><time>27 octobre 2013</time></span>
-                        <h4>Marathon de Vielsalm</h4>
-                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
-                        <span class="dist">marathon et semi</span>
-                        <span class="pays">Belgique</span> -->
+                        <span class="date">Huy</span>
+                        <h4>Groupe de Huy</h4>
                     </li></a>
 
                     <a href="{{ route('showUsersGroup') }}"><li>
-                        <span class="date"><time>27 octobre 2013</time></span>
-                        <h4>Marathon de Vielsalm</h4>
-                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
-                        <span class="dist">marathon et semi</span>
-                        <span class="pays">Belgique</span> -->
+                        <span class="date">Grâce-Hollogne</span>
+                        <h4>Groupe de Grâce-Hollogne</h4>
                     </li></a>
 
                     <a href="{{ route('showUsersGroup') }}"><li>
-                        <span class="date"><time>27 octobre 2013</time></span>
-                        <h4>Marathon de Vielsalm</h4>
-                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
-                        <span class="dist">marathon et semi</span>
-                        <span class="pays">Belgique</span> -->
+                        <span class="date">Seraing</span>
+                        <h4>Groupe de Seraing</h4>
                     </li></a>
 
                     <a href="{{ route('showUsersGroup') }}"><li>
-                        <span class="date"><time>27 octobre 2013</time></span>
-                        <h4>Marathon de Vielsalm</h4>
-                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
-                        <span class="dist">marathon et semi</span>
-                        <span class="pays">Belgique</span> -->
+                        <span class="date">Fléront</span>
+                        <h4>Groupe de Fléront</h4>
                     </li></a>
 
                     <a href="{{ route('showUsersGroup') }}"><li>
-                        <span class="date"><time>27 octobre 2013</time></span>
-                        <h4>Marathon de Vielsalm</h4>
-                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
-                        <span class="dist">marathon et semi</span>
-                        <span class="pays">Belgique</span> -->
+                        <span class="date">Liège</span>
+                        <h4>Groupe de Liège</h4>
                     </li></a>
 
                 </div>

@@ -35,7 +35,8 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-	if (Auth::guest()) return Redirect::guest('login');
+	if (Auth::guest()) return Redirect::guest('login')
+        ->with('flash_error', 'Vous devez être connecté pour voir cette page!');
 });
 
 
@@ -57,7 +58,8 @@ Route::filter('auth.basic', function()
 
 Route::filter('guest', function()
 {
-	if (Auth::check()) return Redirect::to('/');
+	if (Auth::check()) return Redirect::to('/')
+		->with('flash_notice', 'Vous etes déjà connecté!');
 });
 
 /*

@@ -59,84 +59,20 @@ Route::post('/clubs', array('as'=>'searchClubs', function()
 
 /*--------------------------------Users--------------------------------*/
 
-Route::get('/users', array('as'=>'listUsers', function()
+Route::resource('users','UserController');
+
+Route::get('logout', array('as' => 'logout', function () 
 {
-    return View::make('user.index');
-}));
+    Auth::logout();
 
-Route::get('/users/group', array('as'=>'listUsersGroup', function()
-{
-    return View::make('user.group.index');
-}));
-
-Route::get('/users/group/show', array('as'=>'showUsersGroup', function()
-{
-    return View::make('user.group.show');
-}));
-
-Route::get('/user/show', array('as'=>'showUser', function()
-{
-    return View::make('user.show');
-}));
-
-Route::get('/user/register', array('as'=>'register', function()
-{
-    return View::make('user.register');
-}));
-
-
-
-Route::post('register', array('as'=>'registerUser', function()
-{
-    $username =  strtolower(Input::get('username'));
-    $email = Input::get('email');
-    User::create([
-            'username' => $username,
-            'email'=>$email,
-            'password' => Hash::make(Input::get('password')),
-            ]);
-
-    $user = User::where('username', '=', $username)->first();
-
-    Auth::login($user);
-
-    if (Auth::attempt($user)) {
-        return Redirect::route('home')
-            ->with('flash_notice', 'Votre connexion s‘est effectuée avec succes.');
-    }
-
-    return Redirect::route('login')
-            ->with('flash_error', 'vérifiez les champs.')
-            ->withInput();
-}));
-
-
-
-Route::post('/users/group', function()
-{
-    return View::make('user.group.searchGroup');
-});
-
-Route::filter('guest', function()
-{
-        if (Auth::check()) 
-                return Redirect::route('home')
-                        ->with('flash_notice', 'Vous etes déjà connecté!');
-});
-
-Route::get('/user/login', array('as'=>'login', function()
-{
-    return View::make('user.login');
-}))->before('guest');
-
-
-
-Route::get('/user/notification', array('as'=>'notification', function()
-{
-    return View::make('user.notification');
+    return Redirect::route('home')
+        ->with('flash_notice', 'Votre déconnection est un succes.');
 }))->before('auth');
 
-
+Route::get('/login', array('as'=>'login', function()
+{
+    return View::make('users.login');
+}))->before('guest');
 
 Route::post('login', function() 
 {
@@ -156,30 +92,80 @@ Route::post('login', function()
         ->withInput();
 });
 
+// Route::get('/users', array('as'=>'listUsers', function()
+// {
+//     return View::make('user.index');
+// }));
+
+// Route::get('/users/group', array('as'=>'listUsersGroup', function()
+// {
+//     return View::make('user.group.index');
+// }));
+
+// Route::get('/users/group/show', array('as'=>'showUsersGroup', function()
+// {
+//     return View::make('user.group.show');
+// }));
+
+// Route::get('/user/show', array('as'=>'showUser', function()
+// {
+//     return View::make('user.show');
+// }));
+
+// Route::get('/user/register', array('as'=>'register', function()
+// {
+//     return View::make('user.register');
+// }));
 
 
-Route::filter('auth', function()
-{
-        if (Auth::guest())
-                return Redirect::route('login')
-                        ->with('flash_error', 'Vous devez être connecté pour voir cette page!');
-});
+
+// Route::post('register', array(
+//   'uses' => 'UserController@store'
+// ));
+
+// Route::post('update', array(
+//   'uses' => 'UserController@update'
+// ));
 
 
 
-Route::get('logout', array('as' => 'logout', function () 
-{
-    Auth::logout();
+// Route::post('/users/group', function()
+// {
+//     return View::make('user.group.searchGroup');
+// });
 
-    return Redirect::route('home')
-        ->with('flash_notice', 'Votre déconnection est un succes.');
-}))->before('auth');
+// Route::get('/login', array('as'=>'login', function()
+// {
+//     return View::make('user.login');
+// }))->before('guest');
 
 
 
-Route::get('user/profile', array('as' => 'profile', function () {
-    return View::make('user.profile');
-}))->before('auth');
+// Route::get('/user/notification', array('as'=>'notification', function()
+// {
+//     return View::make('user.notification');
+// }))->before('auth');
+
+
+// Route::get('logout', array('as' => 'logout', function () 
+// {
+//     Auth::logout();
+
+//     return Redirect::route('home')
+//         ->with('flash_notice', 'Votre déconnection est un succes.');
+// }))->before('auth');
+
+
+
+// Route::get('user/profile', array('as' => 'profile', function () {
+//     return View::make('user.profile');
+// }))->before('auth');
+
+// Route::get('user/profile/edit', array('as' => 'editProfile', function () {
+//     return View::make('user.edit');
+// }))->before('auth');
+
+
 
 /*--------------------------------News--------------------------------*/
 
@@ -199,6 +185,5 @@ Route::get('/contact', array('as'=>'contact', function()
 {
     return View::make('contact.index');
 }));
-
 
 

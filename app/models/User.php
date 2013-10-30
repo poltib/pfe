@@ -4,7 +4,19 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
 class User extends Eloquent implements UserInterface, RemindableInterface {
+	protected $guarded = array();  // Important
 
+	public static $rules = array(
+		'username' => 'required|unique:users',
+		'email' => 'required|email|unique:users',
+		'password' => 'required|min:6'
+	);
+
+	public static function validate($user)
+    {
+        $v = Validator::make($user,static::$rules);
+        return $v->fails()?$v:true;
+    }
 	/**
 	 * The database table used by the model.
 	 *
