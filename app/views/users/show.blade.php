@@ -7,10 +7,12 @@
         <p>Prénom: {{ $user->first_name }}</p>
         <p>Email: {{ $user->email }}</p>
         <p>Records:</p>
-        @if(Auth::user()->id===$user->id && Auth::check())
-            {{ HTML::linkAction('UserController@edit', 'Modifier', $user->id) }}
-        @else
-            <a href="#" class="button">Envoyer un message</a>
+        @if(Auth::check())
+            @if(Auth::user()->id===$user->id)
+                {{ HTML::linkAction('UserController@edit', 'Modifier', $user->id) }}
+            @else
+                <a href="#" class="button">Envoyer un message</a>
+            @endif
         @endif
     </section>
     <section>

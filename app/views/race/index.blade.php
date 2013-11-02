@@ -44,128 +44,377 @@
     <section class="races">
     <h2>Liste des courses</h2>
     <ul class="races list">
-        <li class="month">
+        <li class="month current">
             <h3>Octobre</h3>
             <ul>
-                <div class="sevenFirst">
-                    <a href="{{ route('showRace') }}"><li>
-                        <span class="date"><time>27 octobre 2013</time></span>
-                        <h4>Marathon de Vielsalm</h4>
-                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
-                        <span class="dist">marathon et semi</span>
-                        <span class="pays">Belgique</span> -->
-                    </li></a>
+                <li>
+                    <div class="name">Nom</div>
+                    <div class="dist">Distances</div>
+                    <div class="date">Date</div>
+                    <div class="description">Description</div>
+                    <div class="location">Localisation</div>
+                    <div class="link">Liens</div>
+                </li>
+                <li>
+                    <div class="name">
+                        <div class="logo">
+                            {{ HTML::image('img/logo.gif'); }}
+                        </div>
+                        <div class="coords">
+                            <h3>Jogging de Liège</h3>
+                            <span><a href="#">www.joggingLiege.be</a></span>
+                            
+                        </div>
+                    </div>
+                    <div class="dist">
+                        10km 20km
+                    </div>
+                    <div class="date">
+                        27/10/2013
+                    </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, corporis vel fugiat voluptatibus molestias ea illum eos molestiae iusto possimus ut inventore blanditiis unde quidem maxime commodi minus explicabo accusamus.</p>
+                    </div>
+                    <div class="location">
+                        <p>Belgique</p>
+                        <p>Liège</p>
+                    </div>
+                    <div class="link">
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>La course</a>
+                    </div>
+                </li>
 
-                    <a href="{{ route('showRace') }}"><li>
-                        <span class="date"><time>27 octobre 2013</time></span>
-                        <h4>Marathon de Vielsalm</h4>
-                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
-                        <span class="dist">marathon et semi</span>
-                        <span class="pays">Belgique</span> -->
-                    </li></a>
+                <li>
+                    <div class="name">
+                        <div class="logo">
+                            {{ HTML::image('img/logo.gif'); }}
+                        </div>
+                        <div class="coords">
+                            <h3>Jogging de Liège</h3>
+                            <span><a href="#">www.joggingLiege.be</a></span>
+                            
+                        </div>
+                    </div>
+                    <div class="dist">
+                        10km 20km
+                    </div>
+                    <div class="date">
+                        27/10/2013
+                    </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, corporis vel fugiat voluptatibus molestias ea illum eos molestiae iusto possimus ut inventore blanditiis unde quidem maxime commodi minus explicabo accusamus.</p>
+                    </div>
+                    <div class="location">
+                        <p>Belgique</p>
+                        <p>Liège</p>
+                    </div>
+                    <div class="link">
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>La course</a>
+                    </div>
+                </li>
 
-                    <a href="{{ route('showRace') }}"><li>
-                        <span class="date"><time>27 octobre 2013</time></span>
-                        <h4>Marathon de Vielsalm</h4>
-                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
-                        <span class="dist">marathon et semi</span>
-                        <span class="pays">Belgique</span> -->
-                    </li></a>
+                <li>
+                    <div class="name">
+                        <div class="logo">
+                            {{ HTML::image('img/logo.gif'); }}
+                        </div>
+                        <div class="coords">
+                            <h3>Jogging de Liège</h3>
+                            <span><a href="#">www.joggingLiege.be</a></span>
+                            
+                        </div>
+                    </div>
+                    <div class="dist">
+                        10km 20km
+                    </div>
+                    <div class="date">
+                        27/10/2013
+                    </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, corporis vel fugiat voluptatibus molestias ea illum eos molestiae iusto possimus ut inventore blanditiis unde quidem maxime commodi minus explicabo accusamus.</p>
+                    </div>
+                    <div class="location">
+                        <p>Belgique</p>
+                        <p>Liège</p>
+                    </div>
+                    <div class="link">
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>La course</a>
+                    </div>
+                </li>
 
-                    <a href="{{ route('showRace') }}"><li>
-                        <span class="date"><time>27 octobre 2013</time></span>
-                        <h4>Marathon de Vielsalm</h4>
-                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
-                        <span class="dist">marathon et semi</span>
-                        <span class="pays">Belgique</span> -->
-                    </li></a>
+                <li>
+                    <div class="name">
+                        <div class="logo">
+                            {{ HTML::image('img/logo.gif'); }}
+                        </div>
+                        <div class="coords">
+                            <h3>Jogging de Liège</h3>
+                            <span><a href="#">www.joggingLiege.be</a></span>
+                            
+                        </div>
+                    </div>
+                    <div class="dist">
+                        10km 20km
+                    </div>
+                    <div class="date">
+                        27/10/2013
+                    </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, corporis vel fugiat voluptatibus molestias ea illum eos molestiae iusto possimus ut inventore blanditiis unde quidem maxime commodi minus explicabo accusamus.</p>
+                    </div>
+                    <div class="location">
+                        <p>Belgique</p>
+                        <p>Liège</p>
+                    </div>
+                    <div class="link">
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>La course</a>
+                    </div>
+                </li>
 
-                    <a href="{{ route('showRace') }}"><li>
-                        <span class="date"><time>27 octobre 2013</time></span>
-                        <h4>Marathon de Vielsalm</h4>
-                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
-                        <span class="dist">marathon et semi</span>
-                        <span class="pays">Belgique</span> -->
-                    </li></a>
+                <li>
+                    <div class="name">
+                        <div class="logo">
+                            {{ HTML::image('img/logo.gif'); }}
+                        </div>
+                        <div class="coords">
+                            <h3>Jogging de Liège</h3>
+                            <span><a href="#">www.joggingLiege.be</a></span>
+                            
+                        </div>
+                    </div>
+                    <div class="dist">
+                        10km 20km
+                    </div>
+                    <div class="date">
+                        27/10/2013
+                    </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, corporis vel fugiat voluptatibus molestias ea illum eos molestiae iusto possimus ut inventore blanditiis unde quidem maxime commodi minus explicabo accusamus.</p>
+                    </div>
+                    <div class="location">
+                        <p>Belgique</p>
+                        <p>Liège</p>
+                    </div>
+                    <div class="link">
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>La course</a>
+                    </div>
+                </li>
 
-                    <a href="{{ route('showRace') }}"><li>
-                        <span class="date"><time>27 octobre 2013</time></span>
-                        <h4>Marathon de Vielsalm</h4>
-                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
-                        <span class="dist">marathon et semi</span>
-                        <span class="pays">Belgique</span> -->
-                    </li></a>
+                <li>
+                    <div class="name">
+                        <div class="logo">
+                            {{ HTML::image('img/logo.gif'); }}
+                        </div>
+                        <div class="coords">
+                            <h3>Jogging de Liège</h3>
+                            <span><a href="#">www.joggingLiege.be</a></span>
+                            
+                        </div>
+                    </div>
+                    <div class="dist">
+                        10km 20km
+                    </div>
+                    <div class="date">
+                        27/10/2013
+                    </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, corporis vel fugiat voluptatibus molestias ea illum eos molestiae iusto possimus ut inventore blanditiis unde quidem maxime commodi minus explicabo accusamus.</p>
+                    </div>
+                    <div class="location">
+                        <p>Belgique</p>
+                        <p>Liège</p>
+                    </div>
+                    <div class="link">
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>La course</a>
+                    </div>
+                </li>
 
-                    <a href="{{ route('showRace') }}"><li>
-                        <span class="date"><time>27 octobre 2013</time></span>
-                        <h4>Marathon de Vielsalm</h4>
-                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
-                        <span class="dist">marathon et semi</span>
-                        <span class="pays">Belgique</span> -->
-                    </li></a>
-                </div>
-
-                    
-                <div class="others">
-                    <a href="{{ route('showRace') }}"><li>
-                        <span class="date"><time>27 octobre 2013</time></span>
-                        <h4>Marathon de Vielsalm</h4>
-                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
-                        <span class="dist">marathon et semi</span>
-                        <span class="pays">Belgique</span> -->
-                    </li></a>
-
-                    <a href="{{ route('showRace') }}"><li>
-                        <span class="date"><time>27 octobre 2013</time></span>
-                        <h4>Marathon de Vielsalm</h4>
-                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
-                        <span class="dist">marathon et semi</span>
-                        <span class="pays">Belgique</span> -->
-                    </li></a>
-
-                    <a href="{{ route('showRace') }}"><li>
-                        <span class="date"><time>27 octobre 2013</time></span>
-                        <h4>Marathon de Vielsalm</h4>
-                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
-                        <span class="dist">marathon et semi</span>
-                        <span class="pays">Belgique</span> -->
-                    </li></a>
-
-                    <a href="{{ route('showRace') }}"><li>
-                        <span class="date"><time>27 octobre 2013</time></span>
-                        <h4>Marathon de Vielsalm</h4>
-                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
-                        <span class="dist">marathon et semi</span>
-                        <span class="pays">Belgique</span> -->
-                    </li></a>
-
-                    <a href="{{ route('showRace') }}"><li>
-                        <span class="date"><time>27 octobre 2013</time></span>
-                        <h4>Marathon de Vielsalm</h4>
-                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
-                        <span class="dist">marathon et semi</span>
-                        <span class="pays">Belgique</span> -->
-                    </li></a>
-
-                    <a href="{{ route('showRace') }}"><li>
-                        <span class="date"><time>27 octobre 2013</time></span>
-                        <h4>Marathon de Vielsalm</h4>
-                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
-                        <span class="dist">marathon et semi</span>
-                        <span class="pays">Belgique</span> -->
-                    </li></a>
-
-                    <a href="{{ route('showRace') }}"><li>
-                        <span class="date"><time>27 octobre 2013</time></span>
-                        <h4>Marathon de Vielsalm</h4>
-                        <!-- <span class="description">Marathon annuel de la ville de Vielsalm</span>
-                        <span class="dist">marathon et semi</span>
-                        <span class="pays">Belgique</span> -->
-                    </li></a>
-                </div>
+                <li>
+                    <div class="name">
+                        <div class="logo">
+                            {{ HTML::image('img/logo.gif'); }}
+                        </div>
+                        <div class="coords">
+                            <h3>Jogging de Liège</h3>
+                            <span><a href="#">www.joggingLiege.be</a></span>
+                            
+                        </div>
+                    </div>
+                    <div class="dist">
+                        10km 20km
+                    </div>
+                    <div class="date">
+                        27/10/2013
+                    </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, corporis vel fugiat voluptatibus molestias ea illum eos molestiae iusto possimus ut inventore blanditiis unde quidem maxime commodi minus explicabo accusamus.</p>
+                    </div>
+                    <div class="location">
+                        <p>Belgique</p>
+                        <p>Liège</p>
+                    </div>
+                    <div class="link">
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>La course</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="name">
+                        <div class="logo">
+                            {{ HTML::image('img/logo.gif'); }}
+                        </div>
+                        <div class="coords">
+                            <h3>Jogging de Liège</h3>
+                            <span><a href="#">www.joggingLiege.be</a></span>
+                            
+                        </div>
+                    </div>
+                    <div class="dist">
+                        10km 20km
+                    </div>
+                    <div class="date">
+                        27/10/2013
+                    </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, corporis vel fugiat voluptatibus molestias ea illum eos molestiae iusto possimus ut inventore blanditiis unde quidem maxime commodi minus explicabo accusamus.</p>
+                    </div>
+                    <div class="location">
+                        <p>Belgique</p>
+                        <p>Liège</p>
+                    </div>
+                    <div class="link">
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>La course</a>
+                    </div>
+                </li>
             </ul>
         </li>
-        <li class="month"><h3>Novembre</h3></li>
+        <li class="month current">
+            <h3>Novembre</h3>
+            <ul>
+                <li>
+                    <div class="name">Nom</div>
+                    <div class="dist">Distances</div>
+                    <div class="date">Date</div>
+                    <div class="description">Description</div>
+                    <div class="location">Localisation</div>
+                    <div class="link">Liens</div>
+                </li>
+                <li>
+                    <div class="name">
+                        <div class="logo">
+                            {{ HTML::image('img/logo.gif'); }}
+                        </div>
+                        <div class="coords">
+                            <h3>Jogging de Liège</h3>
+                            <span><a href="#">www.joggingLiege.be</a></span>
+                            
+                        </div>
+                    </div>
+                    <div class="dist">
+                        10km 20km
+                    </div>
+                    <div class="date">
+                        27/10/2013
+                    </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, corporis vel fugiat voluptatibus molestias ea illum eos molestiae iusto possimus ut inventore blanditiis unde quidem maxime commodi minus explicabo accusamus.</p>
+                    </div>
+                    <div class="location">
+                        <p>Belgique</p>
+                        <p>Liège</p>
+                    </div>
+                    <div class="link">
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>La course</a>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="name">
+                        <div class="logo">
+                            {{ HTML::image('img/logo.gif'); }}
+                        </div>
+                        <div class="coords">
+                            <h3>Jogging de Liège</h3>
+                            <span><a href="#">www.joggingLiege.be</a></span>
+                            
+                        </div>
+                    </div>
+                    <div class="dist">
+                        10km 20km
+                    </div>
+                    <div class="date">
+                        27/10/2013
+                    </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, corporis vel fugiat voluptatibus molestias ea illum eos molestiae iusto possimus ut inventore blanditiis unde quidem maxime commodi minus explicabo accusamus.</p>
+                    </div>
+                    <div class="location">
+                        <p>Belgique</p>
+                        <p>Liège</p>
+                    </div>
+                    <div class="link">
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>La course</a>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="name">
+                        <div class="logo">
+                            {{ HTML::image('img/logo.gif'); }}
+                        </div>
+                        <div class="coords">
+                            <h3>Jogging de Liège</h3>
+                            <span><a href="#">www.joggingLiege.be</a></span>
+                            
+                        </div>
+                    </div>
+                    <div class="dist">
+                        10km 20km
+                    </div>
+                    <div class="date">
+                        27/10/2013
+                    </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, corporis vel fugiat voluptatibus molestias ea illum eos molestiae iusto possimus ut inventore blanditiis unde quidem maxime commodi minus explicabo accusamus.</p>
+                    </div>
+                    <div class="location">
+                        <p>Belgique</p>
+                        <p>Liège</p>
+                    </div>
+                    <div class="link">
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>La course</a>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="name">
+                        <div class="logo">
+                            {{ HTML::image('img/logo.gif'); }}
+                        </div>
+                        <div class="coords">
+                            <h3>Jogging de Liège</h3>
+                            <span><a href="#">www.joggingLiege.be</a></span>
+                            
+                        </div>
+                    </div>
+                    <div class="dist">
+                        10km 20km
+                    </div>
+                    <div class="date">
+                        27/10/2013
+                    </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, corporis vel fugiat voluptatibus molestias ea illum eos molestiae iusto possimus ut inventore blanditiis unde quidem maxime commodi minus explicabo accusamus.</p>
+                    </div>
+                    <div class="location">
+                        <p>Belgique</p>
+                        <p>Liège</p>
+                    </div>
+                    <div class="link">
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>La course</a>
+                    </div>
+                </li>
+            </ul>
+        </li>
     </ul>
     </section>
 @stop

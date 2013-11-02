@@ -13,7 +13,7 @@
 
 Route::get('/', array('as'=>'home', function()
 {
-	return View::make('home.index');
+	return View::make('home.index')->with('title', 'home');
 }));
 
 Route::post('/', array('as'=>'searchRace', function()
@@ -28,12 +28,12 @@ Route::post('/', array('as'=>'searchRace', function()
 
 Route::get('/races', array('as'=>'listRaces', function()
 {
-    return View::make('race.index');
+    return View::make('race.index')->with('title', 'liste des courses');
 }));
 
 Route::get('/race/show', array('as'=>'showRace', function()
 {
-    return View::make('race.show');
+    return View::make('race.show')->with('title', 'voir course');
 }));
 
 

@@ -22,21 +22,21 @@
         {
             $users = $this->user->all();
 
-            return View::make('users.index', compact('users'));
+            return View::make('users.index', compact('users'))->with('title', 'Liste des utilisateurs');
         }
 
         public function show($id)
         {
             $user = $this->user->findOrFail($id);
 
-            return View::make('users.show', compact('user'));
+            return View::make('users.show', compact('user'))->with('title', 'Profil de '.$user->username);
         }
 
         public function edit($id)
         {
             $user = $this->user->findOrFail($id);
 
-            return View::make('users.edit', compact('user'));
+            return View::make('users.edit', compact('user'))->with('title', 'Modifier le profil');
         }
 
         public function update($id)
