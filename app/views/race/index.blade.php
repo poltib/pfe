@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('container')
+
     <section class="find race">
         <h2>Trouver une course</h2>
         <form action="http://pfe" method="POST">
@@ -49,10 +50,9 @@
             <ul>
                 <li>
                     <div class="name">Nom</div>
-                    <div class="dist">Distances</div>
-                    <div class="date">Date</div>
-                    <div class="description">Description</div>
+                    <div class="date">Date et distances</div>
                     <div class="location">Localisation</div>
+                    <div class="description">Description</div>
                     <div class="link">Liens</div>
                 </li>
                 <li>
@@ -66,21 +66,19 @@
                             
                         </div>
                     </div>
-                    <div class="dist">
-                        10km 20km
-                    </div>
                     <div class="date">
-                        27/10/2013
-                    </div>
-                    <div class="description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, corporis vel fugiat voluptatibus molestias ea illum eos molestiae iusto possimus ut inventore blanditiis unde quidem maxime commodi minus explicabo accusamus.</p>
+                        27 octobre 2013
+                        <p><a href="#" class="button">10km</a> <a href="#" class="button">20km</a></p>
                     </div>
                     <div class="location">
                         <p>Belgique</p>
                         <p>Liège</p>
                     </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
                     <div class="link">
-                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>La course</a>
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a>
                     </div>
                 </li>
 
@@ -95,21 +93,19 @@
                             
                         </div>
                     </div>
-                    <div class="dist">
-                        10km 20km
-                    </div>
                     <div class="date">
-                        27/10/2013
-                    </div>
-                    <div class="description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, corporis vel fugiat voluptatibus molestias ea illum eos molestiae iusto possimus ut inventore blanditiis unde quidem maxime commodi minus explicabo accusamus.</p>
+                        27 octobre 2013
+                        <p><a href="#" class="button">10km</a> <a href="#" class="button">20km</a></p>
                     </div>
                     <div class="location">
                         <p>Belgique</p>
                         <p>Liège</p>
                     </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
                     <div class="link">
-                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>La course</a>
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a>
                     </div>
                 </li>
 
@@ -124,21 +120,19 @@
                             
                         </div>
                     </div>
-                    <div class="dist">
-                        10km 20km
-                    </div>
                     <div class="date">
-                        27/10/2013
-                    </div>
-                    <div class="description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, corporis vel fugiat voluptatibus molestias ea illum eos molestiae iusto possimus ut inventore blanditiis unde quidem maxime commodi minus explicabo accusamus.</p>
+                        27 octobre 2013
+                        <p><a href="#" class="button">10km</a> <a href="#" class="button">20km</a></p>
                     </div>
                     <div class="location">
                         <p>Belgique</p>
                         <p>Liège</p>
                     </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
                     <div class="link">
-                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>La course</a>
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a>
                     </div>
                 </li>
 
@@ -153,21 +147,19 @@
                             
                         </div>
                     </div>
-                    <div class="dist">
-                        10km 20km
-                    </div>
                     <div class="date">
-                        27/10/2013
-                    </div>
-                    <div class="description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, corporis vel fugiat voluptatibus molestias ea illum eos molestiae iusto possimus ut inventore blanditiis unde quidem maxime commodi minus explicabo accusamus.</p>
+                        27 octobre 2013
+                        <p><a href="#" class="button">10km</a> <a href="#" class="button">20km</a></p>
                     </div>
                     <div class="location">
                         <p>Belgique</p>
                         <p>Liège</p>
                     </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
                     <div class="link">
-                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>La course</a>
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a>
                     </div>
                 </li>
 
@@ -182,21 +174,19 @@
                             
                         </div>
                     </div>
-                    <div class="dist">
-                        10km 20km
-                    </div>
                     <div class="date">
-                        27/10/2013
-                    </div>
-                    <div class="description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, corporis vel fugiat voluptatibus molestias ea illum eos molestiae iusto possimus ut inventore blanditiis unde quidem maxime commodi minus explicabo accusamus.</p>
+                        27 octobre 2013
+                        <p><a href="#" class="button">10km</a> <a href="#" class="button">20km</a></p>
                     </div>
                     <div class="location">
                         <p>Belgique</p>
                         <p>Liège</p>
                     </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
                     <div class="link">
-                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>La course</a>
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a>
                     </div>
                 </li>
 
@@ -211,21 +201,19 @@
                             
                         </div>
                     </div>
-                    <div class="dist">
-                        10km 20km
-                    </div>
                     <div class="date">
-                        27/10/2013
-                    </div>
-                    <div class="description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, corporis vel fugiat voluptatibus molestias ea illum eos molestiae iusto possimus ut inventore blanditiis unde quidem maxime commodi minus explicabo accusamus.</p>
+                        27 octobre 2013
+                        <p><a href="#" class="button">10km</a> <a href="#" class="button">20km</a></p>
                     </div>
                     <div class="location">
                         <p>Belgique</p>
                         <p>Liège</p>
                     </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
                     <div class="link">
-                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>La course</a>
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a>
                     </div>
                 </li>
 
@@ -240,21 +228,19 @@
                             
                         </div>
                     </div>
-                    <div class="dist">
-                        10km 20km
-                    </div>
                     <div class="date">
-                        27/10/2013
-                    </div>
-                    <div class="description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, corporis vel fugiat voluptatibus molestias ea illum eos molestiae iusto possimus ut inventore blanditiis unde quidem maxime commodi minus explicabo accusamus.</p>
+                        27 octobre 2013
+                        <p><a href="#" class="button">10km</a> <a href="#" class="button">20km</a></p>
                     </div>
                     <div class="location">
                         <p>Belgique</p>
                         <p>Liège</p>
                     </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
                     <div class="link">
-                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>La course</a>
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a>
                     </div>
                 </li>
                 <li>
@@ -268,34 +254,31 @@
                             
                         </div>
                     </div>
-                    <div class="dist">
-                        10km 20km
-                    </div>
                     <div class="date">
-                        27/10/2013
-                    </div>
-                    <div class="description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, corporis vel fugiat voluptatibus molestias ea illum eos molestiae iusto possimus ut inventore blanditiis unde quidem maxime commodi minus explicabo accusamus.</p>
+                        27 octobre 2013
+                        <p><a href="#" class="button">10km</a> <a href="#" class="button">20km</a></p>
                     </div>
                     <div class="location">
                         <p>Belgique</p>
                         <p>Liège</p>
                     </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
                     <div class="link">
-                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>La course</a>
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a>
                     </div>
                 </li>
             </ul>
         </li>
         <li class="month current">
-            <h3>Novembre</h3>
+            <h3>Octobre</h3>
             <ul>
                 <li>
                     <div class="name">Nom</div>
-                    <div class="dist">Distances</div>
-                    <div class="date">Date</div>
-                    <div class="description">Description</div>
+                    <div class="date">Date et distances</div>
                     <div class="location">Localisation</div>
+                    <div class="description">Description</div>
                     <div class="link">Liens</div>
                 </li>
                 <li>
@@ -309,21 +292,19 @@
                             
                         </div>
                     </div>
-                    <div class="dist">
-                        10km 20km
-                    </div>
                     <div class="date">
-                        27/10/2013
-                    </div>
-                    <div class="description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, corporis vel fugiat voluptatibus molestias ea illum eos molestiae iusto possimus ut inventore blanditiis unde quidem maxime commodi minus explicabo accusamus.</p>
+                        27 octobre 2013
+                        <p><a href="#" class="button">10km</a> <a href="#" class="button">20km</a></p>
                     </div>
                     <div class="location">
                         <p>Belgique</p>
                         <p>Liège</p>
                     </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
                     <div class="link">
-                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>La course</a>
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a>
                     </div>
                 </li>
 
@@ -338,21 +319,19 @@
                             
                         </div>
                     </div>
-                    <div class="dist">
-                        10km 20km
-                    </div>
                     <div class="date">
-                        27/10/2013
-                    </div>
-                    <div class="description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, corporis vel fugiat voluptatibus molestias ea illum eos molestiae iusto possimus ut inventore blanditiis unde quidem maxime commodi minus explicabo accusamus.</p>
+                        27 octobre 2013
+                        <p><a href="#" class="button">10km</a> <a href="#" class="button">20km</a></p>
                     </div>
                     <div class="location">
                         <p>Belgique</p>
                         <p>Liège</p>
                     </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
                     <div class="link">
-                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>La course</a>
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a>
                     </div>
                 </li>
 
@@ -367,21 +346,19 @@
                             
                         </div>
                     </div>
-                    <div class="dist">
-                        10km 20km
-                    </div>
                     <div class="date">
-                        27/10/2013
-                    </div>
-                    <div class="description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, corporis vel fugiat voluptatibus molestias ea illum eos molestiae iusto possimus ut inventore blanditiis unde quidem maxime commodi minus explicabo accusamus.</p>
+                        27 octobre 2013
+                        <p><a href="#" class="button">10km</a> <a href="#" class="button">20km</a></p>
                     </div>
                     <div class="location">
                         <p>Belgique</p>
                         <p>Liège</p>
                     </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
                     <div class="link">
-                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>La course</a>
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a>
                     </div>
                 </li>
 
@@ -396,21 +373,126 @@
                             
                         </div>
                     </div>
-                    <div class="dist">
-                        10km 20km
-                    </div>
                     <div class="date">
-                        27/10/2013
-                    </div>
-                    <div class="description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, corporis vel fugiat voluptatibus molestias ea illum eos molestiae iusto possimus ut inventore blanditiis unde quidem maxime commodi minus explicabo accusamus.</p>
+                        27 octobre 2013
+                        <p><a href="#" class="button">10km</a> <a href="#" class="button">20km</a></p>
                     </div>
                     <div class="location">
                         <p>Belgique</p>
                         <p>Liège</p>
                     </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
                     <div class="link">
-                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>La course</a>
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="name">
+                        <div class="logo">
+                            {{ HTML::image('img/logo.gif'); }}
+                        </div>
+                        <div class="coords">
+                            <h3>Jogging de Liège</h3>
+                            <span><a href="#">www.joggingLiege.be</a></span>
+                            
+                        </div>
+                    </div>
+                    <div class="date">
+                        27 octobre 2013
+                        <p><a href="#" class="button">10km</a> <a href="#" class="button">20km</a></p>
+                    </div>
+                    <div class="location">
+                        <p>Belgique</p>
+                        <p>Liège</p>
+                    </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="link">
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="name">
+                        <div class="logo">
+                            {{ HTML::image('img/logo.gif'); }}
+                        </div>
+                        <div class="coords">
+                            <h3>Jogging de Liège</h3>
+                            <span><a href="#">www.joggingLiege.be</a></span>
+                            
+                        </div>
+                    </div>
+                    <div class="date">
+                        27 octobre 2013
+                        <p><a href="#" class="button">10km</a> <a href="#" class="button">20km</a></p>
+                    </div>
+                    <div class="location">
+                        <p>Belgique</p>
+                        <p>Liège</p>
+                    </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="link">
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="name">
+                        <div class="logo">
+                            {{ HTML::image('img/logo.gif'); }}
+                        </div>
+                        <div class="coords">
+                            <h3>Jogging de Liège</h3>
+                            <span><a href="#">www.joggingLiege.be</a></span>
+                            
+                        </div>
+                    </div>
+                    <div class="date">
+                        27 octobre 2013
+                        <p><a href="#" class="button">10km</a> <a href="#" class="button">20km</a></p>
+                    </div>
+                    <div class="location">
+                        <p>Belgique</p>
+                        <p>Liège</p>
+                    </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="link">
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="name">
+                        <div class="logo">
+                            {{ HTML::image('img/logo.gif'); }}
+                        </div>
+                        <div class="coords">
+                            <h3>Jogging de Liège</h3>
+                            <span><a href="#">www.joggingLiege.be</a></span>
+                            
+                        </div>
+                    </div>
+                    <div class="date">
+                        27 octobre 2013
+                        <p><a href="#" class="button">10km</a> <a href="#" class="button">20km</a></p>
+                    </div>
+                    <div class="location">
+                        <p>Belgique</p>
+                        <p>Liège</p>
+                    </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="link">
+                        <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a>
                     </div>
                 </li>
             </ul>

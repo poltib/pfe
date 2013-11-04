@@ -6,7 +6,6 @@
 @import "compass/reset.scss";
 @import "compass/layout.scss";
 @import "base";
-@include sticky-footer(200px, ".cont", ".foo", "footer");
 
 header{
     position:relative;
@@ -23,6 +22,15 @@ header{
         }
     }
 }
+
+#race-map { 
+          height: 25em;
+          width: 100%; 
+          margin-left: auto;
+          margin-right: auto;
+          border:0.3em solid rgb(0,173,152);
+          @include box-sizing(border-box);
+      }
 
 header:after{
     content:"";
@@ -56,12 +64,9 @@ html{
         color:black;
         text-decoration: none;
         border-bottom: 1px dotted black;
-    }
-    a:hover{
-        color:#FF7600;
-    }
-    p{
+    }    p{
         margin-bottom: 0.8em;
+        color: rgb(120,140,140);
     }
 }
 
@@ -79,18 +84,18 @@ h6      { font-size: 0.75em;}
 
 
 [type="submit"], .button{
-    background-color: rgba(236,178,39,0.6);
+    background-color: rgba(0,173,152,0.6);
     border:none;
     cursor: pointer;
-    padding:0.3em 0.5em 0.3em;
-    font-size: 1.1em;
+    padding:0.2em 0.5em 0.2em;
+    font-size: 1em;
     border-radius: 0.3em;
-    transition: background-color 0.5s;
+    transition: all 0.5s;
     color:white;
     display:inline-block;
 }
 [type="submit"]:hover, .button:hover{
-    background-color: rgba(236,178,39,1);
+    background-color: rgba(0,173,152,1);
 }
 
 h1,h2,h3,h4,h5,h6{font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif; }
@@ -111,7 +116,9 @@ section{
     color:black;
     width:100%;
     @include box-sizing(border-box);
+    margin-bottom: 5em;
 }
+
 
 
 /////////----------------------------------------------------------------------------------
@@ -234,6 +241,7 @@ nav:after{
     }
     li{
         display:inline-block;
+        border-left: 1px solid silver;
         @include box-sizing(border-box);
     }
     a{
@@ -279,11 +287,17 @@ box-shadow: inner 0 0 5px #888;
     opacity:0;
     width:100%;
     transition: opacity 0.5s;
-
+    background-image: url(../img/ticks.png);
     li{
-        background-color: rgb(240,240,240);
         width:100%;
         float:left;
+        border-bottom: 1px solid silver;
+        border-left: none;
+        a{
+            padding-left: 20%;
+
+            text-align: left;
+        }
     }
 }
 
@@ -329,6 +343,7 @@ box-shadow: inner 0 0 5px #888;
 /////////----------------------------------------------------------------------------------
 
 footer{
+    margin-top: 2em;
     width:100%;
 }
 
@@ -340,12 +355,19 @@ footer{
 
 h2{
     padding: 0.8em 0;
-    margin-bottom: 1em;
-    color: black;
+    margin-top: 1em;
+    color: rgb(210,79,57);
     position:relative;
 }
 
-
+.races>a{
+    float: right;
+}
+.race:after{
+    content:"";
+    display:block;
+    clear:both;
+}
 .list{
     color:black;
 
@@ -366,7 +388,7 @@ h2{
 }
 
 .logo{
-    width:30%;
+    width:15%;
     img{
         max-width: 100%;
         border:1px solid silver;
@@ -374,11 +396,12 @@ h2{
 }
 
 .date{
-    width:10%;
+    width:20%;
 }
 
+
 .description{
-    width:40%;
+    width:30%;
     p{
         padding: 0 1em 0 0;
     }
@@ -396,7 +419,8 @@ h2{
 
 
 .month{
-    margin-bottom:3em;
+    margin-bottom:0.5em;
+    margin-top: 2em;
     >h3{
         text-align: center;
         padding:0.5em;
@@ -404,35 +428,24 @@ h2{
     }
     li{
         width:100%;
-        padding: 1em 0; 
         position:relative;
+        padding: 1em 0;
         border-bottom: 1px solid silver;
-        transition: box-shadow 0.5s;
+        transition: background-color 0.3s;
         div{
             float:left;
         }
     }
     li:hover{
-        -webkit-box-shadow: 0 0 100px rgba(0,0,0, 0.2) inset;
-    -moz-box-shadow: 0 0 100px rgba(0,0,0, 0.2) inset;
-    box-shadow: 0 0 100px rgba(0,0,0, 0.2) inset;
+        background-color: rgba(120,120,120,0.1);
     }
     li:first-child:hover{
-        box-shadow: none;
+        background-color: transparent;
     }
     li:after{
         content:"";
         display:block;
         clear:both;
-    }
-    li:before{
-        content:"";
-        display:block;
-        position:absolute;
-        bottom:-2px;
-        height:1px;
-        width:100%;
-        border-bottom: 1px solid white;
     }
 }
 
@@ -448,8 +461,11 @@ h2{
 /////////----------------------------------------------------------------------------------
 
 .find{
+    margin-top:  2em;
     color:black;
-    h2{color:black}
+    padding-bottom: 1em;
+    border-bottom: 1px solid silver;
+    position:relative;
     form{
         //padding-left: 10%;
     }
@@ -469,10 +485,21 @@ h2{
     }
 
 }
+
 .find:after{
     content:"";
     display:block;
     clear:both;
+}
+
+.find:before{
+    content:"";
+    display:block;
+    position:absolute;
+    bottom:-2px;
+    height:1px;
+    width:100%;
+    border-bottom: 1px solid white;  
 }
 
 label{
@@ -490,7 +517,7 @@ select{
     border-radius: 0.5em;
     @include box-sizing(border-box);
     padding:0.5em;
-    background: url(../img/down_arrow_select.jpg) no-repeat right #ddd;
+    background: url(../img/arrow.png) no-repeat right #fff;
     margin-bottom: 0.6em;
 }
 select:hover{
@@ -535,6 +562,7 @@ input[type="date"]{
 
 .login{
     .left{
+        @include span-columns(5,10);
         margin-left:25%;
         label{
             padding:0.55em 0;
@@ -553,41 +581,59 @@ input[type="date"]{
 
 
 .news{
+    border-bottom: 1px solid silver;
+    position:relative;
     h2{
         margin-bottom: 1em;
     }
-    a:nth-child(2){
-        @include span-columns(6,10);
+    article:nth-child(2){
+        width:60%;
+        float:left;
+        margin-right: 3%;
         figure img{
             @include span-columns(2,6);
                 max-width: 100%;
             margin-top: 0.3em;
         }
     }
-    a{
+    article{
         display:inline-block;
         @include box-sizing(border-box);
-        padding: 0.6em;
         border:none;
         margin-bottom: 2.04082%;
         transition: background-color, 0.5s;
         h3{
             margin-bottom: 0.8em;
-            background-color: #01939A;
+            position:relative;
             padding:0.5em;
-            color: white;
+            border-bottom: 1px solid silver;
             span{
                 float: right;
                 font-size: 0.8em;
-                color: #FF7C00;
-                text-shadow: 0 0 1px black;
+                color: silver;
             }
         }
-        @include span-columns(4 omega,10);
+        h3:hover{
+            background-color: rgba(0,0,0,0.1);
+            span{color:white;}
+        }
+        h3:after{
+            content:"";
+            display:block;
+            position:absolute;
+            left:0;
+            bottom:-2px;
+            height:1px;
+            width:100%;
+            border-bottom: 1px solid white;
+        }
+        width:37%;
+        float:right;
         figure img{
             @include span-columns(2,4);
             max-width: 100%;
             margin-top: 0.3em;
+            margin-bottom: 3%;
             border: 0.3em solid white;
             box-shadow: 0px 0px 8px rgb(160,160,160);
         }
@@ -601,18 +647,37 @@ input[type="date"]{
     display:block;
     clear:both;
 }
+.news:before{
+    content:"";
+    display:block;
+    position:absolute;
+    left:0;
+    bottom:-2px;
+    height:1px;
+    width:100%;
+    border-bottom: 1px solid white;
+}
 
-.list{
+
+
+section.list{
     .big{
-        @include span-columns(7,10);
-        a, a:nth-child(2){
-            width:auto;
+        width: 70%;
+        float:left;
+        margin-right: 5%;
+        article{
+            width:100%;
+            margin-bottom: 4em;
+            figure{
+                width:30%;
+            }
         }
     }
     aside{
-        @include span-columns(3 omega,10);
-        a, a:nth-child(2){
-            width:auto;
+        width: 25%;
+        float:right;
+        article{
+            width:100%;
         }
     }
 }
@@ -638,33 +703,40 @@ input[type="date"]{
     }
     .cover{
         @include span-columns(10,10);
+        img{
+            max-width: 100%;
+            border:0.3em solid silver;
+            @include box-sizing(border-box);
+        }
+        margin-bottom: 1em;
     }
     .auth{
         figure{
-            @include span-columns(2,10);
+            @include span-columns(2 omega,10);
+            margin-left:0.5em;
+            img{
+                width:100%;
+                border: 0.3em solid silver;
+            }
         }
+    }
+    .auth:after{
+        content:"";
+        display:block;
+        clear:both;
     }
 
-    figure {
-     @include span-columns(4,10);
-        img{
-            border: 0.3em solid silver;
-            width:100%;
-             @include box-sizing(border-box);
-        }
-    }
     .left{
         @include span-columns(10,10);
     }
     form{
-        @include span-columns(8,10);
         @include box-sizing(border-box);
-        margin-left: 10%;
         input, textarea{
-            @include span-columns(6 omega,8);
+            @include span-columns(5,7);
         }
         label{
-            @include span-columns(2,8);
+            @include span-columns(5,7);
+            text-align: left;
         }
     }
 }
@@ -675,11 +747,50 @@ input[type="date"]{
     clear:both;
 }
 
+.participants{
+    li{
+        float:left;
+        width:10%;
+        margin-left:1%;
+        figure{
+            width:100%;
+            img{
+                width: 100%;
+                border: 0.3em solid silver;
+                @include box-sizing(border-box);
+            }
+        }
+    }
+}
+.participants:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
 .comment{
     figure{
-        @include span-columns(1,10); 
+        width:10%;
+        float:left;
+        @include box-sizing(border-box);
+        img{
+            border: 0.3em solid silver;
+            width:100%;
+             @include box-sizing(border-box);
+        }
     }
     margin-bottom: 1em;
+    padding:1%;
+    border-bottom: 1px solid silver;
+    article{
+        width: 89%;
+        @include box-sizing(border-box);
+        padding-left: 1%;
+        float:right;
+        h4{
+        margin-top: 0;
+        }
+    }
 }
 
 .comment:after{
@@ -688,16 +799,23 @@ input[type="date"]{
     clear:both;
 }
 
+.information{
+    width: 75%;
+    float:left;
+}
+
+.sponsors{
+    width: 20%;
+    float:right;
+    margin-left: 5%;
+    img{
+        max-width: 100%;
+    }
+}
+
 .information li{
-    @include span-columns(6 omega,10);
     margin-bottom: 1em;
     span:first-child{
-        text-align: right;
-        background-color: #FF7600;
-        @include span-columns(1.5,6);
-        border-top-left-radius: 0.5em;
-        border-bottom-left-radius: 0.5em;
-        margin-right:0;
 
     }
     span{
@@ -705,11 +823,6 @@ input[type="date"]{
         padding:0.6em;
     }
     span:nth-child(2){
-        background-color:rgb(100,100,100);
-        color:white;
-        border-top-right-radius: 0.5em;
-        border-bottom-right-radius: 0.5em;
-        @include span-columns(4,6);
     }
 }
 
@@ -738,4 +851,87 @@ input[type="date"]{
     .container{
         width:1482px;
     }
+}
+
+///////SWIPE
+
+.no-js{
+    .swipe{
+        width:auto;
+        left:0;
+        visibility:visible;
+        .swipe-wrap>div{
+            width:100%;
+            left:0;
+            border-bottom: 1px solid white;
+        }
+    }
+}
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+  margin-top: 2em;
+    border:2px solid silver;
+  div{
+    width:100%;
+    h2{
+    position:absolute;
+        top:0;
+        left:0;
+        background-color: rgba(0,0,0,0.8);
+        padding:1em;
+        margin:1em;
+    }
+    figure{
+        width: 65%;
+        float:left;
+        overflow:hidden;
+        img{
+            float:left;
+        }
+    }
+  }
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+  background-color: rgba(0,0,0,0.6);
+  div{
+        color:white;
+        width:30%;
+        padding:2em 2.5%;
+        float:right;
+        
+    }
+}
+
+.swipeCommand{
+    a{
+    border:none;
+    font-size: 3em;
+    font-weight: bolder;
+    color:white;
+    position:absolute;
+    top:45%;
+    opacity:0.8;
+    transition:opacity 0.5s;
+    }
+    a:hover{
+        opacity:1;
+    }
+}
+
+.next{
+    right:0;
+}
+
+.prev{
+    left:0;
 }

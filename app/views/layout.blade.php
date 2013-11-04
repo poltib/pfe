@@ -28,22 +28,24 @@
             <ul class="primary"><!-- 
                 --><li><a href="#"><i class="icon-search"></i>Rechercher</a>
                     <ul class="secondary"><!--
-                        --><li>{{ link_to_route('listRaces','Courses') }}</li><!-- 
-                        --><li>{{ link_to_route('listClubs','Clubs') }}</li><!-- 
+                        --><li><a href="{{ route('listRaces') }}"><i class="icon-pitch"></i>Courses</a></li><!-- 
+                        --><li><a href="{{ route('listClubs') }}"><i class="icon-users"></i>Clubs</a></li><!-- 
                        --><li>{{ link_to_route('users.index','Users') }}</li><!-- -->         
                     </ul>
                 </li><!-- 
                 --><li><a href="#"><i class="icon-book"></i>Blog</a>
                     <ul class="secondary"><!--
-                        --><li>{{ link_to_route('listNews','Actu') }}</li><!-- 
-                        --><li><a href="#">Conseils</a></li><!-- 
-                        --><li><a href="#">Entrainements</a></li><!--         
+                        --><li><a href="{{ route('listNews') }}"><i class="icon-newspaper"></i>Actu</a></li><!-- 
+                        --><li><a href="#"><i class="icon-address"></i>Conseils</a></li><!-- 
+                        --><li><a href="#"><i class="icon-chart-area"></i>Entrainements</a></li><!--         
                 --></ul>
                 </li><!-- 
                 --><li><a href="#"><i class="icon-user"></i>Compte</a>
                     <ul class="secondary">
                         @if(Auth::check())
                         <li>{{ link_to_route('users.show', 'Profil' , Auth::user()->id ) }}</li><!-- 
+                        --><li>{{ link_to_route('postRace', 'Ajouter course' ) }}</li><!-- 
+                        --><li>{{ link_to_route('postNew', 'Ajouter actu' ) }}</li><!-- 
                          --><li>{{ link_to_route('logout', 'Déconnexion ('.Auth::user()->username.')') }}</li>
                         @else
                             <li>{{ link_to_route('login','Connexion') }}</li><!--  
@@ -51,7 +53,7 @@
                         @endif     
                     </ul>
                 </li><!-- 
-                 --><li>{{ link_to_route('contact','Contact') }}</li><!-- 
+                 --><li><a href="{{ route('contact') }}"><i class="icon-phone"></i>Contact</a></li><!-- 
             --></ul>
         </nav>
         @if(Session::has('flash_notice'))
@@ -63,14 +65,27 @@
             <h2 class="hidden">Content</h2>
             @yield('container')
         </section>
-        <div class="foo"></div>
     </div>
     <footer>
-        <div class="content">
+        <div class="container">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, ipsam, libero magni quam rem numquam illum explicabo repellendus nulla iste mollitia fugit totam doloremque maxime voluptas deserunt quas veniam labore.</p>
         </div>
     </footer>
-    {{ HTML::script('js/script.js'); }}
+    {{ HTML::script('js/swipe.js'); }}
+    <script>
+
+    // pure JS
+    var elem = document.getElementById('mySwipe');
+    window.mySwipe = Swipe(elem, {
+      startSlide: 1,
+      //auto: 5000,
+      continuous: true,
+      disableScroll: true,
+      stopPropagation: true,
+      callback: function(index, element) {},
+      transitionEnd: function(index, element) {}
+    });
+    </script>
     <script>
         var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
         (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
