@@ -71,21 +71,6 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, ipsam, libero magni quam rem numquam illum explicabo repellendus nulla iste mollitia fugit totam doloremque maxime voluptas deserunt quas veniam labore.</p>
         </div>
     </footer>
-    {{ HTML::script('js/swipe.js'); }}
-    <script>
-
-    // pure JS
-    var elem = document.getElementById('mySwipe');
-    window.mySwipe = Swipe(elem, {
-      startSlide: 1,
-      //auto: 5000,
-      continuous: true,
-      disableScroll: true,
-      stopPropagation: true,
-      callback: function(index, element) {},
-      transitionEnd: function(index, element) {}
-    });
-    </script>
     <script>
         var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
         (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];

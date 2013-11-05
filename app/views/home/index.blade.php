@@ -302,7 +302,7 @@
     </section>
     <section class="news">
         <h2>Actualité</h2>
-        <article>
+        <article class="bigNews">
             <a href="{{ route('showNews') }}"><h3>Lormen actu <span><time>27 octobre 2013</time></span></h3></a>
             <span>Posté par Pizzaiollo</span>
             <figure>{{ HTML::image('img/actu.jpeg'); }}</figure>
@@ -330,4 +330,17 @@
             <span>Lire la suite</span>
         </article>
     </section>
+    {{ HTML::script('js/swipe.js'); }}
+    <script>
+    var elem = document.getElementById('mySwipe');
+    window.mySwipe = Swipe(elem, {
+      startSlide: 1,
+      //auto: 5000,
+      continuous: true,
+      disableScroll: true,
+      stopPropagation: true,
+      callback: function(index, element) {},
+      transitionEnd: function(index, element) {}
+    });
+    </script>
 @stop

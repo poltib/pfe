@@ -83,7 +83,7 @@ Route::post('login', function()
     
     if (Auth::attempt($user)) {
         return Redirect::route('home')
-            ->with('flash_notice', 'Votre connexion s‘est effectuée avec succes.');
+            ->with('flash_notice', 'Votre connexion s\'est effectuée avec succes.');
     }
     
     // authentication failure! lets go back to the login page

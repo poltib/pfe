@@ -14,6 +14,9 @@
                 <a href="#" class="button">Envoyer un message</a>
             @endif
         @endif
+        <aside class="achievement">
+            <h3>Accomplissements</h3>
+        </aside>
     </section>
     <section>
         <h2>Récentes activitées</h2>

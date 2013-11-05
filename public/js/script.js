@@ -52,8 +52,7 @@ var style_festival_zoomed = [
   },{
     "featureType": "road",
     "stylers": [
-      { "visibility": "simplified" },
-      { "color" : "#D24F39" }
+      { "visibility": "simplified" }
     ]
   },{
       featureType: "water",
