@@ -7,11 +7,11 @@
     @if (Session::has('flash_error'))
         <div id="flash_error">{{ Session::get('flash_error') }}</div>
     @endif
-    {{ Form::open(array('route' => 'trainings.store')) }}
+    {{ Form::open(array('route' => 'trainings.store','files' => true)) }}
 
     {{ Form::label('name', 'Nom de l\'entrainement') . Form::text('name','',array('placeholder' => 'Nom')) }}
 
-    {{ Form::label('training', 'Fichier .gpx ou .ctx') . Form::file('training','') }}
+    {{ Form::label('training', 'Fichier .gpx ou .tcx') . Form::file('training','') }}
 
     {{ Form::label('description', 'Description') . Form::textarea('description','') }}
 

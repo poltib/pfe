@@ -21,7 +21,9 @@ class TrainingsController extends BaseController {
 	 */
 	public function index()
 	{
-        return View::make('trainings.index');
+        $trainings = $this->training->all();
+
+        return View::make('trainings.index', compact('trainings'))->with('title', 'Liste des entrainements');
 	}
 
 	/**
@@ -45,19 +47,22 @@ class TrainingsController extends BaseController {
 		$input = Input::all();
         //$validation = Validator::make($input, Training::$rules);
 
-        $xml = new SimpleXMLElement(Input::get('training'), Null, True);  
+		$training = Input::file('training'); // your file upload input field in the form should be named 'file'
 
-		$nodes = $xml->xpath('//TrainingCenterDatabase/Activities/Activity/Lap/Track/Trackpoint/Position');  
-
-		$training = [];
-		  
-		foreach($nodes as $cords) {  
-			array_puch($training, [$cords->LatitudeDegrees, $cords->LongitudeDegrees]);
-		}
+		$destinationPath = 'uploads/trainings';
+		$extension =$training->getClientOriginalExtension(); //if you need extension of the file
+		$filename = str_random(12).'.'.$extension;
+		$uploadSuccess = Input::file('training')->move($destinationPath, $filename);
         
         // if ($validation->passes())
         // {
-            $this->training->create(array('trainingname'=>Input::get('trainingname'),'email'=>Input::get('email'),'password'=>Hash::make(Input::get('password'))));
+            $this->training->create(array(
+            	'name'=>Input::get('name'),
+            	'description'=>Input::get('description'),
+            	'user_id'=>Input::get('user_id'),
+            	'ext'=>$extension,
+            	'training'=>$destinationPath."/".$filename
+            	));
 
             return Redirect::route('trainings.index')
             ->with('flash_notice', 'The new training has been created');
@@ -76,7 +81,27 @@ class TrainingsController extends BaseController {
 	 */
 	public function show($id)
 	{
-        return View::make('trainings.show');
+        $training = $this->training->findOrFail($id);
+
+        if($training->ext === "tcx"){
+	        $xml = new SimpleXMLElement($training->training, Null, True);
+
+			$trainingPoints= [];
+			foreach($xml->Activities->Activity->Lap->Track->Trackpoint as $child) {  
+				array_push($trainingPoints, [$child->Position->LatitudeDegrees, $child->Position->LongitudeDegrees]);
+			}
+		}
+
+		if($training->ext === "gpx"){
+	        $xml = new SimpleXMLElement($training->training, Null, True);
+
+			$trainingPoints= [];
+			foreach($xml->trk->trkseg->trkpt as $child) {  
+				array_push($trainingPoints, [$child['lat'], $child['lon']]);
+			}
+		}
+
+        return View::make('trainings.show', compact('training','trainingPoints'))->with('title', $training->name);
 	}
 
 	/**

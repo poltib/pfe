@@ -23,6 +23,11 @@ header{
     }
 }
 
+#trajet{
+    display:none;
+    
+}
+
 #race-map { 
           height: 25em;
           width: 100%; 
@@ -107,7 +112,7 @@ h1,h2,h3,h4,h5,h6{font-family: "Avant Garde", Avantgarde, "Century Gothic", Cent
     padding:0;
     margin:auto;
     width:1483px;
-    
+
     transition: all 0.3s;
 }
 .container:after{
