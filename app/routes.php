@@ -197,3 +197,6 @@ Route::get('/contact', array('as'=>'contact', function()
 }));
 
 
+
+
+Route::resource('trainings', 'TrainingsController');

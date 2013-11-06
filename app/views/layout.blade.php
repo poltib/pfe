@@ -37,7 +37,7 @@
                     <ul class="secondary"><!--
                         --><li><a href="{{ route('listNews') }}"><i class="icon-newspaper"></i>Actu</a></li><!-- 
                         --><li><a href="#"><i class="icon-address"></i>Conseils</a></li><!-- 
-                        --><li><a href="#"><i class="icon-chart-area"></i>Entrainements</a></li><!--         
+                        --><li><a href="{{ route('trainings.index') }}"><i class="icon-chart-area"></i>Entrainements</a></li><!--         
                 --></ul>
                 </li><!-- 
                 --><li><a href="#"><i class="icon-user"></i>Compte</a>

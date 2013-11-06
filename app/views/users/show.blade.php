@@ -14,6 +14,7 @@
                 <a href="#" class="button">Envoyer un message</a>
             @endif
         @endif
+        {{ link_to_route('trainings.create', 'Poster un entrainement') }}
         <aside class="achievement">
             <h3>Accomplissements</h3>
         </aside>
