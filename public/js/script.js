@@ -73,13 +73,30 @@ var styled_festival_zoomed = new google.maps.StyledMapType(style_festival_zoomed
 
 //Create the variables that will be used within the map configuration options.
 //The latitude and longitude of the center of the map.
-var festivalMapCenter = new google.maps.LatLng(50.6240170196297115, 5.4590396881103516);
 //The degree to which the map is zoomed in. This can range from 0 (least zoomed) to 21 and above (most zoomed).
-var festivalMapZoom = 14;
+var festivalMapZoom = 13;
 var festivalMapZoomMax = 18;
 var festivalMapZoomMin = 4;
 
 //These options configure the setup of the map. 
+
+
+
+//Create the variable for the main map itself.
+var festivalMap;
+var elevator;
+//When the page loads, the line below calls the function below called 'loadFestivalMap' to load up the map.
+google.maps.event.addDomListener(window, 'load', loadFestivalMap);
+
+
+//THE MAIN FUNCTION THAT IS CALLED WHEN THE WEB PAGE LOADS--------------------------------------------------------------------------------
+function loadFestivalMap() {
+var lats = document.getElementsByClassName('lat');
+
+var lons = document.getElementsByClassName('lon');
+
+var festivalMapCenter = new google.maps.LatLng(lats[150].firstChild.textContent, lons[150].firstChild.textContent);
+
 var festivalMapOptions = { 
       center: festivalMapCenter, 
           zoom: festivalMapZoom,
@@ -94,20 +111,9 @@ var festivalMapOptions = {
        }
 };
 
-
-//Create the variable for the main map itself.
-var festivalMap;
-//When the page loads, the line below calls the function below called 'loadFestivalMap' to load up the map.
-google.maps.event.addDomListener(window, 'load', loadFestivalMap);
-
-
-//THE MAIN FUNCTION THAT IS CALLED WHEN THE WEB PAGE LOADS--------------------------------------------------------------------------------
-function loadFestivalMap() {
-var lats = document.getElementsByClassName('lat');
-
-var lons = document.getElementsByClassName('lon');
-
 var trajet = [];
+
+elevator = new google.maps.ElevationService();
   
 //The variable to hold the map was created above.The line below creates the map, assigning it to this variable. The line below also loads the map into the div with the id 'festival-map' (see code within the 'body' tags below), and applies the 'festivalMapOptions' (above) to configure this map. 
 festivalMap = new google.maps.Map(document.getElementById("race-map"), festivalMapOptions); 
@@ -121,6 +127,8 @@ festivalMap.setMapTypeId('map_styles_festival_zoomed');
 for(var i=0; i < lats.length; ++i){
      trajet[i] = new google.maps.LatLng(lats[i].firstChild.textContent, lons[i].firstChild.textContent);
 }
+
+
 
 var polyOptions = {
     strokeColor: 'rgb(210,79,57)',

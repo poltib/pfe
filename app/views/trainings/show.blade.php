@@ -2,8 +2,9 @@
 
 @section('container')
     <section class="show">
-        <h2>{{ $training->name }}</h2>
+        <h2>{{ $training->name }} | {{ $training->distance }}mètres</h2>
         <div id="race-map"></div>
+        <div id="elevation"></div>
         <p>description: {{ $training->description }}</p>
         <p>entrainement: 
             <ul id="trajet">

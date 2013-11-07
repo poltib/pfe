@@ -85,6 +85,7 @@ class TrainingsController extends BaseController {
 
         if($training->ext === "tcx"){
 	        $xml = new SimpleXMLElement($training->training, Null, True);
+	        $training->distance = $xml->Activities->Activity->Lap->DistanceMeters;
 
 			$trainingPoints= [];
 			foreach($xml->Activities->Activity->Lap->Track->Trackpoint as $child) {  
