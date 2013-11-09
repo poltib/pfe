@@ -4,7 +4,7 @@
     <section class="show">
         <h2>{{ $training->name }} | {{ $training->distance }}mètres</h2>
         <div id="race-map"></div>
-        <div id="elevation"></div>
+        <div id="elevation_chart"></div>
         <p>description: {{ $training->description }}</p>
         <p>entrainement: 
             <ul id="trajet">
@@ -15,6 +15,6 @@
             @endforeach
             </ul>
         </p> 
-        <p>créateur: {{ $training->user_id }}</p>
+        <p>créateur: <a href="{{ route('users.show', $training->user->id ) }}"> {{ $training->user->username }} </a></p>
     </section>
 @stop

@@ -4,9 +4,6 @@
 <section class="find login">
 <h2>Inscription</h2>
 <div class="left">
-    @if (Session::has('flash_error'))
-        <div id="flash_error">{{ Session::get('flash_error') }}</div>
-    @endif
     {{ Form::open(array('route' => 'users.store')) }}
 
     {{ Form::label('username', 'Nom d\'utilisateur') . Form::text('username','',array('placeholder' => 'Nom')) }}
@@ -18,7 +15,11 @@
     {{ Form::submit('Register!') }}
 
     {{ Form::token() . Form::close() }}
+    @if($errors->any())
+      <ul>
      {{ implode('', $errors->all('<li>:message</li>'))}}
+     </ul>
+    @endif
 </div>
 </section>
 @stop

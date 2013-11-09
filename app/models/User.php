@@ -17,6 +17,12 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         $v = Validator::make($user,static::$rules);
         return $v->fails()?$v:true;
     }
+
+
+    public function trainings()
+    {
+        return $this->hasMany('Training');
+    }   
 	/**
 	 * The database table used by the model.
 	 *

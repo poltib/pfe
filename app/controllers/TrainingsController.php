@@ -83,6 +83,7 @@ class TrainingsController extends BaseController {
 	{
         $training = $this->training->findOrFail($id);
 
+
         if($training->ext === "tcx"){
 	        $xml = new SimpleXMLElement($training->training, Null, True);
 	        $training->distance = $xml->Activities->Activity->Lap->DistanceMeters;

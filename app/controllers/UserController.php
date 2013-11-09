@@ -70,7 +70,6 @@
                 return Redirect::route('login')
                 ->with('flash_notice', 'The new user has been created');
             }
-
             return Redirect::route('users.create')
               ->withInput()
               ->withErrors($validation->errors());
