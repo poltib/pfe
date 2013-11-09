@@ -28,7 +28,7 @@
             <ul class="primary"><!-- 
                 --><li><a href="#"><i class="icon-search"></i>Rechercher</a>
                     <ul class="secondary"><!--
-                        --><li><a href="{{ route('listRaces') }}"><i class="icon-pitch"></i>Courses</a></li><!-- 
+                        --><li><a href="{{ route('races.index') }}"><i class="icon-pitch"></i>Courses</a></li><!-- 
                         --><li><a href="{{ route('listClubs') }}"><i class="icon-users"></i>Clubs</a></li><!-- 
                        --><li>{{ link_to_route('users.index','Users') }}</li><!-- -->         
                     </ul>
@@ -44,7 +44,7 @@
                     <ul class="secondary">
                         @if(Auth::check())
                         <li>{{ link_to_route('users.show', 'Profil' , Auth::user()->id ) }}</li><!-- 
-                        --><li>{{ link_to_route('postRace', 'Ajouter course' ) }}</li><!-- 
+                        --><li>{{ link_to_route('races.create', 'Ajouter course' ) }}</li><!-- 
                         --><li>{{ link_to_route('postNew', 'Ajouter actu' ) }}</li><!-- 
                          --><li>{{ link_to_route('logout', 'Déconnexion ('.Auth::user()->username.')') }}</li>
                         @else

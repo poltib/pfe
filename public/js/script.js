@@ -226,11 +226,14 @@ function plotElevation(results, status) {
   }
 
   // Draw the chart using the data within its DIV.
-  document.getElementById('elevation_chart').style.display = 'block';
+  document.getElementById('elevation_chart').style.width = 'auto';
   chart.draw(data, {
+    chartType: 'LineChart',
     height: 150,
+    width: 'auto',
     legend: 'none',
-    titleY: 'Elevation (m)'
+    titleY: 'Elevation (m)',
+    titleX: 'Distance'
   });
 }
 

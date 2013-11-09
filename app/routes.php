@@ -24,17 +24,6 @@ Route::post('/', array('as'=>'searchRace', function()
     return View::make('race.search')->with(array('pays'=>$pays, 'ville'=>$ville, 'distance'=>$dist));
 }));
 
-/*--------------------------------Races--------------------------------*/
-
-Route::get('/races', array('as'=>'listRaces', function()
-{
-    return View::make('race.index')->with('title', 'liste des courses');
-}));
-
-Route::get('/race/show', array('as'=>'showRace', function()
-{
-    return View::make('race.show')->with('title', 'voir course');
-}));
 
 
 /*--------------------------------Clubs--------------------------------*/
@@ -102,79 +91,6 @@ Route::get('/new/create', array('as'=>'postNew', function()
     return View::make('news.create')->with('title', 'poster une actu');
 }));
 
-// Route::get('/users', array('as'=>'listUsers', function()
-// {
-//     return View::make('user.index');
-// }));
-
-// Route::get('/users/group', array('as'=>'listUsersGroup', function()
-// {
-//     return View::make('user.group.index');
-// }));
-
-// Route::get('/users/group/show', array('as'=>'showUsersGroup', function()
-// {
-//     return View::make('user.group.show');
-// }));
-
-// Route::get('/user/show', array('as'=>'showUser', function()
-// {
-//     return View::make('user.show');
-// }));
-
-// Route::get('/user/register', array('as'=>'register', function()
-// {
-//     return View::make('user.register');
-// }));
-
-
-
-// Route::post('register', array(
-//   'uses' => 'UserController@store'
-// ));
-
-// Route::post('update', array(
-//   'uses' => 'UserController@update'
-// ));
-
-
-
-// Route::post('/users/group', function()
-// {
-//     return View::make('user.group.searchGroup');
-// });
-
-// Route::get('/login', array('as'=>'login', function()
-// {
-//     return View::make('user.login');
-// }))->before('guest');
-
-
-
-// Route::get('/user/notification', array('as'=>'notification', function()
-// {
-//     return View::make('user.notification');
-// }))->before('auth');
-
-
-// Route::get('logout', array('as' => 'logout', function () 
-// {
-//     Auth::logout();
-
-//     return Redirect::route('home')
-//         ->with('flash_notice', 'Votre déconnection est un succes.');
-// }))->before('auth');
-
-
-
-// Route::get('user/profile', array('as' => 'profile', function () {
-//     return View::make('user.profile');
-// }))->before('auth');
-
-// Route::get('user/profile/edit', array('as' => 'editProfile', function () {
-//     return View::make('user.edit');
-// }))->before('auth');
-
 
 
 /*--------------------------------News--------------------------------*/
@@ -200,3 +116,5 @@ Route::get('/contact', array('as'=>'contact', function()
 
 
 Route::resource('trainings', 'TrainingsController');
+
+Route::resource('races', 'RacesController');
