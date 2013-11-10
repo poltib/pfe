@@ -5,19 +5,19 @@
   <div class='swipe-wrap'>
     <div><!-- 
          --><h2>Super slider</h2><figure>{{ HTML::image('img/slide1.jpg'); }}</figure><!-- 
-         --><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, aperiam, officiis, saepe deleniti alias suscipit rem distinctio odio dignissimos totam cupiditate laborum recusandae nisi corporis minima ut expedita veritatis voluptas. <br><a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a></div><!--     
+         --><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, aperiam, officiis, saepe deleniti alias suscipit rem distinctio odio dignissimos totam cupiditate laborum recusandae nisi corporis minima ut expedita veritatis voluptas. <br><a href="#" class="button"><i class="icon-search"></i>info</a></div><!--     
      --></div><!-- 
      --><div><!-- 
          --><h2>Super slider</h2><figure>{{ HTML::image('img/slide2.jpg'); }}</figure><!-- 
-         --><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita maxime quis blanditiis dolores aliquam ad voluptatem. Aliquid, reiciendis, et inventore unde totam dignissimos eveniet! Harum nihil delectus doloremque aliquid ab. <br><a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a></div><!--     
+         --><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita maxime quis blanditiis dolores aliquam ad voluptatem. Aliquid, reiciendis, et inventore unde totam dignissimos eveniet! Harum nihil delectus doloremque aliquid ab. <br><a href="#" class="button"><i class="icon-search"></i>info</a></div><!--     
      --></div><!-- 
      --><div><!-- 
          --><h2>Super slider</h2><figure>{{ HTML::image('img/slide3.png'); }}</figure><!-- 
-         --><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, aspernatur obcaecati aut quo cum alias minus odio pariatur. Nostrum, iste culpa aut in quisquam beatae aspernatur sequi assumenda perferendis facere. <br><a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a></div><!--     
+         --><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, aspernatur obcaecati aut quo cum alias minus odio pariatur. Nostrum, iste culpa aut in quisquam beatae aspernatur sequi assumenda perferendis facere. <br><a href="#" class="button"><i class="icon-search"></i>info</a></div><!--     
      --></div><!-- 
      --><div><!-- 
          --><h2>Super slider</h2><figure>{{ HTML::image('img/slide4.jpg'); }}</figure><!-- 
-         --><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, veniam, debitis, accusamus et labore aperiam assumenda est maxime molestiae tempore dicta quasi iure placeat modi error nihil incidunt provident ex. <br><a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a></div><!-- 
+         --><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, veniam, debitis, accusamus et labore aperiam assumenda est maxime molestiae tempore dicta quasi iure placeat modi error nihil incidunt provident ex. <br><a href="#" class="button"><i class="icon-search"></i>info</a></div><!-- 
      --></div><!-- 
    --></div>
   <div class="swipeCommand">
@@ -106,7 +106,7 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             </div>
                             <div class="link">
-                                <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a>
+                                <a href="#" class="button"><i class="icon-search"></i>info</a>
                             </div>
                         </li>
 
@@ -133,7 +133,7 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             </div>
                             <div class="link">
-                                <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a>
+                                <a href="#" class="button"><i class="icon-search"></i>info</a>
                             </div>
                         </li>
 
@@ -160,7 +160,7 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             </div>
                             <div class="link">
-                                <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a>
+                                <a href="#" class="button"><i class="icon-search"></i>info</a>
                             </div>
                         </li>
 
@@ -187,7 +187,7 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             </div>
                             <div class="link">
-                                <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a>
+                                <a href="#" class="button"><i class="icon-search"></i>info</a>
                             </div>
                         </li>
 
@@ -214,7 +214,7 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             </div>
                             <div class="link">
-                                <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a>
+                                <a href="#" class="button"><i class="icon-search"></i>info</a>
                             </div>
                         </li>
 
@@ -241,7 +241,7 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             </div>
                             <div class="link">
-                                <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a>
+                                <a href="#" class="button"><i class="icon-search"></i>info</a>
                             </div>
                         </li>
 
@@ -268,7 +268,7 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             </div>
                             <div class="link">
-                                <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a>
+                                <a href="#" class="button"><i class="icon-search"></i>info</a>
                             </div>
                         </li>
                         <li>
@@ -294,7 +294,7 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             </div>
                             <div class="link">
-                                <a href="{{ route('showRace') }}" class="button"><i class="icon-search"></i>info</a>
+                                <a href="#" class="button"><i class="icon-search"></i>info</a>
                             </div>
                         </li>
                     </ul>
@@ -302,7 +302,7 @@
             </ul>
         </div>
     </div>
-    <a href="{{ route('listRaces') }}" class="button">Voir toutes les courses</a>
+    <a href="{{ route('races.index') }}" class="button">Voir toutes les courses</a>
     </section>
     <section class="news">
         <h2>Actualité</h2>

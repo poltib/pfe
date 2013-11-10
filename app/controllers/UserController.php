@@ -44,6 +44,9 @@
             $input = array_except(Input::all(), '_method');
 
             $user = $this->user->find($id);
+            if($input["photo"]){
+                $input["photo"] = Image::upload(Input::file('photo'), 'uploads/users/' . $user->id, true);
+            }
             $user->update($input);
 
             return Redirect::route('users.show', $id);

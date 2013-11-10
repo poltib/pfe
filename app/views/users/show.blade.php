@@ -7,6 +7,7 @@
         <p>Prénom: {{ $user->first_name }}</p>
         <p>Email: {{ $user->email }}</p>
         <p>Records:</p>
+        <figure><img src="{{ $user->photo }}" alt=""></figure>
         @if(Auth::check())
             @if(Auth::user()->id===$user->id)
                 {{ HTML::linkAction('UserController@edit', 'Modifier', $user->id) }}

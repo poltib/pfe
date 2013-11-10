@@ -4,7 +4,7 @@
 <section class="find login">
 <h2>Modification du profil</h2>
 <div class="left">
-    {{ Form::model($user, array('method' => 'PATCH', 'route' => array('users.update', $user->id))) }}
+    {{ Form::model($user, array('method' => 'PATCH', 'files' => true, 'route' => array('users.update', $user->id))) }}
 
     {{ Form::label('username', 'Nom d‘utilisateur') . Form::text('username', Auth::user()->username) }}
     
@@ -12,6 +12,8 @@
 
 
     {{ Form::label('email', 'E-mail') . Form::text('email', Auth::user()->email) }}
+
+    {{ Form::label('photo', 'Photo de profil') . Form::file('photo') }}
 
     {{ Form::hidden('id', Auth::user()->id) }}
 

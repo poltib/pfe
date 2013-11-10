@@ -137,19 +137,6 @@ elevator = new google.maps.ElevationService();
 drawPath();
 
 
-
-// var polyOptions = {
-//     strokeColor: 'rgb(210,79,57)',
-//     strokeWeight: 6,
-//     path: trajet
-//   };
-
-// var polyline =new google.maps.Polyline(polyOptions);
-// polyline.setMap(festivalMap);
-
-
-
-
 //Continuously listens out for when the zoom level changes. This includs when the map zooms when a marker is clicked.
 google.maps.event.addListener(festivalMap, "zoom_changed", function() {
   var newZoom = festivalMap.getZoom();
@@ -208,7 +195,7 @@ function plotElevation(results, status) {
   // Display a polyline of the elevation path.
   var pathOptions = {
     path: elevationPath,
-    strokeColor: '#0000CC',
+    strokeColor: 'rgb(210,79,57)',
     opacity: 0.4,
     map: festivalMap
   }
@@ -230,6 +217,7 @@ function plotElevation(results, status) {
   chart.draw(data, {
     chartType: 'LineChart',
     height: 150,
+    colors: ['#D24F39'],
     width: 'auto',
     legend: 'none',
     titleY: 'Elevation (m)',

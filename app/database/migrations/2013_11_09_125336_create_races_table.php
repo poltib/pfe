@@ -19,6 +19,7 @@ class CreateRacesTable extends Migration {
 			$table->string('tracer');
 			$table->integer('user_id');
 			$table->string('link');
+			$table->timestamps('date');
 			$table->timestamps();
 		});
 	}
