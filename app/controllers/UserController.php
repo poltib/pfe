@@ -43,9 +43,12 @@
         {
             $input = array_except(Input::all(), '_method');
 
+            $pictureName = Input::file('photo')->getClientOriginalName();
             $user = $this->user->find($id);
             if($input["photo"]){
-                $input["photo"] = Image::upload(Input::file('photo'), 'uploads/users/' . $user->id, true);
+                Image::upload(Input::file('photo'), 'users/' . $user->id, true);
+                $input["photo"] = 'http://pfe/uploads/users/'.$user->id.'/600x400/'.$pictureName;
+                $input["thumbs"] = 'http://pfe/uploads/users/'.$user->id.'/100x100_crop/'.$pictureName;
             }
             $user->update($input);
 

@@ -47,6 +47,33 @@ class RacesController extends BaseController {
 	public function store()
 	{
 		//
+		$input = Input::all();
+        //$validation = Validator::make($input, Training::$rules);
+
+		$race = Input::file('race'); // your file upload input field in the form should be named 'file'
+
+		$destinationPath = 'uploads/races';
+		$extension =$race->getClientOriginalExtension(); //if you need extension of the file
+		$filename = str_random(12).'.'.$extension;
+		$uploadSuccess = Input::file('race')->move($destinationPath, $filename);
+        
+        // if ($validation->passes())
+        // {
+            $this->race->create(array(
+            	'name'=>Input::get('name'),
+            	'description'=>Input::get('description'),
+            	'user_id'=>Input::get('user_id'),
+            	'ext'=>$extension,
+            	'race'=>$destinationPath."/".$filename
+            	));
+
+            return Redirect::route('races.index')
+            ->with('flash_notice', 'The new race has been created');
+        // }
+
+        // return Redirect::route('trainings.create')
+        //       ->withInput()
+        //       ->withErrors($validation->errors());
 	}
 
 	/**
@@ -61,7 +88,7 @@ class RacesController extends BaseController {
 
 
         if($race->ext === "tcx"){
-	        $xml = new SimpleXMLElement($race->tracer, Null, True);
+	        $xml = new SimpleXMLElement($race->race, Null, True);
 	        $race->distance = $xml->Activities->Activity->Lap->DistanceMeters;
 
 			$racePoints= [];
@@ -71,7 +98,7 @@ class RacesController extends BaseController {
 		}
 
 		if($race->ext === "gpx"){
-	        $xml = new SimpleXMLElement($race->tracer, Null, True);
+	        $xml = new SimpleXMLElement($race->race, Null, True);
 
 			$racePoints= [];
 			foreach($xml->trk->trkseg->trkpt as $child) {  

@@ -4,6 +4,7 @@
     <section class="show">
         <h2>{{ $race->name }} | <span>27 octobre 20013</span></h2>
         <p>{{ $race->description }}</p>
+        <p>{{ $race->user->username }}</p>
         <div id="race-map"></div>
         <div id="elevation_chart"></div>
         <aside class="sponsors">
