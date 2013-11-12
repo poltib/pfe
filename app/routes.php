@@ -118,3 +118,7 @@ Route::get('/contact', array('as'=>'contact', function()
 Route::resource('trainings', 'TrainingsController');
 
 Route::resource('races', 'RacesController');
+
+Route::resource('comments', 'CommentsController');
+
+Route::resource('raceUsers', 'RaceUsersController');

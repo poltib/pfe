@@ -5,13 +5,18 @@ class Training extends Eloquent {
 
 	public static $rules = array(
         'name' => 'required',
-        'training' => 'mimes:gpx,tcx',
+        'training' => 'required|mimes:gpx,tcx',
         'description' => 'required'
     );
 
-    public static function validate($user)
+    public static $messages = array(
+        'required' => '<span class="errors">Votre :attribute est vide</span>',
+        'mimes' => '<span class="errors">L\'extention du fichier n\'est pas valide</span>'
+    );
+
+    public static function validate($training)
     {
-        $v = Validator::make($user,static::$rules);
+        $v = Validator::make($training,static::$rules,static::$messages);
         return $v->fails()?$v:true;
     }
 

@@ -105,7 +105,6 @@ class RacesController extends BaseController {
 				array_push($racePoints, [$child['lat'], $child['lon']]);
 			}
 		}
-
         return View::make('races.show', compact('race','racePoints'))->with('title', $race->name);
 	}
 

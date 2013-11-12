@@ -45,7 +45,7 @@ class TrainingsController extends BaseController {
 	{
 		//
 		$input = Input::all();
-        $validation = Validator::make($input, Training::$rules);
+        $validation = Training::validate($input, Training::$rules, Training::$messages);
         
         if ($validation->passes())
         {
@@ -56,7 +56,7 @@ class TrainingsController extends BaseController {
             $extension =$training->getClientOriginalExtension(); //if you need extension of the file
             $filename = str_random(12).'.'.$extension;
             $uploadSuccess = Input::file('training')->move($destinationPath, $filename);
-            
+
             $this->training->create(array(
             	'name'=>Input::get('name'),
             	'description'=>Input::get('description'),
@@ -68,7 +68,6 @@ class TrainingsController extends BaseController {
             return Redirect::route('trainings.index')
             ->with('flash_notice', 'The new training has been created');
         }
-
         return Redirect::route('trainings.create')
               ->withInput()
               ->withErrors($validation->errors());

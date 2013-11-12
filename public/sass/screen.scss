@@ -515,9 +515,17 @@ h2{
     color:black;
     padding-bottom: 1em;
     border-bottom: 1px solid silver;
-    position:relative;
     form{
         //padding-left: 10%;
+        ul li:after{
+            content:"";
+            display:block;
+            clear:both;
+        }
+
+        ul li{
+            position:relative;
+        }
     }
     label{
         @include span-columns(1.5,4.5);
@@ -534,6 +542,25 @@ h2{
         @include box-sizing(border-box);
     }
 
+}
+
+form.particip{
+    display:inline-block;
+    input.particip{
+        width: auto;
+        float:none;
+        margin:0;
+        padding: 0.3em;
+    }
+}
+
+.errors{
+    color:red;
+    position:absolute;
+    left:102%;
+    display:block;
+    text-align: left;
+    width:20em;
 }
 
 .find:after{

@@ -9,4 +9,19 @@ class Race extends Eloquent {
     {
         return $this->belongsTo('User');
     }  
+
+    public function comments()
+    {
+        return $this->hasMany('Comment');
+    } 
+
+    public function raceUsers()
+    {
+        return $this->hasMany('raceUser');
+    } 
+
+    public function raceImages()
+    {
+        return $this->hasMany('raceImage');
+    } 
 }

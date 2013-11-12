@@ -43,14 +43,21 @@
         {
             $input = array_except(Input::all(), '_method');
 
-            $pictureName = Input::file('photo')->getClientOriginalName();
             $user = $this->user->find($id);
             if($input["photo"]){
+                $pictureName = Input::file('photo')->getClientOriginalName();
                 Image::upload(Input::file('photo'), 'users/' . $user->id, true);
                 $input["photo"] = 'http://pfe/uploads/users/'.$user->id.'/600x400/'.$pictureName;
                 $input["thumbs"] = 'http://pfe/uploads/users/'.$user->id.'/100x100_crop/'.$pictureName;
             }
-            $user->update($input);
+            $user->update(array(
+                    'username' => Input::get('username'),
+                    'first_name' => Input::get('first_name'),
+                    'email' => Input::get('email'),
+                    'photo' => $input["photo"],
+                    'thumbs' => $input["thumbs"]
+
+                ));
 
             return Redirect::route('users.show', $id);
         }

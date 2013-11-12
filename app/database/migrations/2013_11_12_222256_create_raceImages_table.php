@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
-class CreateRaceUsersTable extends Migration {
+class CreateRaceImagesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,15 @@ class CreateRaceUsersTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('race_users', function(Blueprint $table) {
+		Schema::create('race_images', function(Blueprint $table)
+		{
 			$table->increments('id');
-			$table->integer('user_id');
-			$table->integer('race_id');		
+			$table->integer('race_id');
+			$table->string('image');
+			$table->string('thumb');
 			$table->timestamps();
 		});
 	}
-
 
 	/**
 	 * Reverse the migrations.
@@ -28,7 +29,7 @@ class CreateRaceUsersTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('race_users');
+		Schema::drop('raceImages');
 	}
 
 }
