@@ -49,6 +49,12 @@ class RaceImagesController extends BaseController {
         
         // if ($validation->passes())
         // {
+            if($input["image"]){
+                $pictureName = Input::file('image')->getClientOriginalName();
+                Image::upload(Input::file('image'), 'races/' . $input["race_id"].'/galery', true);
+                $input["image"] = 'http://pfe/uploads/races/'.$input["race_id"].'/galery/600x400/'.$pictureName;
+                $input["thumb"] = 'http://pfe/uploads/races/'.$input["race_id"].'/galery/100x100_crop/'.$pictureName;
+            }
 
             $this->raceImage->create($input);
 

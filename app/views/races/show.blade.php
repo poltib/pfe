@@ -76,6 +76,23 @@
                 @endforeach
             </ul>
             <h3>Galerie des années précédentes</h3>
+            <ul class="participants">
+                @foreach($race->raceImages as $Image)
+                    <li><figure><img src="{{ $Image->thumb }}" ></figure></li>
+                @endforeach
+            </ul>
+                @if($race->user_id === Auth::user()->id)
+                    {{ Form::open(array('files' => true, 'route' => array('raceImages.store') , 'class' => 'particip')) }}
+
+                    {{ Form::label('image', 'Photo') . Form::file('image') }}
+
+                    {{ Form::hidden('race_id', $race->id) }}
+
+                    {{ Form::submit('Ajouter la photo!',array('class' => 'particip')) }}
+
+                    {{ Form::token() . Form::close() }}
+                     {{ implode('', $errors->all('<li>:message</li>'))}}
+                @endif
 
             <h3>Commentaires</h3>
             <ul>

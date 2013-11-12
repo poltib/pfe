@@ -122,3 +122,5 @@ Route::resource('races', 'RacesController');
 Route::resource('comments', 'CommentsController');
 
 Route::resource('raceUsers', 'RaceUsersController');
+
+Route::resource('raceImages', 'RaceImagesController');

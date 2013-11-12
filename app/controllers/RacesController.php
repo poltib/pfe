@@ -52,7 +52,7 @@ class RacesController extends BaseController {
 
 		$race = Input::file('race'); // your file upload input field in the form should be named 'file'
 
-		$destinationPath = 'uploads/races';
+		$destinationPath = 'uploads/races/trace';
 		$extension =$race->getClientOriginalExtension(); //if you need extension of the file
 		$filename = str_random(12).'.'.$extension;
 		$uploadSuccess = Input::file('race')->move($destinationPath, $filename);
