@@ -57,7 +57,7 @@ var style_festival_zoomed = [
   },{
       featureType: "water",
       stylers:[
-          {visibility: "off"}
+          {visibility: "on"}
       ]
   },
   {
@@ -88,6 +88,10 @@ var chart;
 var infowindow = new google.maps.InfoWindow();
 var polyline;
 var trajet = [];
+var gMarker;
+var startPosition;
+var sponsorsPosition = [];
+var gGeocoder;
 
 
 //When the page loads, the line below calls the function below called 'loadFestivalMap' to load up the map.
@@ -99,6 +103,16 @@ function loadFestivalMap() {
 var lats = document.getElementsByClassName('lat');
 
 var lons = document.getElementsByClassName('lon');
+
+var startPosition = document.getElementsByClassName('address')[0].firstChild.textContent;
+
+var sponsorsAdress = document.getElementsByClassName('sponsorAddress');
+
+for(var i=0; i < sponsorsAdress.length; ++i){
+     sponsorsPosition[i] = [sponsorsAdress[i].firstChild.textContent, 'sponsor'+i];
+}
+
+console.log(sponsorsPosition);
 
 var festivalMapCenter = new google.maps.LatLng(lats[150].firstChild.textContent, lons[150].firstChild.textContent);
 
@@ -120,6 +134,13 @@ var festivalMapOptions = {
 //The variable to hold the map was created above.The line below creates the map, assigning it to this variable. The line below also loads the map into the div with the id 'festival-map' (see code within the 'body' tags below), and applies the 'festivalMapOptions' (above) to configure this map. 
 festivalMap = new google.maps.Map(document.getElementById("race-map"), festivalMapOptions); 
 
+gGeocoder = new google.maps.Geocoder;
+
+gMarker = new google.maps.Marker( {
+      position:festivalMapCenter,
+      map:festivalMap
+    } );
+
 //Assigning the two map styles defined above to the map.
 festivalMap.mapTypes.set('map_styles_festival', styled_festival);
 festivalMap.mapTypes.set('map_styles_festival_zoomed', styled_festival_zoomed);
@@ -135,6 +156,38 @@ elevator = new google.maps.ElevationService();
 
 // Draw the path, using the Visualization API and the Elevation service.
 drawPath();
+
+var setMarker = function( sAddress , gMarker ){
+    gGeocoder.geocode({
+      address: sAddress,
+      region:"BE"
+    }, function(aResults, sStatus){
+      gMarker.setPosition( aResults[0].geometry.location );
+    });
+  };
+
+setMarker(startPosition, gMarker);
+
+for(var i=0; i < sponsorsPosition.length; ++i){
+     sponsorsPosition[i][1] = new google.maps.Marker( {
+        position:festivalMapCenter,
+        map:festivalMap,
+        icon:{
+           url: 'http://pfe/uploads/races/1/sponsors/100x100_crop/522977_399909913394501_164909558_n.jpg',
+           size: new google.maps.Size(100, 100),
+           origin: new google.maps.Point(0, 0),
+           anchor: new google.maps.Point(0, 0)
+          },
+        shape:{
+           coord: [0,0,50],
+           type: 'circle'
+          },
+        zIndex:102
+      } );
+
+     //setMarker(sponsorsPosition[i][0], sponsorsPosition[i][1]);
+}
+
 
 
 //Continuously listens out for when the zoom level changes. This includs when the map zooms when a marker is clicked.

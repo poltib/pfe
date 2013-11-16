@@ -307,7 +307,7 @@
     <section class="news">
         <h2>Actualité</h2>
         <article class="bigNews">
-            <a href="{{ route('showNews') }}"><h3>Lormen actu <span><time>27 octobre 2013</time></span></h3></a>
+            <a href="#"><h3>Lormen actu <span><time>27 octobre 2013</time></span></h3></a>
             <span>Posté par Pizzaiollo</span>
             <figure>{{ HTML::image('img/actu.jpeg'); }}</figure>
             <div class="text">
@@ -318,7 +318,7 @@
             <span>Lire la suite</span>
         </article>
         <article>
-            <a href="{{ route('showNews') }}"><h3>Lormen actu <span><time>27 octobre 2013</time></span></h3></a>
+            <a href="#"><h3>Lormen actu <span><time>27 octobre 2013</time></span></h3></a>
             <span>Posté par Bernardo</span>
             <div class="text">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, illo rem explicabo eligendi in cum voluptatem odio? Perspiciatis molestias aperiam recusandae ipsum. Earum, eum et iure molestias iusto itaque ipsum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, commodi, iusto, hic ipsum voluptatum deserunt vero illo molestiae asperiores error odio minima maxime vel quas possimus? Harum natus in tenetur.</p>
@@ -326,7 +326,7 @@
             <span>Lire la suite</span>
         </article>
         <article>
-            <a href="{{ route('showNews') }}"><h3>Lormen actu <span><time>27 octobre 2013</time></span></h3></a>
+            <a href="#"><h3>Lormen actu <span><time>27 octobre 2013</time></span></h3></a>
             <span>Posté par Jean-Luc</span>
             <div class="text">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, illo rem explicabo eligendi in cum voluptatem odio? Perspiciatis molestias aperiam recusandae ipsum. Earum, eum et iure molestias iusto itaque ipsum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, commodi, iusto, hic ipsum voluptatum deserunt vero illo molestiae asperiores error odio minima maxime vel quas possimus? Harum natus in tenetur.</p>

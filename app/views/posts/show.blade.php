@@ -3,27 +3,24 @@
 @section('container')
     <section class="show">
         <article>
-            <h2>Lorem Actu | <span>27 octobre 20013</span></h2>
+            <h2>{{ $post->title }} | <span>27 octobre 20013</span></h2>
             <span>Catégories : Entrainements / Conseils</span>
-            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, ex, quos, consequuntur autem omnis aliquam dolore maiores quisquam odio officia quasi delectus cumque nulla deserunt nesciunt esse sunt. Accusantium, quidem.</span></p>
             <figure class="cover">{{ HTML::image('img/home1.jpg'); }}</figure>
-            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, ex, quos, consequuntur autem omnis aliquam dolore maiores quisquam odio officia quasi delectus cumque nulla deserunt nesciunt esse sunt. Accusantium, quidem.</span><span>Incidunt, dolore, fugit, aliquid, fuga sequi officia nam ducimus earum blanditiis sint repellat odio nulla voluptate perferendis commodi odit nesciunt sapiente. Tempora unde perferendis sequi possimus at asperiores impedit saepe!</span></p>
-            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, ex, quos, consequuntur autem omnis aliquam dolore maiores quisquam odio officia quasi delectus cumque nulla deserunt nesciunt esse sunt. Accusantium, quidem.</span><span>Incidunt, dolore, fugit, aliquid, fuga sequi officia nam ducimus earum blanditiis sint repellat odio nulla voluptate perferendis commodi odit nesciunt sapiente. Tempora unde perferendis sequi possimus at asperiores impedit saepe!</span></p>
-            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, ex, quos, consequuntur autem omnis aliquam dolore maiores quisquam odio officia quasi delectus cumque nulla deserunt nesciunt esse sunt. Accusantium, quidem.</span><span>Incidunt, dolore, fugit, aliquid, fuga sequi officia nam ducimus earum blanditiis sint repellat odio nulla voluptate perferendis commodi odit nesciunt sapiente. Tempora unde perferendis sequi possimus at asperiores impedit saepe!</span></p>
+            <p>{{ $post->post }}</p>
             @if(Auth::check())<a href="#" class="button">Suivre</a>@endif <a href="#" class="button">Partager</a></li>
         </article>
         <aside class="sponsors">
             <h3>Autres articles de l'auteur</h3>
             <ul>
-                <li>{{ link_to_route('showNews', 'Et encore un!!' ) }}</li>
-                <li>{{ link_to_route('showNews', '4h30 au 200m' ) }}</li>
-                <li>{{ link_to_route('showNews', 'Et encore un!!' ) }}</li>
+                @foreach($post->user->posts as $userpost)
+                <li><a href="{{ route('posts.show', $userpost->id) }}">{{ $userpost->title }}</a></li>
+                @endforeach
             </ul>
         </aside>
         <div class="information">
         <div class="auth">
-            <h3>L'auteur : {{ link_to_route('users.show', 'Plop Admin', 4 ) }}</h3>
-            <figure>{{ HTML::image('img/tumbs.jpg'); }}</figure>
+            <h3>L'auteur : {{ link_to_route('users.show', $post->user->username , $post->user_id ) }}</h3>
+            <figure><img src="{{ $post->user->thumbs }}" alt=""></figure>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, ex, quos, consequuntur autem omnis aliquam dolore maiores quisquam odio officia quasi delectus cumque nulla deserunt nesciunt esse sunt. Accusantium, quidem.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, ex, quos, consequuntur autem omnis aliquam dolore maiores quisquam odio officia quasi delectus cumque nulla deserunt nesciunt esse sunt. Accusantium, quidem.</p>
         </div>

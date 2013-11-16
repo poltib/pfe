@@ -93,18 +93,6 @@ Route::get('/new/create', array('as'=>'postNew', function()
 
 
 
-/*--------------------------------News--------------------------------*/
-
-Route::get('/news', array('as'=>'listNews', function()
-{
-    return View::make('news.index');
-}));
-
-Route::get('/news/show', array('as'=>'showNews', function()
-{
-    return View::make('news.show');
-}));
-
 /*--------------------------------Others--------------------------------*/
 
 Route::get('/contact', array('as'=>'contact', function()
@@ -124,3 +112,8 @@ Route::resource('comments', 'CommentsController');
 Route::resource('raceUsers', 'RaceUsersController');
 
 Route::resource('raceImages', 'RaceImagesController');
+
+Route::resource('raceSponsors', 'RaceSponsorsController');
+
+
+Route::resource('posts', 'PostsController');

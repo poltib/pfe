@@ -24,4 +24,9 @@ class Race extends Eloquent {
     {
         return $this->hasMany('raceImage');
     } 
+
+    public function raceSponsors()
+    {
+        return $this->hasMany('raceSponsor');
+    } 
 }

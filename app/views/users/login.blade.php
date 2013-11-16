@@ -2,6 +2,8 @@
 
 @section('container')
 <section class="find login">
+
+    {{ link_to_route('users.create','S\'inscrire') }}
     <h2>Connexion</h2>
     <div class="left">
         @if (Session::has('flash_error'))

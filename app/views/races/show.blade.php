@@ -9,11 +9,29 @@
         <div id="elevation_chart"></div>
         <aside class="sponsors">
             <h3>Sponsors</h3>
+             {{ Form::open(array('route' => 'raceSponsors.store','files' => true, 'class' => 'particip')) }}
+
+                    {{ Form::label('name', 'Nom du sponsor') . Form::text('name','',array('placeholder' => 'Nom')) }}
+
+                    {{ Form::label('address', 'Adresse') . Form::text('address','') }}
+
+                    {{ Form::label('description', 'Description') . Form::textarea('description','') }}
+
+                    {{ Form::label('image', 'Photo') . Form::file('image') }}
+
+                    {{ Form::hidden('race_id', $race->id) }}
+
+                    {{ Form::submit('Ajouter le sponsor!',array('class' => 'particip')) }}
+            {{ Form::token() . Form::close() }}
             <ul>
-                <li>{{ HTML::image('img/logo.gif'); }}</li>
-                <li>{{ HTML::image('img/logo.gif'); }}</li>
-                <li>{{ HTML::image('img/logo.gif'); }}</li>
-                <li>{{ HTML::image('img/logo.gif'); }}</li>
+                @foreach($race->raceSponsors as $sponsor)
+                    <li>
+                        <figure>
+                            <img src="{{ $sponsor->thumb }}" alt="{{ $sponsor->name }}">
+                            <p class="sponsorAddress">{{ $sponsor->address }}</p>
+                        </figure>
+                    </li>
+                @endforeach
             </ul>
         </aside>
         <ul id="trajet">
@@ -42,28 +60,29 @@
                 </tbody>
             </table>
             <ul>
-                <li><span>Adresse:</span><span> Rue du tronc, 4309 Vielsalm</span></li>
+                <li><span>Adresse:</span><span class="address">{{ $race->address }}</span></li>
                 <li>
                     <a href="#" class="button">Inscription</a> 
                     <a href="#" class="button">Suivre</a> 
                     <a href="#" class="button">Partager</a>
-                    @if(isset(Auth::user()->raceUsers[0]))
-                        {{ Form::open(array('method' => 'DELETE', 'route' => array('raceUsers.destroy', Auth::user()->raceUsers[0]->id) , 'class' => 'particip')) }}
+                    @if(Auth::check())
+                        @if(isset(Auth::user()->raceUsers[0]))
+                            {{ Form::open(array('method' => 'DELETE', 'route' => array('raceUsers.destroy', Auth::user()->raceUsers[0]->id) , 'class' => 'particip')) }}
+                                {{ Form::hidden('race_id',$race->id) }}
+                                {{ Form::submit('Ne plus participer',array('class' => 'particip')) }}
+                            {{ Form::close() }}
+                        @else
+                            {{ Form::open(array('route' => 'raceUsers.store', 'method' => 'post', 'class' => 'particip')) }}
+
+                            {{ Form::hidden('user_id',Auth::user()->id) }}
+
                             {{ Form::hidden('race_id',$race->id) }}
-                            {{ Form::submit('Ne plus participer',array('class' => 'particip')) }}
-                        {{ Form::close() }}
-                    @else
-                        {{ Form::open(array('route' => 'raceUsers.store', 'method' => 'post', 'class' => 'particip')) }}
 
-                        {{ Form::hidden('user_id',Auth::user()->id) }}
+                            {{ Form::submit('Participer',array('class' => 'particip')) }}
 
-                        {{ Form::hidden('race_id',$race->id) }}
-
-                        {{ Form::submit('Participer',array('class' => 'particip')) }}
-
-                        {{ Form::token() . Form::close() }}
+                            {{ Form::token() . Form::close() }}
+                        @endif
                     @endif
-
 
 
                 </li>
@@ -81,7 +100,7 @@
                     <li><figure><img src="{{ $Image->thumb }}" ></figure></li>
                 @endforeach
             </ul>
-                @if($race->user_id === Auth::user()->id)
+                @if(Auth::check()&&$race->user_id === Auth::user()->id)
                     {{ Form::open(array('files' => true, 'route' => array('raceImages.store') , 'class' => 'particip')) }}
 
                     {{ Form::label('image', 'Photo') . Form::file('image') }}
@@ -102,7 +121,7 @@
                     <article>
                         <h4><a href="{{ route('users.show', $comment->user->id ) }}">{{ $comment->user->username }}</a> à dit:</h4>
                         <p>{{ htmlentities($comment->comment) }}</p>
-                        @if($comment->user->id === Auth::user()->id)
+                        @if(Auth::check()&&$comment->user->id === Auth::user()->id)
                             {{ Form::open(array('method' => 'DELETE', 'route' => array('comments.destroy', $comment->id) , 'class' => 'particip')) }}
                                 {{ Form::submit('Supprimer',array('class' => 'particip')) }}
                             {{ Form::close() }}

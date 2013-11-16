@@ -18,44 +18,39 @@
     <![endif]-->
 </head>
 <body>
-    <header class="container">
+    <header>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-        <div id="logo"><h1>{{ link_to_route('home','Run Belgium') }}</h1></div>
-        <nav role="navigation">
-            <h2 class="hidden">Navigation</h2>
-            <ul class="primary"><!-- 
-                --><li><a href="#"><i class="icon-search"></i>Rechercher</a>
-                    <ul class="secondary"><!--
-                        --><li><a href="{{ route('races.index') }}"><i class="icon-pitch"></i>Courses</a></li><!-- 
-                        --><li><a href="{{ route('listClubs') }}"><i class="icon-users"></i>Clubs</a></li><!-- 
-                       --><li>{{ link_to_route('users.index','Users') }}</li><!-- -->         
-                    </ul>
-                </li><!-- 
-                --><li><a href="#"><i class="icon-book"></i>Blog</a>
-                    <ul class="secondary"><!--
-                        --><li><a href="{{ route('listNews') }}"><i class="icon-newspaper"></i>Actu</a></li><!-- 
-                        --><li><a href="#"><i class="icon-address"></i>Conseils</a></li><!-- 
-                        --><li><a href="{{ route('trainings.index') }}"><i class="icon-chart-area"></i>Entrainements</a></li><!--         
+        <div class="container">
+            <div id="logo"><h1>{{ link_to_route('home','Run Belgium') }}</h1></div>
+            <nav role="navigation">
+                <h2 class="hidden">Navigation</h2>
+                <ul class="primary"><!-- 
+                    --><li><a href="#"><i class="icon-search"></i>Rechercher</a>
+                        <ul class="secondary"><!--
+                            --><li><a href="{{ route('races.index') }}"><i class="icon-pitch"></i>Courses</a></li><!-- 
+                            --><li><a href="{{ route('listClubs') }}"><i class="icon-users"></i>Clubs</a></li><!-- 
+                           --><li>{{ link_to_route('users.index','Users') }}</li><!-- -->         
+                        </ul>
+                    </li><!-- 
+                    --><li><a href="#"><i class="icon-book"></i>Blog</a>
+                        <ul class="secondary"><!--
+                            --><li><a href="{{ route('posts.index') }}"><i class="icon-newspaper"></i>Actu</a></li><!-- 
+                            --><li><a href="#"><i class="icon-address"></i>Conseils</a></li><!-- 
+                            --><li><a href="{{ route('trainings.index') }}"><i class="icon-chart-area"></i>Entrainements</a></li><!--         
+                    --></ul>
+                    </li><!--
+                    -->@if(Auth::check())<!--
+                        --><li>{{ link_to_route('users.show', 'Profil' , Auth::user()->id ) }}</li><!--
+                    -->@else<!--
+                        --><li>{{ link_to_route('login','Connexion') }}</li><!--
+                    -->@endif<!--  
+                        --></li><!-- 
+                        --><li><a href="{{ route('contact') }}"><i class="icon-phone"></i>Contact</a></li><!-- 
                 --></ul>
-                </li><!-- 
-                --><li><a href="#"><i class="icon-user"></i>Compte</a>
-                    <ul class="secondary">
-                        @if(Auth::check())
-                        <li>{{ link_to_route('users.show', 'Profil' , Auth::user()->id ) }}</li><!-- 
-                        --><li>{{ link_to_route('races.create', 'Ajouter course' ) }}</li><!-- 
-                        --><li>{{ link_to_route('postNew', 'Ajouter actu' ) }}</li><!-- 
-                         --><li>{{ link_to_route('logout', 'Déconnexion ('.Auth::user()->username.')') }}</li>
-                        @else
-                            <li>{{ link_to_route('login','Connexion') }}</li><!--  
-                             --><li>{{ link_to_route('users.create','S\'inscrire') }}</li>
-                        @endif     
-                    </ul>
-                </li><!-- 
-                 --><li><a href="{{ route('contact') }}"><i class="icon-phone"></i>Contact</a></li><!-- 
-            --></ul>
-        </nav>
+            </nav>
+        </div>
         @if(Session::has('flash_notice'))
             <div id="flash_notice"><span>{{ Session::get('flash_notice') }}</span></div>
         @endif 

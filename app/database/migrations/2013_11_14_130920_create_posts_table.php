@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateRacesTable extends Migration {
+class CreatePostsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,15 +12,13 @@ class CreateRacesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('races', function(Blueprint $table) {
+		Schema::create('posts', function(Blueprint $table) {
 			$table->increments('id');
-			$table->string('name');
-			$table->text('description');
-			$table->string('race');
 			$table->integer('user_id');
-			$table->string('link');
-			$table->string('address');
-			$table->timestamps('date');
+			$table->string('title');
+			$table->string('image');
+			$table->string('thumb');
+			$table->text('post');
 			$table->timestamps();
 		});
 	}
@@ -33,7 +31,7 @@ class CreateRacesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('races');
+		Schema::drop('posts');
 	}
 
 }
