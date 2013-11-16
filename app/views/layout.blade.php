@@ -27,20 +27,8 @@
             <nav role="navigation">
                 <h2 class="hidden">Navigation</h2>
                 <ul class="primary"><!-- 
-                    --><li><a href="#"><i class="icon-search"></i>Rechercher</a>
-                        <ul class="secondary"><!--
-                            --><li><a href="{{ route('races.index') }}"><i class="icon-pitch"></i>Courses</a></li><!-- 
-                            --><li><a href="{{ route('listClubs') }}"><i class="icon-users"></i>Clubs</a></li><!-- 
-                           --><li>{{ link_to_route('users.index','Users') }}</li><!-- -->         
-                        </ul>
-                    </li><!-- 
-                    --><li><a href="#"><i class="icon-book"></i>Blog</a>
-                        <ul class="secondary"><!--
-                            --><li><a href="{{ route('posts.index') }}"><i class="icon-newspaper"></i>Actu</a></li><!-- 
-                            --><li><a href="#"><i class="icon-address"></i>Conseils</a></li><!-- 
-                            --><li><a href="{{ route('trainings.index') }}"><i class="icon-chart-area"></i>Entrainements</a></li><!--         
-                    --></ul>
-                    </li><!--
+                    --><li><a href="{{ route('races.index') }}"><i class="icon-search"></i>Rechercher</a></li><!-- 
+                    --><li><a href="{{ route('posts.index') }}"><i class="icon-book"></i>Blog</a></li><!--
                     -->@if(Auth::check())<!--
                         --><li>{{ link_to_route('users.show', 'Profil' , Auth::user()->id ) }}</li><!--
                     -->@else<!--

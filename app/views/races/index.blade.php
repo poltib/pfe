@@ -3,6 +3,11 @@
 @section('container')
 
     <section class="find race">
+        <ul class="secondaryNav"><!-- 
+             --><li class="selected"><a href="{{ route('races.index') }}"><i class="icon-pitch"></i>Courses</a></li><!--  
+             --><li><a href="{{ route('listClubs') }}"><i class="icon-users"></i>Clubs</a></li><!--  
+             --><li>{{ link_to_route('users.index','Users') }}</li>
+        </ul>
         <h2>Trouver une course</h2>
         <form action="http://pfe" method="POST">
             <fieldset>

@@ -2,6 +2,11 @@
 
 @section('container')
     <section class="find club">
+        <ul class="secondaryNav"><!-- 
+             --><li><a href="{{ route('races.index') }}"><i class="icon-pitch"></i>Courses</a></li><!--  
+             --><li class="selected"><a href="{{ route('listClubs') }}"><i class="icon-users"></i>Clubs</a></li><!--  
+             --><li>{{ link_to_route('users.index','Users') }}</li>
+        </ul>
         <h2>Trouver un club</h2>
         <form action="http://pfe/clubs" method="POST">
             <fieldset>

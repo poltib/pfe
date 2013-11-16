@@ -2,6 +2,12 @@
 
 @section('container')
     <section class="news list">
+
+        <ul class="secondaryNav"><!-- 
+             --><li class="selected"><a href="{{ route('posts.index') }}"><i class="icon-newspaper"></i>Actu</a></li><!-- 
+             --><li><a href="#"><i class="icon-address"></i>Conseils</a></li><!--  
+             --><li><a href="{{ route('trainings.index') }}"><i class="icon-chart-area"></i>Entrainements</a></li>
+        </ul>
         <h2>Liste des news</h2>
         <div class="big">
             @foreach($posts as $post)

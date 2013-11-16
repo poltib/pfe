@@ -69,7 +69,7 @@ html{
         border-bottom: 1px dotted black;
     }    
     a:hover{
-        color:rgb(210,79,57);
+        color:rgb(244,129,64);
     }
 
     
@@ -96,14 +96,14 @@ h6      { font-size: 0.75em;}
     .container{
         padding:1em;
         position:relative;
-        border:1px solid silver;
+        border:1px solid rgb(244,129,64);
         @include box-sizing('border-box');
     }
 }
 
 
 [type="submit"], .button{
-    background-color: rgba(0,173,152,0.6);
+    background-color: rgba(144,161,191,0.6);
     border:none;
     cursor: pointer;
     padding:0.2em 0.5em 0.2em;
@@ -114,7 +114,7 @@ h6      { font-size: 0.75em;}
     display:inline-block;
 }
 [type="submit"]:hover, .button:hover{
-    background-color: rgba(0,173,152,1);
+    background-color: rgba(144,161,191,1);
     color:white;
 }
 
@@ -284,50 +284,11 @@ box-shadow: inner 0 0 5px #888;
     >li:hover{
         background-color: rgba(10,10,10,0.1);
         -moz-box-shadow: inset 0 0 5px #888;
--webkit-box-shadow: inset 0 0 5px#888;
-box-shadow: inner 0 0 5px #888;
-
-    .secondary{
-        opacity:1;
-        top:4.375em;
-        box-shadow: 0px 0px 8px;
-    }
-    }
-    // .secondary:hover{
-    //     <li a{
-    //     color:white;
-    //     text-shadow: 0px 0px  3px black;
-    //     background-color: rgba(10,10,10,0.1);
-    //     }
-    // }
-}
-
-.secondary{
-    position:absolute;
-    top:-20em;
-    left:0;
-    opacity:0;
-    width:100%;
-    transition: opacity 0.5s;
-    background-image: url(../img/ticks.png);
-    li{
-        width:100%;
-        float:left;
-        border-bottom: 1px solid silver;
-        border-left: none;
-        a{
-            padding-left: 20%;
-
-            text-align: left;
-        }
+        -webkit-box-shadow: inset 0 0 5px#888;
+        box-shadow: inner 0 0 5px #888;
     }
 }
 
-.secondary:after{
-    content:" ";
-    display:block;
-    clear:both;
-}
 
 .secondaryNav{
     position:absolute;
@@ -342,15 +303,18 @@ box-shadow: inner 0 0 5px #888;
             padding:0.76em;
             background-color: rgb(230,230,230);
             border:1px solid silver;
+            border-bottom:1px solid rgb(244,129,64);
             transition: background-color 0.5s;
         }
     }
 
     a:hover{
         background-color: white;
+        border-color: rgb(244,129,64);
         color:black;
     }
     .selected a{
+        border-color: rgb(244,129,64);
         border-bottom: 1px solid white;
         background-color: white;
     }
@@ -364,6 +328,10 @@ box-shadow: inner 0 0 5px #888;
 footer{
     margin-top: 2em;
     width:100%;
+    background-color: white;
+    div{
+        margin-bottom: 0;
+    }
 }
 
 
@@ -514,8 +482,6 @@ h2{
 .find{
     margin-top:  2em;
     color:black;
-    padding-bottom: 1em;
-    border-bottom: 1px solid silver;
     form{
         //padding-left: 10%;
         ul li:after{
@@ -568,16 +534,6 @@ form.particip{
     content:"";
     display:block;
     clear:both;
-}
-
-.find:before{
-    content:"";
-    display:block;
-    position:absolute;
-    bottom:-2px;
-    height:1px;
-    width:auto;
-    border-bottom: 1px solid white;  
 }
 
 label{
@@ -703,7 +659,7 @@ input[type="date"]{
     float:right;
     padding:1em;
     position:relative;
-    border-left:1px solid silver;
+    border-left:1px solid rgb(244,129,64);
 }
 
 .userDescription:after { 
@@ -729,7 +685,7 @@ left:-25px;
 /* taille */ 
 /* les bordures */ 
 border-width: 25px 25px 25px 0;
-border-color: transparent silver;
+border-color: transparent rgb(244,129,64);
 border-style: solid;
 }
 
@@ -753,8 +709,6 @@ border-style: solid;
 
 
 .news{
-    border-bottom: 1px solid silver;
-    position:relative;
     h2{
         margin-bottom: 1em;
     }
@@ -789,16 +743,6 @@ border-style: solid;
             color:black;
             span{color:white;}
         }
-        h3:after{
-            content:"";
-            display:block;
-            position:absolute;
-            left:0;
-            bottom:-2px;
-            height:1px;
-            width:100%;
-            border-bottom: 1px solid white;
-        }
         width:37%;
         float:right;
         figure img{
@@ -810,26 +754,12 @@ border-style: solid;
             box-shadow: 0px 0px 8px rgb(160,160,160);
         }
     }
-    a:hover{
-        background-color: rgba(245,245,245,0.1);
-    }
 }
 .news:after{
     content:"";
     display:block;
     clear:both;
 }
-.news:before{
-    content:"";
-    display:block;
-    position:absolute;
-    left:0;
-    bottom:-2px;
-    height:1px;
-    width:100%;
-    border-bottom: 1px solid white;
-}
-
 
 
 section.list{

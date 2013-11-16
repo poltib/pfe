@@ -52,7 +52,8 @@ var style_festival_zoomed = [
   },{
     "featureType": "road",
     "stylers": [
-      { "visibility": "simplified" }
+      { "visibility": "simplified" },
+      { "color": "#90A1BF" }
     ]
   },{
       featureType: "water",
@@ -248,7 +249,7 @@ function plotElevation(results, status) {
   // Display a polyline of the elevation path.
   var pathOptions = {
     path: elevationPath,
-    strokeColor: 'rgb(210,79,57)',
+    strokeColor: 'rgb(244,129,64)',
     opacity: 0.4,
     map: festivalMap
   }
@@ -270,7 +271,7 @@ function plotElevation(results, status) {
   chart.draw(data, {
     chartType: 'LineChart',
     height: 150,
-    colors: ['#D24F39'],
+    colors: ['#90A1BF'],
     width: 'auto',
     legend: 'none',
     titleY: 'Elevation (m)',
