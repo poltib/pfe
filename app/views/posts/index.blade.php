@@ -12,7 +12,7 @@
         <div class="big">
             @foreach($posts as $post)
                 <article>
-                <a href="{{ route('posts.show', $post->id) }}"><h3>{{ $post->title }}<span><time>{{ $post->created_at }}</time></span></h3></a>
+                <a href="{{ route('posts.show', $post->id) }}"><h3>{{ $post->title }}<span><time>{{ $post->created_at->toFormattedDateString() }}</time></span></h3></a>
                 <span>Posté par {{ $post->user->username }}</span>
                 <figure>{{ HTML::image('img/actu.jpeg'); }}</figure>
                 <div class="text">

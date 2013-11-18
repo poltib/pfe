@@ -172,21 +172,10 @@ setMarker(startPosition, gMarker);
 for(var i=0; i < sponsorsPosition.length; ++i){
      sponsorsPosition[i][1] = new google.maps.Marker( {
         position:festivalMapCenter,
-        map:festivalMap,
-        icon:{
-           url: 'http://pfe/uploads/races/1/sponsors/100x100_crop/522977_399909913394501_164909558_n.jpg',
-           size: new google.maps.Size(100, 100),
-           origin: new google.maps.Point(0, 0),
-           anchor: new google.maps.Point(0, 0)
-          },
-        shape:{
-           coord: [0,0,50],
-           type: 'circle'
-          },
-        zIndex:102
+        map:festivalMap
       } );
 
-     //setMarker(sponsorsPosition[i][0], sponsorsPosition[i][1]);
+     setMarker(sponsorsPosition[i][0], sponsorsPosition[i][1]);
 }
 
 

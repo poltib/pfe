@@ -7,6 +7,8 @@
 @import "compass/layout.scss";
 @import "base";
 
+@include sticky-footer(100px, ".cont", "#layout_footer", "#footer");
+
 header{
     position:relative;
     z-index: 100000;
@@ -327,6 +329,8 @@ box-shadow: inner 0 0 5px #888;
 
 footer{
     margin-top: 2em;
+    padding-top: 2em;
+    border-top: 1px solid silver;
     width:100%;
     background-color: white;
     div{
@@ -659,32 +663,19 @@ input[type="date"]{
     float:right;
     padding:1em;
     position:relative;
-    border-left:1px solid rgb(244,129,64);
+    border-left:0.3em solid rgb(244,129,64);
 }
-
-.userDescription:after { 
-content:""; 
-position:absolute;
-top:25px; 
-left:-23px;
-
-/* taille */ 
-height:0;width:0; 
-/* les bordures */ 
-border-width: 25px 25px 25px 0;
-border-color: transparent #FAFAFA;
-border-style: solid;
-}
+ 
 
 .userDescription:before { 
 content:""; 
 position:absolute;
 top:25px; 
-left:-25px;
+left:-16px;
 
 /* taille */ 
 /* les bordures */ 
-border-width: 25px 25px 25px 0;
+border-width: 1em 1em 1em 0;
 border-color: transparent rgb(244,129,64);
 border-style: solid;
 }

@@ -117,3 +117,5 @@ Route::resource('raceSponsors', 'RaceSponsorsController');
 
 
 Route::resource('posts', 'PostsController');
+
+Route::resource('messages', 'MessagesController');

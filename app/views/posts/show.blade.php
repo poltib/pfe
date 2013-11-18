@@ -2,6 +2,13 @@
 
 @section('container')
     <section class="show">
+        <ul class="secondaryNav"><!-- 
+             --><li class="selected"><a href="{{ route('posts.show', $post->id ) }}" >{{ $post->title }}</a></li><!--  
+            -->@if($post->user->id === Auth::user()->id)<!--  
+             --><li><a href="{{ route('posts.edit', $post->id ) }}">Modifier l'entrainement</a></li><!--  
+             --><li><a href="{{ route('posts.destroy', $post->id ) }}">Supprimer l'entrainement</a></li>
+             @endif
+        </ul>
         <article>
             <h2>{{ $post->title }} | <span>27 octobre 20013</span></h2>
             <span>Catégories : Entrainements / Conseils</span>

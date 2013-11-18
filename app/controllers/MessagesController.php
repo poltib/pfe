@@ -1,29 +1,25 @@
 <?php
 
-class CommentsController extends BaseController {
+class MessagesController extends BaseController {
 
 	/**
-    * Comment Repository
+    * Message Repository
     */
-    protected $comment;
+    protected $message;
 
     /**
-    * Inject the Comment Repository
+    * Inject the Message Repository
     */
-    public function __construct(Comment $comment)
+    public function __construct(Message $message)
     {
-    $this->comment = $comment;
+    $this->message = $message;
     }
 
+    public function index()
+    {
+        $messages = $this->message->all();
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-        return View::make('comments.index');
+        return View::make('messages.index', compact('messages'))->with('title', 'Liste des messages');
 	}
 
 	/**
@@ -33,7 +29,7 @@ class CommentsController extends BaseController {
 	 */
 	public function create()
 	{
-        return View::make('comments.create');
+        return View::make('messages.create');
 	}
 
 	/**
@@ -50,10 +46,19 @@ class CommentsController extends BaseController {
         // if ($validation->passes())
         // {
 
-            $this->comment->create($input);
+            $this->message->create(array(
+            		'objet' => Input::get('objet'),
+                    'message' => Input::get('message'),
+                    'from' => Input::get('from')
+            	));
 
-            return Redirect::route('races.show', Input::get('race_id'))
-            ->with('flash_notice', 'The new comment has been created');
+            $newMessage = $this->message->orderBy('created_at', 'desc')->first();
+            $this->message->update(array(
+                    'message_id' => $newMessage->id
+            	));
+
+            return Redirect::route('messages.index')
+            ->with('flash_notice', 'The new message has been send');
         // }
         // return Redirect::route('trainings.create')
         //       ->withInput()
@@ -68,7 +73,7 @@ class CommentsController extends BaseController {
 	 */
 	public function show($id)
 	{
-        return View::make('comments.show');
+        return View::make('messages.show');
 	}
 
 	/**
@@ -79,7 +84,7 @@ class CommentsController extends BaseController {
 	 */
 	public function edit($id)
 	{
-        return View::make('comments.edit');
+        return View::make('messages.edit');
 	}
 
 	/**
@@ -102,9 +107,6 @@ class CommentsController extends BaseController {
 	public function destroy($id)
 	{
 		//
-        $this->comment->find($id)->delete();
-
-        return Redirect::route('races.show', Input::get('race_id'));
 	}
 
 }

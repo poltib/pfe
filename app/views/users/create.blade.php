@@ -2,6 +2,10 @@
 
 @section('container')
 <section class="find login">
+  <ul class="secondaryNav"><!-- 
+       --><li>{{ link_to_route('login','Connexion') }}</li><!--  
+       --><li class="selected">{{ link_to_route('users.create','S\'inscrire') }}</li>
+  </ul>
 <h2>Inscription</h2>
 <div class="left">
     {{ Form::open(array('route' => 'users.store')) }}

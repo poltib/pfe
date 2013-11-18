@@ -2,9 +2,19 @@
 
 @section('container')
     <section class="show">
+        <ul class="secondaryNav"><!-- 
+             --><li class="selected"><a href="{{ route('races.show', $race->id ) }}" >{{ $race->name }}</a></li><!--  
+            -->@if(Auth::check())<!--  
+            -->@if($race->user->id === Auth::user()->id)<!--  
+             --><li><a href="{{ route('races.edit', $race->id ) }}">Modifier la course</a></li><!--  
+             --><li><a href="{{ route('races.destroy', $race->id ) }}">Supprimer la course</a></li>
+             @endif
+             @endif
+        </ul>
         <h2>{{ $race->name }} | <span>27 octobre 20013</span></h2>
         <p>{{ $race->description }}</p>
         <p>{{ $race->user->username }}</p>
+        <a href="http://pfe/public/{{ $race->race }}">lien</a>
         <div id="race-map"></div>
         <div id="elevation_chart"></div>
         <aside class="sponsors">
@@ -123,7 +133,11 @@
                         <p>{{ htmlentities($comment->comment) }}</p>
                         @if(Auth::check()&&$comment->user->id === Auth::user()->id)
                             {{ Form::open(array('method' => 'DELETE', 'route' => array('comments.destroy', $comment->id) , 'class' => 'particip')) }}
+
+                                {{ Form::hidden('race_id',$race->id) }}
+
                                 {{ Form::submit('Supprimer',array('class' => 'particip')) }}
+                            
                             {{ Form::close() }}
                         @endif
                     </article>

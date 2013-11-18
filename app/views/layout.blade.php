@@ -48,8 +48,9 @@
             <h2 class="hidden">Content</h2>
             @yield('container')
         </section>
+        <div id='layout_footer'></div>
     </div>
-    <footer>
+    <footer id="footer">
         <div class="container">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, ipsam, libero magni quam rem numquam illum explicabo repellendus nulla iste mollitia fugit totam doloremque maxime voluptas deserunt quas veniam labore.</p>
         </div>
