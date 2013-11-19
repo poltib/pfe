@@ -129,6 +129,7 @@
                 <li class="comment">
                     <figure><img src="{{ $comment->user->thumbs }}" ></figure>
                     <article>
+                        <span>{{ $comment->created_at->toFormattedDateString() }}</span>
                         <h4><a href="{{ route('users.show', $comment->user->id ) }}">{{ $comment->user->username }}</a> à dit:</h4>
                         <p>{{ htmlentities($comment->comment) }}</p>
                         @if(Auth::check()&&$comment->user->id === Auth::user()->id)

@@ -22,13 +22,11 @@
                 @if(Auth::check())
                     @if(Auth::user()->id===$user->id)
                     <a href="{{ route('users.edit', Auth::user()->id ) }}" class="button">Modifier</a>
-                    {{ $user->sent_messages }}
                     @else
                         <a href="#" class="button">Envoyer un message</a>
                     @endif
                 @endif
             </div>
-
             <p class="userDescription">
                 {{ $user->description }}
             </p>

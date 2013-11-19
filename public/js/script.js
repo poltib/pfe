@@ -52,8 +52,7 @@ var style_festival_zoomed = [
   },{
     "featureType": "road",
     "stylers": [
-      { "visibility": "simplified" },
-      { "color": "#90A1BF" }
+      { "visibility": "simplified" }
     ]
   },{
       featureType: "water",
@@ -64,7 +63,8 @@ var style_festival_zoomed = [
   {
       featureType: "landscape",
       stylers:[
-          {visibility: "off"}
+          {visibility: "on"},
+          {color: "#90A1BF"}
       ]
   }
 ];

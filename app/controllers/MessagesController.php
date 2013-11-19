@@ -17,7 +17,7 @@ class MessagesController extends BaseController {
 
     public function index()
     {
-        $messages = $this->message->all();
+        $messages = $this->message->orderBy('created_at', 'desc')->get();
 
         return View::make('messages.index', compact('messages'))->with('title', 'Liste des messages');
 	}
@@ -53,9 +53,7 @@ class MessagesController extends BaseController {
             	));
 
             $newMessage = $this->message->orderBy('created_at', 'desc')->first();
-            $this->message->update(array(
-                    'message_id' => $newMessage->id
-            	));
+            $newMessage->to()->attach(Input::get('user_id'));
 
             return Redirect::route('messages.index')
             ->with('flash_notice', 'The new message has been send');

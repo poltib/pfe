@@ -18,6 +18,7 @@
                 @if($dest->id === Auth::user()->id)
                     <li class="comment">
                         <h3>Sujet : {{ $message->objet }}</h3>
+                        <figure><img src="{{ $message->user->thumbs }}" alt=""></figure>
                         <span>de <a href="{{ route('users.show', $message->user->id ) }}">{{ $message->user->username }}</a> le <time>{{ $message->created_at->toFormattedDateString() }}</time></span>
                         <p>{{ $message->message }}</p>
                         {{ Form::open(array('route' => 'messages.store', 'method' => 'post')) }}

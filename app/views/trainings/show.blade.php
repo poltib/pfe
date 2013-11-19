@@ -13,6 +13,7 @@
         <div id="race-map"></div>
         <div id="elevation_chart"></div>
         <p>description: {{ $training->description }}</p>
+        <span>Adresse:</span><span class="address">{{ $training->address }}</span>
         <p>entrainement: 
             <ul id="trajet">
             @foreach($trainingPoints as $point)

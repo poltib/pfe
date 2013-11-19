@@ -5,6 +5,7 @@
     <ul class="secondaryNav"><!-- 
          --><li><a href="{{ route('users.show', Auth::user()->id ) }}" >Profil</a></li><!--  
         -->@if(Auth::check())<!--  
+         --><li><a href="{{ route('messages.index') }}">Messages</a></li><!-- 
          --><li class="selected"><a href="{{ route('races.create') }}">Ajouter une course</a></li><!--  
          --><li>{{ link_to_route('posts.create', 'Ajouter actu' ) }}</li><!--  
          --><li>{{ link_to_route('trainings.create', 'Ajouter un entrainement') }}</li><!--  
