@@ -33,7 +33,7 @@ class TrainingsController extends BaseController {
 	 */
 	public function create()
 	{
-        return View::make('trainings.create');
+        return View::make('trainings.create')->with('title', 'Créer un entrainement');
 	}
 
 	/**

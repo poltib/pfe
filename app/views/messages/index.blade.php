@@ -18,26 +18,13 @@
                 @if($dest->id === Auth::user()->id)
                     <li class="comment">
                         <h3>Sujet : {{ $message->objet }}</h3>
-                        <figure><img src="{{ $message->user->thumbs }}" alt=""></figure>
                         <span>de <a href="{{ route('users.show', $message->user->id ) }}">{{ $message->user->username }}</a> le <time>{{ $message->created_at->toFormattedDateString() }}</time></span>
-                        <p>{{ $message->message }}</p>
-                        {{ Form::open(array('route' => 'messages.store', 'method' => 'post')) }}
-
-                            {{ Form::label('objet', 'Sujet du message') . Form::text('objet','',array('placeholder' => 'titre')) }}
-
-                            {{ Form::label('message', 'Message') . Form::textarea('message','',array('placeholder' => 'Votre message...')) }}
-
-                            {{ Form::hidden('from',Auth::user()->id) }}
-
-                            {{ Form::hidden('user_id',$message->user->id) }}
-
-                            {{ Form::submit('Répondre') }}
-
-                        {{ Form::token() . Form::close() }}
+                        <a href="{{ route('messages.show', $message->id ) }}">Lire le message</a>
                     </li>
                 @endif
             @endforeach
         @endforeach
         </ul>
+        {{ $messages->links() }}
     </section>
 @stop

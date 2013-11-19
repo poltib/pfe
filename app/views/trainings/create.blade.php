@@ -13,6 +13,7 @@
          @endif
     </ul>
 <h2>Ajouter un entrainement</h2>
+<div id="map_canvas"></div>
 <div class="left">
     
     @if (Session::has('flash_error'))

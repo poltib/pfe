@@ -81,17 +81,6 @@ Route::post('login', function()
         ->withInput();
 });
 
-Route::get('/race/create', array('as'=>'postRace', function()
-{
-    return View::make('race.create')->with('title', 'poster une course');
-}));
-
-Route::get('/new/create', array('as'=>'postNew', function()
-{
-    return View::make('news.create')->with('title', 'poster une actu');
-}));
-
-
 
 /*--------------------------------Others--------------------------------*/
 
@@ -115,7 +104,8 @@ Route::resource('raceImages', 'RaceImagesController');
 
 Route::resource('raceSponsors', 'RaceSponsorsController');
 
-
 Route::resource('posts', 'PostsController');
+
+Route::get('messages/send/{id}', 'MessagesController@send');
 
 Route::resource('messages', 'MessagesController');

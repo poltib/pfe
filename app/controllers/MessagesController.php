@@ -17,19 +17,31 @@ class MessagesController extends BaseController {
 
     public function index()
     {
-        $messages = $this->message->orderBy('created_at', 'desc')->get();
+        $messages = $this->message->orderBy('created_at', 'desc')->paginate(4);
 
         return View::make('messages.index', compact('messages'))->with('title', 'Liste des messages');
 	}
 
 	/**
-	 * Show the form for creating a new resource.
+	 * Show the form for creating a new resource with the user_id.
 	 *
+	 * @param  int  $user_id
 	 * @return Response
 	 */
-	public function create()
+	public function send($user_id)
 	{
-        return View::make('messages.create');
+        return View::make('messages.send')->with('user_id', $user_id);
+	}
+
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @param  int  $user_id
+	 * @return Response
+	 */
+	public function create($user_id)
+	{
+        return View::make('messages.create')->with('user_id', $user_id);
 	}
 
 	/**
@@ -71,7 +83,9 @@ class MessagesController extends BaseController {
 	 */
 	public function show($id)
 	{
-        return View::make('messages.show');
+        $message = $this->message->findOrFail($id);
+
+        return View::make('messages.show', compact('message'))->with('title', 'Profil de '.$message->objet);
 	}
 
 	/**

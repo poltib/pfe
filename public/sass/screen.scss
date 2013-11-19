@@ -32,7 +32,7 @@ header{
 
 }
 
-#race-map { 
+#race-map, #map_canvas { 
           height: 25em;
           width: auto; 
           border:0.3em solid silver;
@@ -126,8 +126,7 @@ h1,h2,h3,h4,h5,h6{font-family: "Avant Garde", Avantgarde, "Century Gothic", Cent
     padding:0;
     margin:auto;
     width:1483px;
-    background-color: white;
-    transition: all 0.3s;
+    background-color: white;    
 }
 .container:after{
     content:"";

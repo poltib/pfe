@@ -23,7 +23,7 @@
                     @if(Auth::user()->id===$user->id)
                     <a href="{{ route('users.edit', Auth::user()->id ) }}" class="button">Modifier</a>
                     @else
-                        <a href="#" class="button">Envoyer un message</a>
+                        {{ link_to_action('MessagesController@send', "Envoyer un message", $user->id) }}
                     @endif
                 @endif
             </div>

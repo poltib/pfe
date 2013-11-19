@@ -1,3 +1,5 @@
+@extends('layout')
+
 @section('container')
     <section class="show">
         <ul class="secondaryNav"><!-- 

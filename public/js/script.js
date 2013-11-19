@@ -1,4 +1,4 @@
-var style_festival = [
+var style_map = [
   {
     "featureType": "administrative",
     "stylers": [
@@ -33,7 +33,7 @@ var style_festival = [
   }
 ];
 
-var style_festival_zoomed = [
+var style_map_zoomed = [
   {
     "featureType": "administrative",
     "stylers": [
@@ -69,21 +69,21 @@ var style_festival_zoomed = [
   }
 ];
 
-var styled_festival = new google.maps.StyledMapType(style_festival, {name: "Festival style"});
-var styled_festival_zoomed = new google.maps.StyledMapType(style_festival_zoomed, {name: "Festival style zoomed"});
+var styled_map = new google.maps.StyledMapType(style_map, {name: "Map style"});
+var styled_map_zoomed = new google.maps.StyledMapType(style_map_zoomed, {name: "Map style zoomed"});
 
 //Create the variables that will be used within the map configuration options.
 //The latitude and longitude of the center of the map.
 //The degree to which the map is zoomed in. This can range from 0 (least zoomed) to 21 and above (most zoomed).
-var festivalMapZoom = 13;
-var festivalMapZoomMax = 18;
-var festivalMapZoomMin = 4;
+var mapZoom = 13;
+var mapZoomMax = 18;
+var mapZoomMin = 4;
 
 
 google.load('visualization', '1.0', {'packages':['corechart']});
 
 //Create the variable for the main map itself.
-var festivalMap;
+var map;
 var elevator;
 var chart;
 var infowindow = new google.maps.InfoWindow();
@@ -95,12 +95,12 @@ var sponsorsPosition = [];
 var gGeocoder;
 
 
-//When the page loads, the line below calls the function below called 'loadFestivalMap' to load up the map.
-google.maps.event.addDomListener(window, 'load', loadFestivalMap);
+//When the page loads, the line below calls the function below called 'loadmap' to load up the map.
+google.maps.event.addDomListener(window, 'load', loadMap);
 
 
 //THE MAIN FUNCTION THAT IS CALLED WHEN THE WEB PAGE LOADS--------------------------------------------------------------------------------
-function loadFestivalMap() {
+function loadMap() {
 var lats = document.getElementsByClassName('lat');
 
 var lons = document.getElementsByClassName('lon');
@@ -115,38 +115,38 @@ for(var i=0; i < sponsorsAdress.length; ++i){
 
 console.log(sponsorsPosition);
 
-var festivalMapCenter = new google.maps.LatLng(lats[150].firstChild.textContent, lons[150].firstChild.textContent);
+var mapCenter = new google.maps.LatLng(lats[150].firstChild.textContent, lons[150].firstChild.textContent);
 
-var festivalMapOptions = { 
-      center: festivalMapCenter, 
-          zoom: festivalMapZoom,
-      maxZoom:festivalMapZoomMax,
+var mapOptions = { 
+      center:mapCenter, 
+          zoom: mapZoom,
+      maxZoom:mapZoomMax,
       scrollwheel:false,
-      minZoom:festivalMapZoomMin,
+      minZoom:mapZoomMin,
       panControl: false,
       backgroundColor: "rgba(0,0,0,0)",
       mapTypeControl: false,
        mapTypeControlOptions: {
-        mapTypeIds: [ 'map_styles_festival', 'map_styles_festival_zoomed']
+        mapTypeIds: [ 'map_styles', 'map_styles_zoomed']
        }
 };
 
   
-//The variable to hold the map was created above.The line below creates the map, assigning it to this variable. The line below also loads the map into the div with the id 'festival-map' (see code within the 'body' tags below), and applies the 'festivalMapOptions' (above) to configure this map. 
-festivalMap = new google.maps.Map(document.getElementById("race-map"), festivalMapOptions); 
+//The variable to hold the map was created above.The line below creates the map, assigning it to this variable. The line below also loads the map into the div with the id 'festival-map' (see code within the 'body' tags below), and applies the 'mapOptions' (above) to configure this map. 
+map = new google.maps.Map(document.getElementById("race-map"), mapOptions); 
 
 gGeocoder = new google.maps.Geocoder;
 
 gMarker = new google.maps.Marker( {
-      position:festivalMapCenter,
-      map:festivalMap
+      position:mapCenter,
+      map:map
     } );
 
 //Assigning the two map styles defined above to the map.
-festivalMap.mapTypes.set('map_styles_festival', styled_festival);
-festivalMap.mapTypes.set('map_styles_festival_zoomed', styled_festival_zoomed);
+map.mapTypes.set('map_styles', styled_map);
+map.mapTypes.set('map_styles_zoomed', styled_map_zoomed);
 //Setting the one of the styles to display as default as the map loads.
-festivalMap.setMapTypeId('map_styles_festival_zoomed');
+map.setMapTypeId('map_styles_zoomed');
 
 for(var i=0; i < lats.length; ++i){
      trajet[i] = new google.maps.LatLng(lats[i].firstChild.textContent, lons[i].firstChild.textContent);
@@ -171,8 +171,8 @@ setMarker(startPosition, gMarker);
 
 for(var i=0; i < sponsorsPosition.length; ++i){
      sponsorsPosition[i][1] = new google.maps.Marker( {
-        position:festivalMapCenter,
-        map:festivalMap
+        position:mapCenter,
+        map:map
       } );
 
      setMarker(sponsorsPosition[i][0], sponsorsPosition[i][1]);
@@ -181,15 +181,15 @@ for(var i=0; i < sponsorsPosition.length; ++i){
 
 
 //Continuously listens out for when the zoom level changes. This includs when the map zooms when a marker is clicked.
-google.maps.event.addListener(festivalMap, "zoom_changed", function() {
-  var newZoom = festivalMap.getZoom();
+google.maps.event.addListener(map, "zoom_changed", function() {
+  var newZoom = map.getZoom();
   //If the map is zoomed in, the switch to the style that shows the higher level of detail.
   if (newZoom > 6){
-    festivalMap.setMapTypeId('map_styles_festival_zoomed');
+    map.setMapTypeId('map_styles_zoomed');
       }
   //Otherwise the map must be zoomed out, so use the style with the lower level of detail.
   else {
-    festivalMap.setMapTypeId('map_styles_festival');
+    map.setMapTypeId('map_styles');
   }
 
 }); 
@@ -240,7 +240,7 @@ function plotElevation(results, status) {
     path: elevationPath,
     strokeColor: 'rgb(244,129,64)',
     opacity: 0.4,
-    map: festivalMap
+    map: map
   }
   polyline = new google.maps.Polyline(pathOptions);
 
