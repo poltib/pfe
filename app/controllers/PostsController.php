@@ -22,9 +22,11 @@ class PostsController extends BaseController {
 	 */
 	public function index()
 	{
-        $posts = $this->post->all();
+        $posts = $this->post->orderBy('created_at', 'desc')->paginate(4);
 
-        return View::make('posts.index', compact('posts'))->with('title', 'Liste des actus');
+        $categories = Categorie::all();
+
+        return View::make('posts.index', compact('posts', 'categories'))->with('title', 'Liste des actus');
 	}
 
 	/**
@@ -34,7 +36,9 @@ class PostsController extends BaseController {
 	 */
 	public function create()
 	{
-        return View::make('posts.create');
+        $categories = Categorie::all();
+
+        return View::make('posts.create', compact('categories'));
 	}
 
 	/**
@@ -50,9 +54,22 @@ class PostsController extends BaseController {
         
         // if ($validation->passes())
         // {
-            $this->post->create($input);
 
-            return Redirect::route('races.index')
+            if($input["photo"]){
+                $pictureName = Input::file('photo')->getClientOriginalName();
+                Image::upload(Input::file('photo'), 'posts/' . Input::get('title'), true);
+                $input["photo"] = 'http://pfe/uploads/posts/'.Input::get('title').'/600x400/'.$pictureName;
+                $input["thumb"] = 'http://pfe/uploads/posts/'.Input::get('title').'/100x100_crop/'.$pictureName;
+            }
+            $this->post->create(array(
+                'title' => Input::get('title'),
+                'post' => Input::get('post'),
+                'user_id' => Input::get('user_id'),
+                'image' => $input["photo"],
+                'thumb' => $input["thumb"]
+            ));
+
+            return Redirect::route('posts.index')
             ->with('flash_notice', 'The new post has been created');
         // }
 
@@ -84,7 +101,9 @@ class PostsController extends BaseController {
 	 */
 	public function edit($id)
 	{
-        return View::make('posts.edit');
+        $post = $this->post->findOrFail($id);
+
+        return View::make('posts.edit', compact('post'))->with('title', 'Modifier le post');
 	}
 
 	/**
@@ -96,6 +115,24 @@ class PostsController extends BaseController {
 	public function update($id)
 	{
 		//
+        $input = Input::all();
+
+        $newPost = $this->post->find($id);
+        if($input["photo"]){
+            $pictureName = Input::file('photo')->getClientOriginalName();
+            Image::upload(Input::file('photo'), 'posts/' . $newPost->id, true);
+            $input["photo"] = 'http://pfe/uploads/posts/'.$newPost->id.'/600x400/'.$pictureName;
+            $input["thumb"] = 'http://pfe/uploads/posts/'.$newPost->id.'/100x100_crop/'.$pictureName;
+        }
+        $newPost->update(array(
+                'title' => Input::get('title'),
+                'post' => Input::get('post'),
+                'image' => $input["photo"],
+                'thumb' => $input["thumb"]
+
+            ));
+
+        return Redirect::route('posts.show', $id);
 	}
 
 	/**
@@ -107,6 +144,9 @@ class PostsController extends BaseController {
 	public function destroy($id)
 	{
 		//
+        $this->post->find($id)->delete();
+
+        return Redirect::route('posts.index');
 	}
 
 }

@@ -43,7 +43,7 @@
         {
             $input = array_except(Input::all(), '_method');
 
-            $user = $this->user->find($id);
+           
             if($input["photo"]){
                 $pictureName = Input::file('photo')->getClientOriginalName();
                 Image::upload(Input::file('photo'), 'users/' . $user->id, true);

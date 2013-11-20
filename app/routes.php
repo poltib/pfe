@@ -109,3 +109,6 @@ Route::resource('posts', 'PostsController');
 Route::get('messages/send/{id}', 'MessagesController@send');
 
 Route::resource('messages', 'MessagesController');
+
+
+Route::resource('categories', 'CategoriesController');

@@ -6,8 +6,8 @@ google.maps.event.addDomListener(window, 'load', loadFestivalMap);
 
 function loadFestivalMap() {
   var myOptions = {
-    zoom: 17,
-    center: new google.maps.LatLng(37.2008385157313, -93.2812106609344),
+    zoom: 14,
+    center: new google.maps.LatLng(50.633333, 5.566667),
     panControl: false,
     backgroundColor: "rgba(0,0,0,0)",
     mapTypeControl: false,
@@ -16,8 +16,9 @@ function loadFestivalMap() {
     draggableCursor: "crosshair"
   }
 
+
   map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-  poly = new google.maps.Polyline({ map: map });
+  poly = new google.maps.Polyline({ map: map, strokeColor: 'rgb(244,129,64)', opacity: 0.4, });
   google.maps.event.addListener(map, "click", function(evt) {
     if (path.getLength() === 0) {
       path.push(evt.latLng);

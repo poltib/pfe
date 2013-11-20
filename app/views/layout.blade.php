@@ -28,7 +28,7 @@
                 <h2 class="hidden">Navigation</h2>
                 <ul class="primary"><!-- 
                     --><li><a href="{{ route('races.index') }}"><i class="icon-search"></i>Rechercher</a></li><!-- 
-                    --><li><a href="{{ route('posts.index') }}"><i class="icon-book"></i>Blog</a></li><!--
+                    --><li><a href="{{ route('posts.index') }}"><i class="icon-book"></i>News</a></li><!--
                     -->@if(Auth::check())<!--
                         --><li>{{ link_to_route('users.show', 'Profil' , Auth::user()->id ) }}</li><!--
                     -->@else<!--
@@ -61,9 +61,22 @@
         g.src='//www.google-analytics.com/ga.js';
         s.parentNode.insertBefore(g,s)}(document,'script'));
     </script>
+    <script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA9m3Ix3AmZHlnvQCQAIUo4yyFjD7c9eLw&sensor=true">
+    </script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHJ3p-sn1Y5tJGrzH9MF5cbR5sdsDmhfg&sensor=true"></script>
-    {{ HTML::script('js/trainings.js'); }}
-<!--     {{ HTML::script('js/script.js'); }} -->
+   {{ HTML::script('js/trainings.js'); }}
+    {{ HTML::script('js/tinymce/tinymce.min.js'); }}
+    <script type="text/javascript">
+    tinymce.init({
+        selector: "textarea.post",
+        plugins: [
+            "advlist autolink lists link charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen"
+        ],
+        toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent"
+    });
+    </script>
+    {{ HTML::script('js/script.js'); }}
 </body>
 </html>

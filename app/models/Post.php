@@ -9,4 +9,9 @@ class Post extends Eloquent {
     {
         return $this->belongsTo('User');
     }  
+
+    public function categories()
+    {
+        return $this->belongsToMany('Categorie');
+    }  
 }

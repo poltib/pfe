@@ -48,5 +48,11 @@
         <h3>Courses auquelles vous avez participé</h3>
         <h3>Entrainements réalisés en groupe</h3>
         <h3>Entrainements seul</h3>
+        <h3>Articles postés</h3>
+        <ul>
+        @foreach($user->posts as $post)
+            <li>{{ link_to_route('posts.show', $post->title, $post->id) }}</li>
+        @endforeach
+        </ul>
     </section>
 @stop

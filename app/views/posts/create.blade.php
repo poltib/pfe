@@ -13,21 +13,33 @@
          @endif
     </ul>
 <h2>Poster une actualité</h2>
-<div class="left">
+<div class="post">
     @if (Session::has('flash_error'))
         <div id="flash_error">{{ Session::get('flash_error') }}</div>
     @endif
-    {{ Form::open(array('route' => 'posts.store','files' => true)) }}
+    <ul>
+    <li>{{ Form::open(array('route' => 'posts.store','files' => true)) }}</li>
 
-    {{ Form::label('title', 'Nom du post') . Form::text('title','',array('placeholder' => 'Nom')) }}
+    <li>{{ Form::label('title', 'Nom du post') . Form::text('title','',array('placeholder' => 'Nom du post')) }}</li>
 
-    {{ Form::label('post', 'Contenu') . Form::textarea('post') }}
+    <li>{{ Form::label('post', 'Contenu') }}</li> 
 
-    {{ Form::hidden('user_id',Auth::user()->id) }}
+    <li>{{ Form::textarea('post','',array('class' => 'post')) }}</li>
+    
+    <li>{{ Form::label('photo', 'Photo') . Form::file('photo') }}</li>
 
-    {{ Form::submit('Poster!') }}
+    <h3>Catégories</h3>
+    
+    @foreach($categories as $categorie)
+        <li>{{ Form::checkbox('categorie'.$categorie->id, $categorie->id, array('class' => 'cat')) . Form::label('categorie'.$categorie->id, $categorie->name, array('class' => 'cat')) }}</li>
+    @endforeach
+    
+    <li>{{ Form::hidden('user_id',Auth::user()->id) }}</li>
 
-    {{ Form::token() . Form::close() }}
+    <li>{{ Form::submit('Poster') }}</li>
+
+    <li>{{ Form::token() . Form::close() }}</li>
+    </ul>
      {{ implode('', $errors->all('<li>:message</li>'))}}
 </div>
 </section>

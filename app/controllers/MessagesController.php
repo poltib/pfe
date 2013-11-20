@@ -17,7 +17,7 @@ class MessagesController extends BaseController {
 
     public function index()
     {
-        $messages = $this->message->orderBy('created_at', 'desc')->paginate(4);
+        $messages = $this->message->orderBy('created_at', 'desc')->paginate(6);
 
         return View::make('messages.index', compact('messages'))->with('title', 'Liste des messages');
 	}

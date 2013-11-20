@@ -13,27 +13,30 @@
             @foreach($posts as $post)
                 <article>
                 <a href="{{ route('posts.show', $post->id) }}"><h3>{{ $post->title }}<span><time>{{ $post->created_at->toFormattedDateString() }}</time></span></h3></a>
+                <span>Catégories : 
+                @foreach($post->categories as $categorie)
+                    {{ $categorie->name }}
+                @endforeach
+                </span>
                 <span>Posté par {{ $post->user->username }}</span>
-                <figure>{{ HTML::image('img/actu.jpeg'); }}</figure>
+                <figure><img src="{{ $post->image }}" alt=""></figure>
                 <div class="text">
                     <p>{{ $post->post }}</p>
                 </div>
                 </article>
             @endforeach
+             {{ $posts->links() }}
         </div>
         <aside>
             <h3>Catégories</h3>
-            <h4>Conseils</h4>
+            @foreach($categories as $categorie)
+            <h4>{{ $categorie->name }}</h4>
             <ul>
-                <li><a href="#">Bien choisir ses chaussures</a></li>
-                <li><a href="#">Plop</a></li>
-                <li><a href="#">Plop</a></li>
-                <li><a href="#">Plop</a></li>
-                <li><a href="#">Plop</a></li>
-                <li><a href="#">Plop</a></li>
+                @foreach($categorie->posts as $categoriePost)
+                <li>{{ link_to_route('posts.show', $categoriePost->title, $categoriePost->id) }}</li>
+                @endforeach
             </ul>
-            <h4>Entrainements</h4>
-            
+            @endforeach
         </aside>
     </section>
 @stop
