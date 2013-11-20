@@ -29,9 +29,9 @@
     <li>{{ Form::label('photo', 'Photo') . Form::file('photo') }}</li>
 
     <h3>Catégories</h3>
-    
+
     @foreach($categories as $categorie)
-        <li>{{ Form::checkbox('categorie'.$categorie->id, $categorie->id, array('class' => 'cat')) . Form::label('categorie'.$categorie->id, $categorie->name, array('class' => 'cat')) }}</li>
+        <li>{{ Form::checkbox('categories[]', $categorie->id, array('class' => 'cat')) . Form::label('categories', $categorie->name, array('class' => 'cat')) }}</li>
     @endforeach
     
     <li>{{ Form::hidden('user_id',Auth::user()->id) }}</li>

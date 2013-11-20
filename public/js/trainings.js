@@ -1,5 +1,7 @@
 var map, path = new google.maps.MVCArray(),
-    service = new google.maps.DirectionsService(), poly;
+    service = new google.maps.DirectionsService(), 
+    poly,
+    allPath;
 
 google.maps.event.addDomListener(window, 'load', loadFestivalMap);
 
@@ -27,12 +29,14 @@ function loadFestivalMap() {
       service.route({
         origin: path.getAt(path.getLength() - 1),
         destination: evt.latLng,
-        travelMode: google.maps.DirectionsTravelMode.DRIVING
+        travelMode: google.maps.DirectionsTravelMode.WALKING
       }, function(result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
           for (var i = 0, len = result.routes[0].overview_path.length;
               i < len; i++) {
             path.push(result.routes[0].overview_path[i]);
+            allPath = poly.getPath();
+            console.log(allPath.length);
           }
         }
       });

@@ -15,19 +15,38 @@
         <div id="flash_error">{{ Session::get('flash_error') }}</div>
     @endif
     {{ Form::model($post, array('method' => 'PATCH', 'files' => true, 'route' => array('posts.update', $post->id))) }}
-    <div class="clear">
-        {{ Form::label('title', 'Nom du post') . Form::text('title', $post->title ,array('placeholder' => 'Nom du post')) }}
+    <ul>
+    <li>{{ Form::label('title', 'Nom du post') . Form::text('title', $post->title) }}</li>
 
-        {{ Form::label('post', 'Contenu') }} 
-    </div>
+    <li>{{ Form::label('post', 'Contenu') }}</li> 
 
-    {{ Form::textarea('post', $post->post ,array('class' => 'post')) }}
-
-    {{ Form::label('photo', 'Photo') . Form::file('photo') }}
+    <li>{{ Form::textarea('post', $post->post ,array('class' => 'post')) }}</li>
     
-    {{ Form::hidden('user_id',Auth::user()->id) }}
+    <li>{{ Form::label('photo', 'Photo') . Form::file('photo') }}</li>
 
-    {{ Form::submit('Poster') }}
+    <h3>Catégories</h3>
+    
+        @foreach($categories as $categorie)
+            <?php $checked = false; ?>
+            @foreach($post->categories as $cat)
+                @if($cat->id ===  $categorie->id)
+                    <?php $checked = 'checked'; ?>
+                @endif
+            @endforeach
+            <li>
+                <label class="cat" for="categories">
+                    {{ $categorie->name }}
+                    <input type="checkbox" name="categories[]" value="{{ $categorie->id }}" id="categories[]" {{ $checked }}>
+                </label>
+
+            </li>
+        @endforeach
+
+    <li>{{ Form::hidden('user_id',Auth::user()->id) }}</li>
+
+    <li>{{ Form::submit('Poster') }}</li>
+
+    </ul>
 
     {{ Form::token() . Form::close() }}
      {{ implode('', $errors->all('<li>:message</li>'))}}

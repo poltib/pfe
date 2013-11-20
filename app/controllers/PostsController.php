@@ -50,6 +50,7 @@ class PostsController extends BaseController {
 	{
 		//
 		$input = Input::all();
+        $cat = Input::get('categories');
         //$validation = Validator::make($input, Training::$rules);
         
         // if ($validation->passes())
@@ -68,6 +69,12 @@ class PostsController extends BaseController {
                 'image' => $input["photo"],
                 'thumb' => $input["thumb"]
             ));
+
+            $newPost = $this->post->orderBy('created_at', 'desc')->first();
+
+            for($i=0; $i <= count($cat)-1; $i++){
+                $newPost->categories()->attach($newPost->id, array('categorie_id'=> $cat[$i]));
+            }
 
             return Redirect::route('posts.index')
             ->with('flash_notice', 'The new post has been created');
@@ -103,7 +110,9 @@ class PostsController extends BaseController {
 	{
         $post = $this->post->findOrFail($id);
 
-        return View::make('posts.edit', compact('post'))->with('title', 'Modifier le post');
+        $categories = Categorie::all();
+
+        return View::make('posts.edit', compact('post','categories'))->with('title', 'Modifier le post');
 	}
 
 	/**
@@ -116,6 +125,7 @@ class PostsController extends BaseController {
 	{
 		//
         $input = Input::all();
+        $cat = Input::get('categories');
 
         $newPost = $this->post->find($id);
         if($input["photo"]){
@@ -131,6 +141,12 @@ class PostsController extends BaseController {
                 'thumb' => $input["thumb"]
 
             ));
+
+        $newPost = $this->post->orderBy('created_at', 'desc')->first();
+
+        for($i=0; $i <= count($cat)-1; $i++){
+            $newPost->categories()->attach($newPost->id, array('categorie_id'=> $cat[$i]));
+        }
 
         return Redirect::route('posts.show', $id);
 	}
