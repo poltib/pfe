@@ -5,6 +5,25 @@ var map, path = new google.maps.MVCArray(),
 
 google.maps.event.addDomListener(window, 'load', loadFestivalMap);
 
+var addElement = function(){
+    var newDiv = document.createElement('div');
+    var newDiv2 = document.createElement('div');
+    var newDiv3 = document.createElement('div');
+    var saveContent = document.createTextNode("save");
+    var beforeContent = document.createTextNode("before");
+    var closeContent = document.createTextNode("close");
+
+    var beforeButton = newDiv.appendChild(beforeContent);
+    var saveButton = newDiv2.appendChild(saveContent);
+    var closeButton = newDiv3.appendChild(closeContent);
+
+    my_div = document.getElementById("map_canvas");
+    parentMy_div = my_div.parentNode;
+    parentMy_div.insertBefore(beforeButton, my_div);
+    parentMy_div.insertBefore(saveButton, my_div);
+    parentMy_div.insertBefore(closeButton, my_div);
+  }
+
 
 function loadFestivalMap() {
   var myOptions = {
@@ -20,7 +39,8 @@ function loadFestivalMap() {
 
 
   map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-  poly = new google.maps.Polyline({ map: map, strokeColor: 'rgb(244,129,64)', opacity: 0.4, });
+  poly = new google.maps.Polyline({ map: map, strokeColor: 'rgba(244,129,64,0.8)'});
+  addElement();
   google.maps.event.addListener(map, "click", function(evt) {
     if (path.getLength() === 0) {
       path.push(evt.latLng);

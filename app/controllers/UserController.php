@@ -78,7 +78,12 @@
 
             if ($validation->passes())
             {
-                $this->user->create(array('username'=>Input::get('username'),'email'=>Input::get('email'),'password'=>Hash::make(Input::get('password'))));
+                $this->user->create(
+                    array(
+                        'username'=>Input::get('username'),
+                        'email'=>Input::get('email'),
+                        'password'=>Hash::make(Input::get('password'))
+                        ));
 
                 return Redirect::route('login')
                 ->with('flash_notice', 'The new user has been created');
@@ -88,15 +93,53 @@
               ->withErrors($validation->errors());
         }
 
-
-        public function postProfile()
+        public function logout()
         {
-            $input = array_except(Input::all(), '_method');
-            $id = Input::get('id');
-            $user = $this->user->find($id);
-            $user->update($input);
+            Auth::logout();
 
-            return Redirect::route('profile');
+            return Redirect::route('home')
+                ->with('flash_notice', 'Votre déconnection est un succes.');
+        }
+
+        public function login()
+        {
+            return View::make('users.login');
+        }
+
+        public function connexion()
+        {
+            $user = array(
+                'username' => Input::get('username'),
+                'password' => Input::get('password')
+            );
+            
+            if (Auth::attempt($user)) {
+                return Redirect::route('home')
+                    ->with('flash_notice', 'Votre connexion s\'est effectuée avec succes.');
+            }
+            
+            // authentication failure! lets go back to the login page
+            return Redirect::route('login')
+                ->with('flash_error', 'Votre combinaison nom/mot-de-passe est incorrecte.')
+                ->withInput();
+        }
+
+        public function raceParticip()
+        {
+            $user = $this->user->find(Input::get('user_id'));
+            $user->races()->attach(Input::get('race_id'));
+
+            return Redirect::route('races.show', Input::get('race_id'))
+            ->with('flash_notice', 'The new raceUser has been created');
+        }
+
+        public function raceDontParticip($id)
+        {
+
+            $user = $this->user->find($id);
+            $user->races()->detach(Input::get('race_id'));
+
+            return Redirect::route('races.show', Input::get('race_id'));
         }
         
     }

@@ -76,17 +76,17 @@
                     <a href="#" class="button">Suivre</a> 
                     <a href="#" class="button">Partager</a>
                     @if(Auth::check())
-                        @if(isset(Auth::user()->raceUsers[0]))
-                            {{ Form::open(array('method' => 'DELETE', 'route' => array('raceUsers.destroy', Auth::user()->raceUsers[0]->id) , 'class' => 'particip')) }}
+                        @if(isset(Auth::user()->races[0]))
+                            {{ Form::open(array('method' => 'DELETE', 'route' => array('dontParticip', Auth::user()->id) , 'class' => 'particip')) }}
                                 {{ Form::hidden('race_id',$race->id) }}
                                 {{ Form::submit('Ne plus participer',array('class' => 'particip')) }}
                             {{ Form::close() }}
                         @else
-                            {{ Form::open(array('route' => 'raceUsers.store', 'method' => 'post', 'class' => 'particip')) }}
+                            {{ Form::open(array('route' => 'particip', 'method' => 'post', 'class' => 'particip')) }}
 
                             {{ Form::hidden('user_id',Auth::user()->id) }}
 
-                            {{ Form::hidden('race_id',$race->id) }}
+                            {{ Form::hidden('race_id[]',$race->id) }}
 
                             {{ Form::submit('Participer',array('class' => 'particip')) }}
 
@@ -100,8 +100,8 @@
 
             <h3>Utilisateurs participant</h3>
             <ul class="participants">
-                @foreach($race->raceUsers as $user)
-                    <li><figure><img src="{{ $user->user->thumbs }}" alt="{{ $user->user->username }}"></figure></li>
+                @foreach($race->users as $user)
+                    <li><figure><img src="{{ $user->thumbs }}" alt="{{ $user->username }}"></figure></li>
                 @endforeach
             </ul>
             <h3>Galerie des années précédentes</h3>

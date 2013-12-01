@@ -15,7 +15,7 @@
              @endif
         </ul>
         <article>
-            <h2>{{ $post->title }} | <span>27 octobre 20013</span></h2>
+            <h2>{{ $post->title }} | <span><time>{{ $post->created_at->toFormattedDateString() }}</time></span></h2>
             <span>Catégories : 
             @foreach($post->categories as $categorie)
                 {{ $categorie->name }}

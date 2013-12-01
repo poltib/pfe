@@ -50,36 +50,16 @@ Route::post('/clubs', array('as'=>'searchClubs', function()
 
 Route::resource('users','UserController');
 
-Route::get('logout', array('as' => 'logout', function () 
-{
-    Auth::logout();
+Route::get('logout', array('as' => 'logout', 'uses' => 'UserController@logout'))->before('auth');
 
-    return Redirect::route('home')
-        ->with('flash_notice', 'Votre déconnection est un succes.');
-}))->before('auth');
+Route::get('login', array('as' => 'login', 'uses' => 'UserController@login'))->before('guest');
 
-Route::get('/login', array('as'=>'login', function()
-{
-    return View::make('users.login');
-}))->before('guest');
+Route::post('login', array('as' => 'connexion', 'uses' => 'UserController@connexion'))->before('guest');
 
-Route::post('login', function() 
-{
-    $user = array(
-        'username' => Input::get('username'),
-        'password' => Input::get('password')
-    );
-    
-    if (Auth::attempt($user)) {
-        return Redirect::route('home')
-            ->with('flash_notice', 'Votre connexion s\'est effectuée avec succes.');
-    }
-    
-    // authentication failure! lets go back to the login page
-    return Redirect::route('login')
-        ->with('flash_error', 'Votre combinaison nom/mot-de-passe est incorrecte.')
-        ->withInput();
-});
+Route::post('raceUsers', array('as' => 'particip', 'uses' => 'UserController@raceParticip'));
+
+Route::delete('raceUsersDestroy/{userId}', array('as' => 'dontParticip', 'uses' => 'UserController@raceDontParticip'));
+
 
 
 /*--------------------------------Others--------------------------------*/
@@ -98,7 +78,7 @@ Route::resource('races', 'RacesController');
 
 Route::resource('comments', 'CommentsController');
 
-Route::resource('raceUsers', 'RaceUsersController');
+//Route::resource('raceUsers', 'RaceUsersController');
 
 Route::resource('raceImages', 'RaceImagesController');
 
