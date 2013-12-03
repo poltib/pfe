@@ -1,17 +1,20 @@
 <?php
+use PostInterface;
+use CategorieInterface;
 
 class PostsController extends BaseController {
 	/**
-    * Post Repository
+    * PostInterface Repository
     */
     protected $post;
 
     /**
-    * Inject the Post Repository
+    * Inject the PostInterface Repository
     */
-    public function __construct(Post $post)
+    public function __construct(PostInterface $post, CategorieInterface $categorie)
     {
     $this->post = $post;
+    $this->categorie = $categorie;
     }
 
 
@@ -22,9 +25,9 @@ class PostsController extends BaseController {
 	 */
 	public function index()
 	{
-        $posts = $this->post->orderBy('created_at', 'desc')->paginate(4);
+        $posts = $this->post->findAll();
 
-        $categories = Categorie::all();
+        $categories = $this->categorie->findAll();
 
         return View::make('posts.index', compact('posts', 'categories'))->with('title', 'Liste des actus');
 	}
@@ -49,32 +52,12 @@ class PostsController extends BaseController {
 	public function store()
 	{
 		//
-		$input = Input::all();
-        $cat = Input::get('categories');
+
+		$this->post->store( Input::all() );
         //$validation = Validator::make($input, Training::$rules);
         
         // if ($validation->passes())
         // {
-
-            if($input["photo"]){
-                $pictureName = Input::file('photo')->getClientOriginalName();
-                Image::upload(Input::file('photo'), 'posts/' . Input::get('title'), true);
-                $input["photo"] = 'http://pfe/uploads/posts/'.Input::get('title').'/600x400/'.$pictureName;
-                $input["thumb"] = 'http://pfe/uploads/posts/'.Input::get('title').'/100x100_crop/'.$pictureName;
-            }
-            $this->post->create(array(
-                'title' => Input::get('title'),
-                'post' => Input::get('post'),
-                'user_id' => Input::get('user_id'),
-                'image' => $input["photo"],
-                'thumb' => $input["thumb"]
-            ));
-
-            $newPost = $this->post->orderBy('created_at', 'desc')->first();
-
-            for($i=0; $i <= count($cat)-1; $i++){
-                $newPost->categories()->attach($newPost->id, array('categorie_id'=> $cat[$i]));
-            }
 
             return Redirect::route('posts.index')
             ->with('flash_notice', 'The new post has been created');
@@ -95,7 +78,7 @@ class PostsController extends BaseController {
 	public function show($id)
 	{
 
-		$post = $this->post->findOrFail($id);
+		$post = $this->post->findById($id);
         
         return View::make('posts.show', compact('post'))->with('title', $post->name);
 	}
@@ -108,9 +91,9 @@ class PostsController extends BaseController {
 	 */
 	public function edit($id)
 	{
-        $post = $this->post->findOrFail($id);
+        $post = $this->post->findById($id);
 
-        $categories = Categorie::all();
+        $categories = $this->categorie->findAll();
 
         return View::make('posts.edit', compact('post','categories'))->with('title', 'Modifier le post');
 	}
@@ -124,29 +107,8 @@ class PostsController extends BaseController {
 	public function update($id)
 	{
 		//
-        $input = Input::all();
-        $cat = Input::get('categories');
 
-        $newPost = $this->post->find($id);
-        if($input["photo"]){
-            $pictureName = Input::file('photo')->getClientOriginalName();
-            Image::upload(Input::file('photo'), 'posts/' . $newPost->id, true);
-            $input["photo"] = 'http://pfe/uploads/posts/'.$newPost->id.'/600x400/'.$pictureName;
-            $input["thumb"] = 'http://pfe/uploads/posts/'.$newPost->id.'/100x100_crop/'.$pictureName;
-        }
-        $newPost->update(array(
-                'title' => Input::get('title'),
-                'post' => Input::get('post'),
-                'image' => $input["photo"],
-                'thumb' => $input["thumb"]
-
-            ));
-
-        $newPost = $this->post->orderBy('created_at', 'desc')->first();
-
-        for($i=0; $i <= count($cat)-1; $i++){
-            $newPost->categories()->attach($newPost->id, array('categorie_id'=> $cat[$i]));
-        }
+        $this->post->update( $id, Input::all() );
 
         return Redirect::route('posts.show', $id);
 	}
@@ -160,7 +122,7 @@ class PostsController extends BaseController {
 	public function destroy($id)
 	{
 		//
-        $this->post->find($id)->delete();
+        $this->post->destroy( $id );
 
         return Redirect::route('posts.index');
 	}

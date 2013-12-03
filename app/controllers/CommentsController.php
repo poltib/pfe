@@ -1,40 +1,21 @@
 <?php
+use RaceInterface; 
 
 class CommentsController extends BaseController {
 
 	/**
-    * Comment Repository
+    * RaceInterface Repository
     */
     protected $comment;
 
     /**
-    * Inject the Comment Repository
+    * Inject the RaceInterface Repository
     */
-    public function __construct(Comment $comment)
+    public function __construct(RaceInterface $comment)
     {
     $this->comment = $comment;
     }
 
-
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-        return View::make('comments.index');
-	}
-
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-        return View::make('comments.create');
-	}
 
 	/**
 	 * Store a newly created resource in storage.
@@ -44,13 +25,12 @@ class CommentsController extends BaseController {
 	public function store()
 	{
 		//
-		$input = Input::all();
         //$validation = Comment::validate($input, Comment::$rules, Comment::$messages);
         
         // if ($validation->passes())
         // {
 
-            $this->comment->create($input);
+            $this->comment->storeComment( Input::all() );
 
             return Redirect::route('races.show', Input::get('race_id'))
             ->with('flash_notice', 'The new comment has been created');
@@ -60,39 +40,7 @@ class CommentsController extends BaseController {
         //       ->withErrors($validation->errors());
 	}
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-        return View::make('comments.show');
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-        return View::make('comments.edit');
-	}
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
+	
 	/**
 	 * Remove the specified resource from storage.
 	 *
@@ -102,7 +50,7 @@ class CommentsController extends BaseController {
 	public function destroy($id)
 	{
 		//
-        $this->comment->find($id)->delete();
+        $this->comment->destroyComment($id);
 
         return Redirect::route('races.show', Input::get('race_id'));
 	}

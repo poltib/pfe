@@ -1,5 +1,12 @@
 <?php
 
+App::bind('UserRunInterface', 'UserRepository');
+App::bind('RaceInterface', 'RaceRepository');
+App::bind('TrainingInterface', 'TrainingRepository');
+App::bind('MessageInterface', 'MessageRepository');
+App::bind('PostInterface', 'PostRepository');
+App::bind('CategorieInterface', 'CategorieRepository');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -11,9 +18,20 @@
 |
 */
 
+Event::listen('illuminate.query', function($sql)
+{
+    var_dump($sql);
+    echo ('<br><br><br>');
+});
+
 Route::get('/', array('as'=>'home', function()
 {
 	return View::make('home.index')->with('title', 'home');
+}));
+
+Route::get('/404', array('as'=>'404', function()
+{
+    return View::make('404')->with('title', '404 not found');
 }));
 
 Route::post('/', array('as'=>'searchRace', function()
@@ -54,7 +72,7 @@ Route::get('logout', array('as' => 'logout', 'uses' => 'UserController@logout'))
 
 Route::get('login', array('as' => 'login', 'uses' => 'UserController@login'))->before('guest');
 
-Route::post('login', array('as' => 'connexion', 'uses' => 'UserController@connexion'))->before('guest');
+Route::post('login', array('as' => 'connection', 'uses' => 'UserController@connection'))->before('guest');
 
 Route::post('raceUsers', array('as' => 'particip', 'uses' => 'UserController@raceParticip'));
 

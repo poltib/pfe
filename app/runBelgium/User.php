@@ -7,8 +7,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	protected $guarded = array();  // Important
 
 	public static $rules = array(
-		'username' => 'required|unique:users',
-		'email' => 'required|email|unique:users',
+		'username' => 'required',
+		'email' => 'required|email',
 		'password' => 'required|min:6'
 	);
 
@@ -49,9 +49,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         return $this->hasMany('Comment');
     }   
 
-    public function raceUsers()
+    public function raceParticip()
     {
-        return $this->hasMany('raceUser');
+        return $this->belongsToMany('Race');
     } 
 	/**
 	 * The database table used by the model.

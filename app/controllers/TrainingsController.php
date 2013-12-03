@@ -1,15 +1,16 @@
 <?php
+use TrainingInterface; 
 
 class TrainingsController extends BaseController {
 	/**
-    * Training Repository
+    * TrainingInterface Repository
     */
     protected $training;
 
     /**
-    * Inject the Training Repository
+    * Inject the TrainingInterface Repository
     */
-    public function __construct(Training $training)
+    public function __construct(TrainingInterface $training)
     {
     $this->training = $training;
     }
@@ -21,7 +22,7 @@ class TrainingsController extends BaseController {
 	 */
 	public function index()
 	{
-        $trainings = $this->training->all();
+        $trainings = $this->training->findAll();
 
         return View::make('trainings.index', compact('trainings'))->with('title', 'Liste des entrainements');
 	}
@@ -43,34 +44,15 @@ class TrainingsController extends BaseController {
 	 */
 	public function store()
 	{
-		//
-		$input = Input::all();
-        $validation = Training::validate($input, Training::$rules, Training::$messages);
-        
-        if ($validation->passes())
+		//        
+        $training = $this->training->store( Input::all() );
+        if ($training['validation'])
         {
-
-            $training = Input::file('training'); // your file upload input field in the form should be named 'file'
-
-            $destinationPath = 'uploads/trainings';
-            $extension =$training->getClientOriginalExtension(); //if you need extension of the file
-            $filename = str_random(12).'.'.$extension;
-            $uploadSuccess = Input::file('training')->move($destinationPath, $filename);
-
-            $this->training->create(array(
-            	'name'=>Input::get('name'),
-            	'description'=>Input::get('description'),
-            	'user_id'=>Input::get('user_id'),
-            	'ext'=>$extension,
-            	'training'=>$destinationPath."/".$filename
-            	));
-
             return Redirect::route('trainings.index')
             ->with('flash_notice', 'The new training has been created');
         }
         return Redirect::route('trainings.create')
-              ->withInput()
-              ->withErrors($validation->errors());
+              ->withInput();
 	}
 
 	/**
@@ -81,28 +63,9 @@ class TrainingsController extends BaseController {
 	 */
 	public function show($id)
 	{
-        $training = $this->training->findOrFail($id);
-
-
-        if($training->ext === "tcx"){
-	        $xml = new SimpleXMLElement($training->training, Null, True);
-	        $training->distance = $xml->Activities->Activity->Lap->DistanceMeters;
-
-			$trainingPoints= [];
-			foreach($xml->Activities->Activity->Lap->Track->Trackpoint as $child) {  
-				array_push($trainingPoints, [$child->Position->LatitudeDegrees, $child->Position->LongitudeDegrees]);
-			}
-		}
-
-		if($training->ext === "gpx"){
-	        $xml = new SimpleXMLElement($training->training, Null, True);
-
-			$trainingPoints= [];
-			foreach($xml->trk->trkseg->trkpt as $child) {  
-				array_push($trainingPoints, [$child['lat'], $child['lon']]);
-			}
-		}
-
+        $trainingAndPoints = $this->training->findById($id);
+        $training = $trainingAndPoints['training'];
+        $trainingPoints = $trainingAndPoints['trainingPoints'];
         return View::make('trainings.show', compact('training','trainingPoints'))->with('title', $training->name);
 	}
 
@@ -137,6 +100,9 @@ class TrainingsController extends BaseController {
 	public function destroy($id)
 	{
 		//
+        $this->training->destroy($id);
+        return Redirect::route('trainings.index')
+            ->with('flash_notice', 'The training has been deleted');
 	}
 
 }

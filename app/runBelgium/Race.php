@@ -15,18 +15,18 @@ class Race extends Eloquent {
         return $this->hasMany('Comment');
     } 
 
-    public function raceUsers()
+    public function users()
     {
-        return $this->hasMany('raceUser');
+        return $this->belongsToMany('User');
     } 
 
     public function raceImages()
     {
-        return $this->hasMany('raceImage');
+        return $this->hasMany('RaceImage');
     } 
 
     public function raceSponsors()
     {
-        return $this->hasMany('raceSponsor');
+        return $this->hasMany('RaceSponsor');
     } 
 }

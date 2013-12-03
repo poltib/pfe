@@ -113,7 +113,6 @@ for(var i=0; i < sponsorsAdress.length; ++i){
      sponsorsPosition[i] = [sponsorsAdress[i].firstChild.textContent, 'sponsor'+i];
 }
 
-console.log(sponsorsPosition);
 
 var mapCenter = new google.maps.LatLng(lats[150].firstChild.textContent, lons[150].firstChild.textContent);
 

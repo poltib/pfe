@@ -5,7 +5,7 @@ class Training extends Eloquent {
 
 	public static $rules = array(
         'name' => 'required',
-        'training' => 'required|mimes:gpx,tcx',
+        'training' => 'required',
         'description' => 'required'
     );
 

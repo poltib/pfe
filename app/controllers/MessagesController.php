@@ -1,23 +1,24 @@
 <?php
+use MessageInterface;
 
 class MessagesController extends BaseController {
 
 	/**
-    * Message Repository
+    * MessageInterface Repository
     */
     protected $message;
 
     /**
-    * Inject the Message Repository
+    * Inject the MessageInterface Repository
     */
-    public function __construct(Message $message)
+    public function __construct(MessageInterface $message)
     {
     $this->message = $message;
     }
 
     public function index()
     {
-        $messages = $this->message->orderBy('created_at', 'desc')->paginate(6);
+        $messages = $this->message->findAll()->paginate(7);
 
         return View::make('messages.index', compact('messages'))->with('title', 'Liste des messages');
 	}
@@ -52,20 +53,11 @@ class MessagesController extends BaseController {
 	public function store()
 	{
 		//
-		$input = Input::all();
         //$validation = Comment::validate($input, Comment::$rules, Comment::$messages);
         
         // if ($validation->passes())
         // {
-
-            $this->message->create(array(
-            		'objet' => Input::get('objet'),
-                    'message' => Input::get('message'),
-                    'from' => Input::get('from')
-            	));
-
-            $newMessage = $this->message->orderBy('created_at', 'desc')->first();
-            $newMessage->to()->attach(Input::get('user_id'));
+        $this->message->store( Input::all() );
 
             return Redirect::route('messages.index')
             ->with('flash_notice', 'The new message has been send');
@@ -83,7 +75,7 @@ class MessagesController extends BaseController {
 	 */
 	public function show($id)
 	{
-        $message = $this->message->findOrFail($id);
+        $message = $this->message->findById($id);
 
         return View::make('messages.show', compact('message'))->with('title', 'Profil de '.$message->objet);
 	}
