@@ -52,7 +52,7 @@ class RacesController extends BaseController {
 
         //$validation = Validator::make($input, Training::$rules);
 
-            return Redirect::route('races.index')
+            return Redirect::route('races.show', $race['id'])
             ->with('flash_notice', 'The new race has been created');
         // }
 

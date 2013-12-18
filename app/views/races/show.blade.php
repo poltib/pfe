@@ -19,6 +19,7 @@
         <div id="elevation_chart"></div>
         <aside class="sponsors">
             <h3>Sponsors</h3>
+            @if(Auth::check()&&$race->user_id === Auth::user()->id)
              {{ Form::open(array('route' => 'raceSponsors.store','files' => true, 'class' => 'particip')) }}
 
                     {{ Form::label('name', 'Nom du sponsor') . Form::text('name','',array('placeholder' => 'Nom')) }}
@@ -33,6 +34,7 @@
 
                     {{ Form::submit('Ajouter le sponsor!',array('class' => 'particip')) }}
             {{ Form::token() . Form::close() }}
+            @endif
             <ul>
                 @foreach($race->raceSponsors as $sponsor)
                     <li>

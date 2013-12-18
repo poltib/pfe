@@ -18,11 +18,11 @@ App::bind('CategorieInterface', 'CategorieRepository');
 |
 */
 
-Event::listen('illuminate.query', function($sql)
-{
-    var_dump($sql);
-    echo ('<br><br><br>');
-});
+// Event::listen('illuminate.query', function($sql)
+// {
+//     var_dump($sql);
+//     echo ('<br><br><br>');
+// });
 
 Route::get('/', array('as'=>'home', function()
 {
@@ -93,6 +93,8 @@ Route::get('/contact', array('as'=>'contact', function()
 Route::resource('trainings', 'TrainingsController');
 
 Route::resource('races', 'RacesController');
+
+Route::get('download', array('as' => 'download', 'uses' => 'RaceController@download'));
 
 Route::resource('comments', 'CommentsController');
 

@@ -13,7 +13,7 @@ class CommentsController extends BaseController {
     */
     public function __construct(RaceInterface $comment)
     {
-    $this->comment = $comment;
+        $this->comment = $comment;
     }
 
 

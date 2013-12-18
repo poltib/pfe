@@ -181,6 +181,7 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Image' 		  => 'App\Facades\ImageFacade',
+		'Xml' 		  	  => 'App\Facades\XmlFacade',
 
 	),
 

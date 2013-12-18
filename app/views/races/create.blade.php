@@ -25,6 +25,8 @@
 
     {{ Form::label('description', 'Description') . Form::textarea('description','') }}
 
+    {{ Form::label('address', 'Addresse') . Form::text('address','') }}
+
     {{ Form::hidden('user_id',Auth::user()->id) }}
 
     {{ Form::submit('poster la course') }}
