@@ -47,11 +47,11 @@ class UserRepository implements UserRunInterface {
   {
     $user = $this->findById($id);
 
-    if($data["photo"]){
-        $pictureName = $data['photo']->getClientOriginalName();
-        Image::upload($data['photo'], 'users/' . $id, true);
-        $data["photo"] = 'http://pfe/uploads/users/'.$id.'/600x400/'.$pictureName;
-        $data["thumbs"] = 'http://pfe/uploads/users/'.$id.'/100x100_crop/'.$pictureName;
+    if($data["image"]){
+        $pictureName = $data['image']->getClientOriginalName();
+        Image::upload($data['image'], 'users/' . $id, true);
+        $data["image"] = 'http://pfe/uploads/users/'.$id.'/600x400/'.$pictureName;
+        $data["thumb"] = 'http://pfe/uploads/users/'.$id.'/100x100_crop/'.$pictureName;
         $user->fill($data);
     }else{
       $user->fill(array(

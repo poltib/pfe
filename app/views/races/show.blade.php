@@ -4,11 +4,9 @@
     <section class="show">
         <ul class="secondaryNav"><!-- 
              --><li class="selected"><a href="{{ route('races.show', $race->id ) }}" >{{ $race->name }}</a></li><!--  
-            -->@if(Auth::check())<!--  
-            -->@if($race->user->id === Auth::user()->id)<!--  
+            -->@if(Auth::check() && $race->user->id === Auth::user()->id)<!--  
              --><li><a href="{{ route('races.edit', $race->id ) }}">Modifier la course</a></li><!--  
              --><li><a href="{{ route('races.destroy', $race->id ) }}">Supprimer la course</a></li>
-             @endif
              @endif
         </ul>
         <h2>{{ $race->name }} | <span>27 octobre 20013</span></h2>

@@ -13,7 +13,7 @@
 
     {{ Form::label('email', 'E-mail') . Form::text('email', Auth::user()->email) }}
 
-    {{ Form::label('photo', 'Photo de profil') . Form::file('photo') }}
+    {{ Form::label('image', 'Photo de profil') . Form::file('image') }}
 
     {{ Form::hidden('id', Auth::user()->id) }}
 

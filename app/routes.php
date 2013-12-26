@@ -26,7 +26,9 @@ App::bind('CategorieInterface', 'CategorieRepository');
 
 Route::get('/', array('as'=>'home', function()
 {
-	return View::make('home.index')->with('title', 'home');
+    $event = User::where('email','=','nick.plop@gmail.com')->first()->id;
+    return $event;
+	//return View::make('home.index')->with('title', 'home');
 }));
 
 Route::get('/404', array('as'=>'404', function()
@@ -112,3 +114,5 @@ Route::resource('messages', 'MessagesController');
 
 
 Route::resource('categories', 'CategoriesController');
+
+Route::resource('teams', 'TeamsController');

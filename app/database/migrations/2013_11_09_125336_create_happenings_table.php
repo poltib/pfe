@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreatePostsTable extends Migration {
+class CreateHappeningsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,18 @@ class CreatePostsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('posts', function(Blueprint $table) {
+		Schema::create('happenings', function(Blueprint $table) {
 			$table->increments('id');
+			$table->string('name');
+			$table->text('description');
+			$table->string('file_name');
+			$table->string('file_ext');
+			$table->integer('eventType_id')->unsigned();
+            $table->foreign('eventType_id')->references('id')->on('event_types');
 			$table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-			$table->string('title');
-			$table->string('image');
-			$table->string('thumb');
-			$table->text('post');
+			$table->string('link');
+			$table->string('address');
 			$table->timestamps();
 		});
 	}
@@ -32,7 +36,7 @@ class CreatePostsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('posts');
+		Schema::drop('events');
 	}
 
 }

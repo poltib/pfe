@@ -12,13 +12,22 @@ class DatabaseSeeder extends Seeder {
 		Eloquent::unguard();
 
 		$this->call('UserTableSeeder');
-		$this->call('NewsTableSeeder');
-		$this->call('TrainingsTableSeeder');
-		$this->call('RacesTableSeeder');
-		$this->call('CommentsTableSeeder');
+		$this->call('CategoriesTableSeeder');
+		$this->call('StatusTableSeeder');
+		$this->call('EventTypesTableSeeder');
 		$this->call('PostsTableSeeder');
 		$this->call('MessagesTableSeeder');
-		$this->call('CategoriesTableSeeder');
+		$this->call('TeamsTableSeeder');
+		$this->call('RolesTableSeeder');
+		$this->call('HappeningsTableSeeder');
+		$this->call('SponsorsTableSeeder');
+		$this->call('HappeningUserTableSeeder');
+		//$this->call('ForumsTableSeeder');
+		//$this->call('ImagesTableSeeder');
+		$this->call('MessageUserTableSeeder');
+		//$this->call('AnnouncesTableSeeder');
+		$this->call('CategoryPostTableSeeder');
+		$this->call('TeamUserTableSeeder');
 	}
 
 }

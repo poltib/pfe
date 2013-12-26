@@ -4,7 +4,7 @@
     <section class="show">
         <ul class="secondaryNav"><!-- 
              --><li class="selected"><a href="{{ route('posts.show', $post->id ) }}" >{{ $post->title }}</a></li><!--  
-            -->@if($post->user->id === Auth::user()->id)<!--  
+            -->@if(Auth::check() && $post->user->id === Auth::user()->id)<!--  
              --><li><a href="{{ route('posts.edit', $post->id ) }}">Modifier "{{ $post->title }}"</a></li><!--  
              --><li><!--
                     -->{{ Form::open(array('method' => 'DELETE', 'route' => array('posts.destroy', $post->id))) }}<!--

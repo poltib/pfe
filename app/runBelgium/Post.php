@@ -14,4 +14,9 @@ class Post extends Eloquent {
     {
         return $this->belongsToMany('Categorie');
     }  
+
+    public function forums()
+    {
+        return $this->morphTo('Forum', 'forumable');
+    }
 }

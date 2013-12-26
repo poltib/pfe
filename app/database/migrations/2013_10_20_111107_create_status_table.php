@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateMessagesTable extends Migration {
+class CreateStatusTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,9 @@ class CreateMessagesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('messages', function(Blueprint $table) {
+		Schema::create('status', function(Blueprint $table) {
 			$table->increments('id');
-			$table->string('objet');
-			$table->text('message');
-			$table->integer('from')->unsigned();
-			$table->foreign('from')->references('id')->on('users');
+			$table->string('status_name');
 			$table->timestamps();
 		});
 	}
@@ -30,7 +27,7 @@ class CreateMessagesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('messages');
+		Schema::drop('status');
 	}
 
 }

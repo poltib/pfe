@@ -29,14 +29,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     }
 
 
-    public function trainings()
+    public function events()
     {
-        return $this->hasMany('Training');
-    }   
-
-    public function races()
-    {
-        return $this->hasMany('Race');
+        return $this->hasMany('Event');
     }   
 
     public function posts()
@@ -44,14 +39,34 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         return $this->hasMany('Post');
     }   
 
-    public function comments()
+    public function teams()
     {
-        return $this->hasMany('Comment');
+        return $this->hasMany('Team');
     }   
 
-    public function raceParticip()
+    public function announces() 
     {
-        return $this->belongsToMany('Race');
+        return $this->morphMany( 'Announce', 'announcable' );
+    }
+
+    public function forums()
+    {
+        return $this->hasMany('Forum');
+    } 
+
+    public function postedAnnounces()
+    {
+        return $this->hasMany('Announce');
+    } 
+
+    public function teamPart()
+    {
+        return $this->belongsToMany('Team');
+    }   
+
+    public function eventParticip()
+    {
+        return $this->belongsToMany('Event');
     } 
 	/**
 	 * The database table used by the model.
