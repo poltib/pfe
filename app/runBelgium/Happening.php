@@ -14,9 +14,9 @@ class Happening extends Eloquent {
         'mimes' => '<span class="errors">L\'extention du fichier n\'est pas valide</span>'
     );
 
-    public function event()
+    public function getDates()
     {
-        return $this->belongsTo('Event');
+        return array_merge(parent::getDates(), array('date'));
     }
 
     public function user()
@@ -26,12 +26,12 @@ class Happening extends Eloquent {
 
     public function forums()
     {
-        return $this->morphTo('Forum', 'forumable');
+        return $this->morphMany('Forum', 'forumable');
     } 
 
-    public function images()
+    public function photos()
     {
-        return $this->morphTo('Image', 'imageable');
+        return $this->morphMany('Photo', 'imageable');
     } 
 
     public function announces()

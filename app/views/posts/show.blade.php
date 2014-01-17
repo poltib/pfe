@@ -5,9 +5,9 @@
         <ul class="secondaryNav"><!-- 
              --><li class="selected"><a href="{{ route('posts.show', $post->id ) }}" >{{ $post->title }}</a></li><!--  
             -->@if(Auth::check() && $post->user->id === Auth::user()->id)<!--  
-             --><li><a href="{{ route('posts.edit', $post->id ) }}">Modifier "{{ $post->title }}"</a></li><!--  
+             --><li><a href="{{ route('posts.edit', $post->slug ) }}">Modifier "{{ $post->title }}"</a></li><!--  
              --><li><!--
-                    -->{{ Form::open(array('method' => 'DELETE', 'route' => array('posts.destroy', $post->id))) }}<!--
+                    -->{{ Form::open(array('method' => 'DELETE', 'route' => array('posts.destroy', $post->slug))) }}<!--
                         -->{{ Form::submit('Supprimer') }}<!--
                             
                     -->{{ Form::close() }}<!--
@@ -29,14 +29,14 @@
             <h3>Autres articles de l'auteur</h3>
             <ul>
                 @foreach($post->user->posts as $userpost)
-                <li><a href="{{ route('posts.show', $userpost->id) }}">{{ $userpost->title }}</a></li>
+                <li><a href="{{ route('posts.show', $userpost->slug) }}">{{ $userpost->title }}</a></li>
                 @endforeach
             </ul>
         </aside>
         <div class="information">
             <div class="auth">
-                <h3>L'auteur : {{ link_to_route('users.show', $post->user->username , $post->user_id ) }}</h3>
-                <figure><img src="{{ $post->user->thumbs }}" alt=""></figure>
+                <h3>L'auteur : {{ link_to_route('users.show', $post->user->username , $post->user->slug ) }}</h3>
+                <figure><img src="{{ $post->user->thumb }}" alt=""></figure>
                 <p>{{ $post->user->description }}</p>
             </div>
         </div>

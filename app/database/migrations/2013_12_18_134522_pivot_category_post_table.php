@@ -18,6 +18,7 @@ class PivotCategoryPostTable extends Migration {
 			$table->integer('post_id')->unsigned()->index();
 			$table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
 			$table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+			$table->timestamps();
 		});
 	}
 

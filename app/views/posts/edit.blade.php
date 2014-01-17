@@ -3,10 +3,10 @@
 @section('container')
 <section class="find login">
     <ul class="secondaryNav"><!-- 
-         --><li><a href="{{ route('posts.show', $post->id ) }}" >{{ $post->title }}</a></li><!--  
+         --><li><a href="{{ route('posts.show', $post->slug ) }}" >{{ $post->title }}</a></li><!--  
         -->@if($post->user->id === Auth::user()->id)<!--  
          --><li class="selected"><a href="{{ route('posts.edit', $post->id ) }}">Modifier "{{ $post->title }}"</a></li><!--  
-         --><li><a href="{{ route('posts.destroy', $post->id ) }}">Supprimer "{{ $post->title }}"</a></li>
+         --><li><a href="{{ route('posts.destroy', $post->slug ) }}">Supprimer "{{ $post->title }}"</a></li>
          @endif
     </ul>
 <h2>Poster une actualité</h2>

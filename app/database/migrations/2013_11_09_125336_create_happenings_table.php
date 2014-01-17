@@ -16,6 +16,7 @@ class CreateHappeningsTable extends Migration {
 			$table->increments('id');
 			$table->string('name');
 			$table->text('description');
+			$table->string('distance');
 			$table->string('file_name');
 			$table->string('file_ext');
 			$table->integer('eventType_id')->unsigned();
@@ -24,6 +25,8 @@ class CreateHappeningsTable extends Migration {
             $table->foreign('user_id')->references('id')->on('users');
 			$table->string('link');
 			$table->string('address');
+			$table->datetime('date');
+			$table->string('slug');
 			$table->timestamps();
 		});
 	}

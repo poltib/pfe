@@ -25,26 +25,26 @@
             return View::make('users.index', compact('users'))->with('title', 'Liste des utilisateurs');
         }
 
-        public function show($id)
+        public function show($slug)
         {
-            $user = $this->user->findById($id);
+            $user = $slug;
 
             return View::make('users.show', compact('user'))->with('title', 'Profil de '.$user->username);
         }
 
-        public function edit($id)
+        public function edit($slug)
         {
-            $user = $this->user->findById($id);
+            $user = $slug;
 
             return View::make('users.edit', compact('user'))->with('title', 'Modifier le profil');
         }
 
-        public function update($id)
+        public function update($slug)
         {
 
-            $this->user->update($id, Input::all());
+            $this->user->update($slug->id, Input::all());
 
-            return Redirect::route('users.show', $id);
+            return Redirect::route('users.show', $slug->slug);
         }
 
 
@@ -96,19 +96,18 @@
                 ->withInput();
         }
 
-        public function raceParticip()
+        public function raceParticip($slug)
         {
 
             $this->user->raceParticip( Input::all() );
-            return Redirect::route('races.show', Input::get('race_id'))
+            return Redirect::route('happenings.show', $slug)
                 ->with('flash_notice', 'The new raceUser has been created');
         }
 
-        public function raceDontParticip($id)
+        public function raceDontParticip($slug)
         {
-
-            $this->user->raceDontParticip( $id, Input::all() );
-            return Redirect::route('races.show', Input::get('race_id'));
+            $this->user->raceDontParticip( Input::all() );
+            return Redirect::route('happenings.show', $slug);
         }
         
     }

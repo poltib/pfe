@@ -13,19 +13,19 @@ class Team extends Eloquent
         return $this->belongsTo('User');
     }
 
-    public function images()
+    public function photos()
     {
-        return $this->morphTo('Image', 'imageable');
+        return $this->morphMany('Photo', 'imageable');
     }
 
     public function announces()
     {
-        return $this->morphTo('Announce', 'announceable');
+        return $this->morphMany('Announce', 'announceable');
     }
 
     public function forums()
     {
-        return $this->morphTo('Forum', 'forumable');
+        return $this->morphMany('Forum', 'forumable');
     }
 
 }

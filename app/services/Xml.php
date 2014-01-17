@@ -10,7 +10,7 @@ class Xml {
 
         if($ext === "tcx"){
           $xml = new \SimpleXMLElement($file, Null, True);
-
+        
           $distance = $xml->Activities->Activity->Lap->DistanceMeters;
 
           foreach($xml->Activities->Activity->Lap->Track->Trackpoint as $child) {  

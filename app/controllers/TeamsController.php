@@ -1,6 +1,20 @@
 <?php
+use TeamInterface; 
 
 class TeamsController extends BaseController {
+
+	/**
+    * TeamInterface Repository
+    */
+    protected $team;
+
+    /**
+    * Inject the TeamInterface Repository
+    */
+    public function __construct(TeamInterface $team)
+    {
+    $this->team = $team;
+    }
 
 	/**
 	 * Display a listing of the resource.
@@ -9,7 +23,9 @@ class TeamsController extends BaseController {
 	 */
 	public function index()
 	{
-        return View::make('teams.index');
+		$teams = $this->team->findAll();
+
+        return View::make('teams.index', compact('teams'));
 	}
 
 	/**
@@ -35,12 +51,15 @@ class TeamsController extends BaseController {
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param  int  $slug
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($slug)
 	{
-        return View::make('teams.show');
+
+		$team = $slug;
+
+        return View::make('teams.show', compact('team'));
 	}
 
 	/**

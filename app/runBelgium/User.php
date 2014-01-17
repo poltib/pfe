@@ -29,9 +29,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     }
 
 
-    public function events()
+    public function happenings()
     {
-        return $this->hasMany('Event');
+        return $this->hasMany('Happening');
     }   
 
     public function posts()
@@ -52,7 +52,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     public function forums()
     {
         return $this->hasMany('Forum');
-    } 
+    }
 
     public function postedAnnounces()
     {
@@ -64,9 +64,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         return $this->belongsToMany('Team');
     }   
 
-    public function eventParticip()
+    public function happeningParticip()
     {
-        return $this->belongsToMany('Event');
+        return $this->belongsToMany('Happening');
     } 
 	/**
 	 * The database table used by the model.

@@ -16,7 +16,7 @@ class MessageUserTableSeeder extends Seeder {
             ],
             [
                 'message_id' => Message::where('objet','=','plop!')->first()->id,
-                'user_id' => User::where('email','=','thiry.jeremy@gmail')->first()->id,
+                'user_id' => User::where('email','=','thiry.jeremy@gmail.com')->first()->id,
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
             ],

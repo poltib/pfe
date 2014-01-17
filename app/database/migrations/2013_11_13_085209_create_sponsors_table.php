@@ -23,6 +23,7 @@ class CreateSponsorsTable extends Migration {
 			$table->integer('local');
 			$table->string('image');
 			$table->string('thumb');
+			$table->string('slug');
 			$table->timestamps();
 		});
 	}

@@ -1,11 +1,12 @@
 <?php
 
 App::bind('UserRunInterface', 'UserRepository');
-App::bind('RaceInterface', 'RaceRepository');
-App::bind('TrainingInterface', 'TrainingRepository');
+App::bind('HappeningInterface', 'HappeningRepository');
+App::bind('TeamInterface', 'TeamRepository');
 App::bind('MessageInterface', 'MessageRepository');
 App::bind('PostInterface', 'PostRepository');
 App::bind('CategorieInterface', 'CategorieRepository');
+App::bind('ForumInterface', 'ForumRepository');
 
 /*
 |--------------------------------------------------------------------------
@@ -26,9 +27,7 @@ App::bind('CategorieInterface', 'CategorieRepository');
 
 Route::get('/', array('as'=>'home', function()
 {
-    $event = User::where('email','=','nick.plop@gmail.com')->first()->id;
-    return $event;
-	//return View::make('home.index')->with('title', 'home');
+	return View::make('home.index')->with('title', 'home');
 }));
 
 Route::get('/404', array('as'=>'404', function()
@@ -76,9 +75,9 @@ Route::get('login', array('as' => 'login', 'uses' => 'UserController@login'))->b
 
 Route::post('login', array('as' => 'connection', 'uses' => 'UserController@connection'))->before('guest');
 
-Route::post('raceUsers', array('as' => 'particip', 'uses' => 'UserController@raceParticip'));
+Route::post('raceUsers/{slug}', array('as' => 'particip', 'uses' => 'UserController@raceParticip'));
 
-Route::delete('raceUsersDestroy/{userId}', array('as' => 'dontParticip', 'uses' => 'UserController@raceDontParticip'));
+Route::post('raceUsersDestroy/{slug}', array('as' => 'dontParticip', 'uses' => 'UserController@raceDontParticip'));
 
 
 
@@ -94,7 +93,7 @@ Route::get('/contact', array('as'=>'contact', function()
 
 Route::resource('trainings', 'TrainingsController');
 
-Route::resource('races', 'RacesController');
+Route::resource('happenings', 'HappeningsController');
 
 Route::get('download', array('as' => 'download', 'uses' => 'RaceController@download'));
 
@@ -108,7 +107,11 @@ Route::resource('raceSponsors', 'RaceSponsorsController');
 
 Route::resource('posts', 'PostsController');
 
+Route::resource('forums', 'ForumsController');
+
 Route::get('messages/send/{id}', 'MessagesController@send');
+
+Route::get('messages/conv/{id}/{from}', array( 'as' => 'conv', 'uses' => 'MessagesController@conv' ));
 
 Route::resource('messages', 'MessagesController');
 
@@ -116,3 +119,24 @@ Route::resource('messages', 'MessagesController');
 Route::resource('categories', 'CategoriesController');
 
 Route::resource('teams', 'TeamsController');
+
+
+Route::bind('happenings',function($value,$route)
+{
+        return Happening::where('slug','=',$value)->first();
+});
+
+Route::bind('posts',function($value,$route)
+{
+        return Post::where('slug','=',$value)->first();
+});
+
+Route::bind('users',function($value,$route)
+{
+        return User::where('slug','=',$value)->first();
+});
+
+Route::bind('teams',function($value,$route)
+{
+        return Team::where('slug','=',$value)->first();
+});

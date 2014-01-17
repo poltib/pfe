@@ -18,6 +18,8 @@
         {{ Form::text('username','',array('placeholder' => 'Nom'),Input::old('username')) }}
         {{ Form::label('password','Mot de passe') }}
         {{ Form::password('password') }}
+        {{ Form::label('remember','Se souvenir de moi') }}
+        {{ Form::checkbox('remember' , 'true') }}
         {{ Form::submit('Connexion') }}
     {{ Form::close() }}
 

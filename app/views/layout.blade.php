@@ -27,10 +27,10 @@
             <nav role="navigation">
                 <h2 class="hidden">Navigation</h2>
                 <ul class="primary"><!-- 
-                    --><li><a href="{{ route('races.index') }}"><i class="icon-search"></i>Rechercher</a></li><!-- 
+                    --><li><a href="{{ route('happenings.index') }}"><i class="icon-search"></i>Rechercher</a></li><!-- 
                     --><li><a href="{{ route('posts.index') }}"><i class="icon-book"></i>News</a></li><!--
                     -->@if(Auth::check())<!--
-                        --><li>{{ link_to_route('users.show', 'Profil' , Auth::user()->id ) }}</li><!--
+                        --><li><a href="{{ route('users.show', Auth::user()->slug ) }}"><i class="icon-user" ></i>Profil</a></li><!--
                     -->@else<!--
                         --><li>{{ link_to_route('login','Connexion') }}</li><!--
                     -->@endif<!--  
@@ -65,7 +65,6 @@
       src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA9m3Ix3AmZHlnvQCQAIUo4yyFjD7c9eLw&sensor=true">
     </script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-   {{ HTML::script('js/trainings.js'); }}
     {{ HTML::script('js/tinymce/tinymce.min.js'); }}
     <script type="text/javascript">
     tinymce.init({
@@ -78,5 +77,6 @@
     });
     </script>
     {{ HTML::script('js/script.js'); }}
+    {{ HTML::script('js/trainings.js'); }}
 </body>
 </html>

@@ -1,4 +1,5 @@
 <?php
+use Carbon\Carbon as Carbon; 
 class HappeningsTableSeeder extends Seeder {
 
 	public function run()
@@ -9,6 +10,7 @@ class HappeningsTableSeeder extends Seeder {
 	  DB::table('happenings')->delete();
         Happening::create(array(
             'name' => 'race1',
+            'date' => Carbon::now(),
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, ipsam, libero magni quam rem numquam illum explicabo',
             'file_name' => 'http://pfe/uploads/events/default.tcx',
             'file_ext' => 'tcx',
@@ -19,6 +21,7 @@ class HappeningsTableSeeder extends Seeder {
             ));
         Happening::create(array(
             'name' => 'race2',
+            'date' => Carbon::now(),
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, ipsam, libero magni quam rem numquam illum explicabo',
             'file_name' => 'http://pfe/uploads/events/default.tcx',
             'file_ext' => 'tcx',
@@ -29,6 +32,7 @@ class HappeningsTableSeeder extends Seeder {
             ));
         Happening::create(array(
             'name' => 'race3',
+            'date' => Carbon::now(),
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, ipsam, libero magni quam rem numquam illum explicabo',
             'file_name' => 'http://pfe/uploads/events/default.tcx',
             'file_ext' => 'tcx',
@@ -39,6 +43,7 @@ class HappeningsTableSeeder extends Seeder {
             ));
         Happening::create(array(
             'name' => 'training1',
+            'date' => Carbon::now(),
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, ipsam, libero magni quam rem numquam illum explicabo',
             'file_name' => 'http://pfe/uploads/events/default.tcx',
             'file_ext' => 'tcx',
@@ -49,6 +54,7 @@ class HappeningsTableSeeder extends Seeder {
             ));
         Happening::create(array(
             'name' => 'training2',
+            'date' => Carbon::now(),
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, ipsam, libero magni quam rem numquam illum explicabo',
             'file_name' => 'http://pfe/uploads/events/default.tcx',
             'file_ext' => 'tcx',
@@ -59,6 +65,7 @@ class HappeningsTableSeeder extends Seeder {
             ));
         Happening::create(array(
             'name' => 'training3',
+            'date' => Carbon::now(),
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, ipsam, libero magni quam rem numquam illum explicabo',
             'file_name' => 'http://pfe/uploads/events/default.tcx',
             'file_ext' => 'tcx',

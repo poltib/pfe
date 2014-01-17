@@ -18,6 +18,10 @@ class CreateTeamsTable extends Migration {
 			$table->text('description');
 			$table->string('image');
 			$table->string('thumb');
+			$table->string('slug');
+			$table->string('trainings');
+			$table->string('country');
+			$table->string('city');
 			$table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
 			$table->timestamps();

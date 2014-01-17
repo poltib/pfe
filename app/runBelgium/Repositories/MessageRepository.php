@@ -9,6 +9,19 @@ class MessageRepository implements MessageInterface {
     if(!$message) throw new NotFoundException('Message Not Found');
     return $message;
   }
+
+  public function findConv($id, $from)
+  {
+    $messages = Message::with('to', 'user')
+                        ->where('message_user.user_id', '=', $id)
+                        ->where('from', '=', $from)
+                        ->get();
+
+    dd($messages);
+
+    if(!$message) throw new NotFoundException('Message Not Found');
+    return $message;
+  }
  
   public function findAll()
   {
@@ -47,24 +60,7 @@ class MessageRepository implements MessageInterface {
  
   public function update($id, $data)
   {
-    $user = $this->findById($id);
-
-    if($data["photo"]){
-        $pictureName = $data['photo']->getClientOriginalName();
-        Image::upload($data['photo'], 'users/' . $id, true);
-        $data["photo"] = 'http://pfe/uploads/users/'.$id.'/600x400/'.$pictureName;
-        $data["thumbs"] = 'http://pfe/uploads/users/'.$id.'/100x100_crop/'.$pictureName;
-        $user->fill($data);
-    }else{
-      $user->fill(array(
-          'username' => $data['username'],
-          'first_name' => $data['first_name'],
-          'email' => $data['email']
-        ));
-    }
-    $this->validate($user->toArray());
-    $user->save();
-    return $user;
+   
   }
 
   public function send($data)
@@ -79,8 +75,8 @@ class MessageRepository implements MessageInterface {
 
   public function destroy($id)
   {
-    $user = $this->findById($id);
-    $user->delete();
+    $message = $this->findById($id);
+    $message->delete();
     return true;
   }
  

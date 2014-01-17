@@ -7,9 +7,9 @@
             -->@if(Auth::check())<!--  
             -->@if($user->id === Auth::user()->id)<!--  
              --><li><a href="{{ route('messages.index') }}">Messages</a></li><!-- 
-             --><li><a href="{{ route('races.create') }}">Ajouter une course</a></li><!--   
+             --><li><a href="{{ route('happenings.create') }}">Ajouter une course</a></li><!--   
              --><li>{{ link_to_route('posts.create', 'Ajouter actu' ) }}</li><!--  
-             --><li>{{ link_to_route('trainings.create', 'Ajouter un entrainement') }}</li><!--  
+             --><li>{{ link_to_route('happenings.create', 'Ajouter un entrainement') }}</li><!--  
              --><li>{{ link_to_route('logout', 'Déconnexion ('.Auth::user()->username.')') }}</li>
              @endif
              @endif
@@ -18,10 +18,10 @@
         <div class="user">
             <h2>Profil de {{ $user->first_name }} {{ $user->username }}</h2>
             <div class="thumbLink">
-                <figure><img src="{{ $user->thumbs }}" alt=""></figure>
+                <figure><img src="{{ $user->thumb }}" alt=""></figure>
                 @if(Auth::check())
                     @if(Auth::user()->id===$user->id)
-                    <a href="{{ route('users.edit', Auth::user()->id ) }}" class="button">Modifier</a>
+                    <a href="{{ route('users.edit', Auth::user()->slug ) }}" class="button">Modifier</a>
                     @else
                         {{ link_to_action('MessagesController@send', "Envoyer un message", $user->id) }}
                     @endif
@@ -51,7 +51,7 @@
         <h3>Articles postés</h3>
         <ul>
         @foreach($user->posts as $post)
-            <li>{{ link_to_route('posts.show', $post->title, $post->id) }}</li>
+            <li>{{ link_to_route('posts.show', $post->title, $post->slug) }}</li>
         @endforeach
         </ul>
     </section>

@@ -4,7 +4,7 @@ class CategorieRepository implements CategorieInterface {
  
   public function findById($id)
   {
-    $post = Categorie::findOrFail($id);
+    $post = Category::findOrFail($id);
 
     if(!$post) throw new NotFoundException('Categorie Not Found');
     return $post;
@@ -12,22 +12,22 @@ class CategorieRepository implements CategorieInterface {
  
   public function findAll()
   {
-    return Categorie::all();
+    return Category::all();
   }
  
   public function paginate($limit = null)
   {
-    return Categorie::paginate($limit);
+    return Category::paginate($limit);
   }
 
 
  
   public function store($data)
   {
-    $this->validation = Validator::make($data, Categorie::$rules);
+    $this->validation = Validator::make($data, Category::$rules);
     if($this->validation->passes())
     {
-      Categorie::create(
+      Category::create(
         array(
             'username'=>$data['username'],
             'email'=>$data['email'],
@@ -74,14 +74,14 @@ class CategorieRepository implements CategorieInterface {
  
   public function validate($data)
   {
-    $validator = Validator::make($data, Categorie::$rules);
+    $validator = Validator::make($data, Category::$rules);
     if($validator->fails()) throw new ValidationException($validator);
     return true;
   }
  
   public function instance($data = array())
   {
-    return new Categorie($data);
+    return new Category($data);
   }
  
 }

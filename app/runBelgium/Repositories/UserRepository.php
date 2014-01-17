@@ -48,10 +48,9 @@ class UserRepository implements UserRunInterface {
     $user = $this->findById($id);
 
     if($data["image"]){
-        $pictureName = $data['image']->getClientOriginalName();
-        Image::upload($data['image'], 'users/' . $id, true);
-        $data["image"] = 'http://pfe/uploads/users/'.$id.'/600x400/'.$pictureName;
-        $data["thumb"] = 'http://pfe/uploads/users/'.$id.'/100x100_crop/'.$pictureName;
+        $path = Image::upload($data['image'], 'users/' . $id, true);
+        $data["image"] = 'http://pfe/'.$path['image'];
+        $data["thumb"] = 'http://pfe/'.$path['thumb'];
         $user->fill($data);
     }else{
       $user->fill(array(
@@ -60,7 +59,7 @@ class UserRepository implements UserRunInterface {
           'email' => $data['email']
         ));
     }
-    $this->validate($user->toArray());
+    //$this->validate($user->toArray());
     $user->save();
     return $user;
   }
@@ -71,19 +70,23 @@ class UserRepository implements UserRunInterface {
         'username' => $data['username'],
         'password' => $data['password']
     );
-    return Auth::attempt($user);
+    if(isset($data['remember'])){
+      return Auth::attempt($user, $data['remember']);
+    }else{
+      return Auth::attempt($user);
+    }
   }
 
   public function raceParticip($data)
   {
-    $user = $this->user->find(Input::get('user_id'));
-    $user->races()->attach(Input::get('race_id'));
+    $user = $this->findById($data['user_id']);
+    $user->happeningParticip()->attach($data['happening_id']);
   }
 
   public function raceDontParticip($data)
   {
-    $user = $this->user->find(Input::get('user_id'));
-    $user->races()->detach(Input::get('race_id'));
+    $user = $this->findById($data['user_id']);
+    $user->happeningParticip()->detach($data['happening_id']);
   }
  
   public function destroy($id)

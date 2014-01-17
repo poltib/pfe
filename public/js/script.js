@@ -118,7 +118,7 @@ var mapCenter = new google.maps.LatLng(lats[150].firstChild.textContent, lons[15
 
 var mapOptions = { 
       center:mapCenter, 
-          zoom: mapZoom,
+      zoom: mapZoom,
       maxZoom:mapZoomMax,
       scrollwheel:false,
       minZoom:mapZoomMin,
@@ -132,7 +132,7 @@ var mapOptions = {
 
   
 //The variable to hold the map was created above.The line below creates the map, assigning it to this variable. The line below also loads the map into the div with the id 'festival-map' (see code within the 'body' tags below), and applies the 'mapOptions' (above) to configure this map. 
-map = new google.maps.Map(document.getElementById("race-map"), mapOptions); 
+map = new google.maps.Map(document.getElementById("happening-map"), mapOptions); 
 
 gGeocoder = new google.maps.Geocoder;
 

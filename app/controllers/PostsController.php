@@ -39,7 +39,7 @@ class PostsController extends BaseController {
 	 */
 	public function create()
 	{
-        $categories = Categorie::all();
+        $categories = Category::all();
 
         return View::make('posts.create', compact('categories'));
 	}
@@ -75,10 +75,10 @@ class PostsController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($slug)
 	{
 
-		$post = $this->post->findById($id);
+		$post = $slug;
         
         return View::make('posts.show', compact('post'))->with('title', $post->name);
 	}
@@ -89,9 +89,9 @@ class PostsController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($slug)
 	{
-        $post = $this->post->findById($id);
+        $post = $slug;
 
         $categories = $this->categorie->findAll();
 
@@ -104,11 +104,11 @@ class PostsController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($slug)
 	{
 		//
 
-        $this->post->update( $id, Input::all() );
+        $this->post->update( $slug->id, Input::all() );
 
         return Redirect::route('posts.show', $id);
 	}
@@ -119,10 +119,10 @@ class PostsController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($slug)
 	{
 		//
-        $this->post->destroy( $id );
+        $this->post->destroy( $slug->id );
 
         return Redirect::route('posts.index');
 	}

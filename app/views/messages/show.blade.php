@@ -3,17 +3,17 @@
 @section('container')
     <section class="show">
         <ul class="secondaryNav"><!-- 
-             --><li><a href="{{ route('users.show', Auth::user()->id ) }}" >Profil</a></li><!--  
+             --><li><a href="{{ route('users.show', Auth::user()->slug ) }}" >Profil</a></li><!--  
              --><li class="selected"><a href="{{ route('messages.index') }}">Messages</a></li><!-- 
-             --><li><a href="{{ route('races.create') }}">Ajouter une course</a></li><!--   
+             --><li><a href="{{ route('happenings.create') }}">Ajouter une course</a></li><!--   
              --><li>{{ link_to_route('posts.create', 'Ajouter actu' ) }}</li><!--  
              --><li>{{ link_to_route('trainings.create', 'Ajouter un entrainement') }}</li><!--  
              --><li>{{ link_to_route('logout', 'Déconnexion ('.Auth::user()->username.')') }}</li>
              
         </ul>
         <h2>Messages | {{ $message->objet }}</h2>
-        <figure><img src="{{ $message->user->thumbs }}" alt=""></figure>
-        <span>de <a href="{{ route('users.show', $message->user->id ) }}">{{ $message->user->username }}</a> le <time>{{ $message->created_at->toFormattedDateString() }}</time></span>
+        <span>de <a href="{{ route('users.show', $message->user->slug ) }}">{{ $message->user->username }}</a> le <time>{{ $message->created_at->toFormattedDateString() }}</time></span>
+        <figure><img src="{{ $message->user->thumb }}" alt=""></figure>
         <p>{{ $message->message }}</p>
 
         <h3>Répondre</h3>

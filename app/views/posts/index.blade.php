@@ -12,7 +12,7 @@
         <div class="big">
             @foreach($posts as $post)
                 <article>
-                <a href="{{ route('posts.show', $post->id) }}"><h3>{{ $post->title }}<span><time>{{ $post->created_at->toFormattedDateString() }}</time></span></h3></a>
+                <a href="{{ route('posts.show', $post->slug) }}"><h3>{{ $post->title }}<span><time>{{ $post->created_at->toFormattedDateString() }}</time></span></h3></a>
                 <span>Catégories : 
                 @foreach($post->categories as $categorie)
                     {{ $categorie->name }}
@@ -33,7 +33,7 @@
             <h4>{{ $categorie->name }}</h4>
             <ul>
                 @foreach($categorie->posts as $categoriePost)
-                <li>{{ link_to_route('posts.show', $categoriePost->title, $categoriePost->id) }}</li>
+                <li>{{ link_to_route('posts.show', $categoriePost->title, $categoriePost->slug) }}</li>
                 @endforeach
             </ul>
             @endforeach

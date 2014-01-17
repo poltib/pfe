@@ -21,13 +21,14 @@ class DatabaseSeeder extends Seeder {
 		$this->call('RolesTableSeeder');
 		$this->call('HappeningsTableSeeder');
 		$this->call('SponsorsTableSeeder');
-		$this->call('HappeningUserTableSeeder');
 		//$this->call('ForumsTableSeeder');
 		//$this->call('ImagesTableSeeder');
 		$this->call('MessageUserTableSeeder');
 		//$this->call('AnnouncesTableSeeder');
 		$this->call('CategoryPostTableSeeder');
 		$this->call('TeamUserTableSeeder');
+		$this->call('HappeningUserTableSeeder');
+		$this->call('SlugSeeder');
 	}
 
 }

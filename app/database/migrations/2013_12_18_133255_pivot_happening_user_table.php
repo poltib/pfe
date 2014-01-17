@@ -20,6 +20,7 @@ class PivotHappeningUserTable extends Migration {
 			$table->foreign('happening_id')->references('id')->on('happenings')->onDelete('cascade');
 			$table->foreign('status_id')->references('id')->on('status')->onDelete('cascade');
 			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+			$table->timestamps();
 		});
 	}
 

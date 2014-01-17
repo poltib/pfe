@@ -302,7 +302,7 @@
             </ul>
         </div>
     </div>
-    <a href="{{ route('races.index') }}" class="button">Voir toutes les courses</a>
+    <a href="{{ route('happenings.index') }}" class="button">Voir toutes les courses</a>
     </section>
     <section class="news">
         <h2>Actualité</h2>

@@ -142,7 +142,10 @@ class Image {
                 {
                     if ($createDimensions) $this->createDimensions($path);
          
-                    return $path;
+                    return array(
+                            'thumb' => Config::get('image.upload_dir'). '/' . $dir . '/100x100_crop/' . $filename,
+                            'image' => Config::get('image.upload_dir'). '/' . $dir . '/600x400/' . $filename
+                        );
                 }
             }
         }

@@ -80,6 +80,21 @@ class MessagesController extends BaseController {
         return View::make('messages.show', compact('message'))->with('title', 'Profil de '.$message->objet);
 	}
 
+
+
+    /**
+     * Display the specified conversation.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function conv($id, $from)
+    {
+        $message = $this->message->findConv($id, $from);
+
+        return View::make('messages.conv', compact('message'))->with('title', 'Profil de '.$message->objet);
+    }
+
 	/**
 	 * Show the form for editing the specified resource.
 	 *

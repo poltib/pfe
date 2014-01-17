@@ -39,7 +39,7 @@ function loadFestivalMap() {
 
 
   map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-  poly = new google.maps.Polyline({ map: map, strokeColor: 'rgba(244,129,64,0.8)'});
+  poly = new google.maps.Polyline({ draggable: true, editable:true, geodesic:false, map: map, strokeColor: 'rgba(244,129,64,0.8)'});
   addElement();
   google.maps.event.addListener(map, "click", function(evt) {
     if (path.getLength() === 0) {

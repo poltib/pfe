@@ -12,7 +12,7 @@ class Post extends Eloquent {
 
     public function categories()
     {
-        return $this->belongsToMany('Categorie');
+        return $this->belongsToMany('Category');
     }  
 
     public function forums()

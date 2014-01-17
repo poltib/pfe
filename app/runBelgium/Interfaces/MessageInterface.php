@@ -1,6 +1,7 @@
 <?php
 
 interface MessageInterface {
+  public function findConv($id, $from);
   public function findById($id);
   public function findAll();
   public function paginate($limit = null);
