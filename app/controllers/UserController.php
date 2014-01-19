@@ -29,7 +29,24 @@
         {
             $user = $slug;
 
-            return View::make('users.show', compact('user'))->with('title', 'Profil de '.$user->username);
+            $config = array(
+                'lang' => '',
+                'start_day' => 'monday',
+                'month_type' => 'long',
+                'show_next_prev' => true
+            );
+
+            Calendar::initialize($config);
+
+            if( Request::get( 'month' ) && Request::get( 'year' )  ){
+                $month = Request::get( 'month' );
+                $year = Request::get( 'year' );
+            }else{
+                $month = MONTH;
+                $year = YEAR;
+            }
+
+            return View::make('users.show', compact('user', 'month', 'year'))->with('title', 'Profil de '.$user->username);
         }
 
         public function edit($slug)

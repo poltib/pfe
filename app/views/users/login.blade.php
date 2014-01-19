@@ -21,6 +21,8 @@
         {{ Form::label('remember','Se souvenir de moi') }}
         {{ Form::checkbox('remember' , 'true') }}
         {{ Form::submit('Connexion') }}
+
+        {{ link_to_route('password_resets.create', 'Oublié votre mot-de-passe?') }}
     {{ Form::close() }}
 
     </div>

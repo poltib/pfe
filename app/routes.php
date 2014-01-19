@@ -79,6 +79,10 @@ Route::post('raceUsers/{slug}', array('as' => 'particip', 'uses' => 'UserControl
 
 Route::post('raceUsersDestroy/{slug}', array('as' => 'dontParticip', 'uses' => 'UserController@raceDontParticip'));
 
+// Password Resets
+Route::get('password_resets/reset/{token}', 'PasswordResetsController@reset');
+Route::post('password_resets/reset/{token}', 'PasswordResetsController@postReset');
+Route::resource('password_resets', 'PasswordResetsController', ['only' => ['create', 'store']]);
 
 
 /*--------------------------------Others--------------------------------*/

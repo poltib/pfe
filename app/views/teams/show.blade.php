@@ -11,17 +11,17 @@
         </ul>
         <h2>{{ $team->name }}</h2>
         <p>{{ $team->description }}</p>
-        <p>{{ $team->user->username }}</p>
+        <p>Créer par <a href="{{ route('users.show', $team->user->slug ) }}">{{ $team->user->username }}</a></p>
         <aside class="sponsors">
             <h3>Sponsors</h3>
             
         </aside>
         <div class="information">
 
-            <h3>Utilisateurs participant</h3>
+            <h3>Membres</h3>
             <ul class="participants">
                 @foreach($team->users as $user)
-                    <li><a href="{{ route('users.show', $user->id ) }}"><figure><img src="{{ $user->thumb }}" alt="{{ $user->username }}"></figure></a></li>
+                    <li><a href="{{ route('users.show', $user->slug ) }}"><figure><img src="{{ $user->thumb }}" alt="{{ $user->username }}"></figure></a></li>
                 @endforeach
             </ul>
 

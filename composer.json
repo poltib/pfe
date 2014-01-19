@@ -6,7 +6,8 @@
 	"require": {
 		"laravel/framework": "4.0.*",
 	    "way/generators": "dev-master",
-	    "imagine/imagine": "0.6.*@dev"
+	    "imagine/imagine": "0.6.*@dev",
+	    "gloudemans/calendar": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

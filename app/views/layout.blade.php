@@ -30,13 +30,12 @@
                     --><li><a href="{{ route('happenings.index') }}"><i class="icon-search"></i>Rechercher</a></li><!-- 
                     --><li><a href="{{ route('posts.index') }}"><i class="icon-book"></i>News</a></li><!--
                     -->@if(Auth::check())<!--
-                        --><li><a href="{{ route('users.show', Auth::user()->slug ) }}"><i class="icon-user" ></i>Profil</a></li><!--
+                        --><li><a href="{{ route('users.show', Auth::user()->slug ) }}"><i class="icon-user" ></i>Profil ({{{ Auth::user()->username }}})</a></li><!--
                     -->@else<!--
-                        --><li>{{ link_to_route('login','Connexion') }}</li><!--
+                        --><li><a href="{{ route('login') }}"><i class="icon-login"></i>Connexion</a></li><!--
                     -->@endif<!--  
-                        --></li><!-- 
-                        --><li><a href="{{ route('contact') }}"><i class="icon-phone"></i>Contact</a></li><!-- 
-                --></ul>
+                        --></li><li><a href="{{ route('logout') }}"><i class="icon-logout" ></i>Déconnexion</a></li>
+              </ul>
             </nav>
         </div>
         @if(Session::has('flash_notice'))
@@ -50,11 +49,42 @@
         </section>
         <div id='layout_footer'></div>
     </div>
-    <footer id="footer">
+    <footer role="footer" id="footer">
         <div class="container">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, ipsam, libero magni quam rem numquam illum explicabo repellendus nulla iste mollitia fugit totam doloremque maxime voluptas deserunt quas veniam labore.</p>
+            <div class="footDiv">
+                <h3>Conditions</h3>
+                <ul>
+                    <li>Lorem</li>
+                    <li>Ipsum</li>
+                    <li>Ypslis</li>
+                </ul>
+            </div>
+            <div class="footDiv">
+                <h3>Information</h3>
+                <ul>
+                    <li>Condition</li>
+                    <li>Contact</li>
+                    <li>Salut</li>
+                </ul>
+            </div>
+            <div class="social">
+                <h3>Réseaux sociaux</h3>
+                <ul>
+                    <li><a href="#"><i class="icon-youtube-squared" ></i></a></li>
+                    <li><a href="#"><i class="icon-twitter-squared" ></i></a></li>
+                    <li><a href="#"><i class="icon-facebook-squared" ></i></a></li>
+                    <li><a href="#"><i class="icon-gplus-squared" ></i></a></li>
+                    <li><a href="#"><i class="icon-rss-squared" ></i></a></li>
+                </ul>
+                
+            </div>
+
+
         </div>
     </footer>
+
+
+
     <script>
         var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
         (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];

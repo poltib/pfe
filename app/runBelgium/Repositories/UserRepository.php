@@ -27,12 +27,12 @@ class UserRepository implements UserRunInterface {
     $this->validation = Validator::make($data, User::$rules);
     if($this->validation->passes())
     {
-      User::create(
-        array(
-            'username'=>$data['username'],
-            'email'=>$data['email'],
-            'password'=>Hash::make($data['password'])
-            ));
+      $user = new User;
+      $user->username = $data['username'];
+      $user->email = $data['email'];
+      $user->password = Hash::make($data['password']);
+      $user->setSlugAttribute($data['username']);
+      $user->save();
 
       return array( 'validation' => true);
     }
@@ -56,7 +56,9 @@ class UserRepository implements UserRunInterface {
       $user->fill(array(
           'username' => $data['username'],
           'first_name' => $data['first_name'],
-          'email' => $data['email']
+          'name' => $data['name'],
+          'email' => $data['email'],
+          'description' => $data['description'],
         ));
     }
     //$this->validate($user->toArray());

@@ -7,8 +7,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	protected $guarded = array();  // Important
 
 	public static $rules = array(
-		'username' => 'required',
-		'email' => 'required|email',
+		'username' => 'required|unique:users',
+		'email' => 'required|email|unique:users',
 		'password' => 'required|min:6'
 	);
 
@@ -111,5 +111,19 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	{
 		return $this->email;
 	}
+
+    public function setSlugAttribute($value)
+
+    {
+
+        $slug = Str::slug($value);
+
+        $slugCount = count( $this->whereRaw("slug REGEXP '^{$slug}(-[0-9]*)?$'")->get() );
+
+        $slugFinal = ($slugCount > 0) ? "{$slug}-{$slugCount}" : $slug;
+
+        $this->attributes['slug'] = $slugFinal;
+
+    }
 
 }

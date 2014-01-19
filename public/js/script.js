@@ -125,9 +125,9 @@ var mapOptions = {
       panControl: false,
       backgroundColor: "rgba(0,0,0,0)",
       mapTypeControl: false,
-       mapTypeControlOptions: {
+      mapTypeControlOptions: {
         mapTypeIds: [ 'map_styles', 'map_styles_zoomed']
-       }
+      }
 };
 
   
@@ -135,6 +135,7 @@ var mapOptions = {
 map = new google.maps.Map(document.getElementById("happening-map"), mapOptions); 
 
 gGeocoder = new google.maps.Geocoder;
+
 
 gMarker = new google.maps.Marker( {
       position:mapCenter,

@@ -28,7 +28,7 @@
              {{ $posts->links() }}
         </div>
         <aside>
-            <h3>Catégories</h3>
+            <h3><i class="icon-tags"></i>Catégories</h3>
             @foreach($categories as $categorie)
             <h4>{{ $categorie->name }}</h4>
             <ul>
