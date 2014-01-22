@@ -25,10 +25,8 @@ App::bind('ForumInterface', 'ForumRepository');
 //     echo ('<br><br><br>');
 // });
 
-Route::get('/', array('as'=>'home', function()
-{
-	return View::make('home.index')->with('title', 'home');
-}));
+
+Route::get('/', array('as' => 'home', 'uses' => 'HappeningsController@home'));
 
 Route::get('/404', array('as'=>'404', function()
 {
@@ -43,19 +41,6 @@ Route::post('/', array('as'=>'searchRace', function()
     return View::make('race.search')->with(array('pays'=>$pays, 'ville'=>$ville, 'distance'=>$dist));
 }));
 
-
-
-/*--------------------------------Clubs--------------------------------*/
-
-Route::get('/clubs', array('as'=>'listClubs', function()
-{
-    return View::make('club.index');
-}));
-
-Route::get('/clubs/show', array('as'=>'showClubs', function()
-{
-    return View::make('club.show');
-}));
 
 Route::post('/clubs', array('as'=>'searchClubs', function()
 {
@@ -99,7 +84,7 @@ Route::resource('trainings', 'TrainingsController');
 
 Route::resource('happenings', 'HappeningsController');
 
-Route::get('download', array('as' => 'download', 'uses' => 'RaceController@download'));
+Route::get('/download/{path}', 'HappeningsController@getDownload');
 
 Route::resource('comments', 'CommentsController');
 

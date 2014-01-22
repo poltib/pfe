@@ -48,4 +48,19 @@ class Happening extends Eloquent {
     {
         return $this->hasMany('Sponsor');
     } 
+
+
+    public function setSlugAttribute($value)
+
+    {
+
+        $slug = Str::slug($value);
+
+        $slugCount = count( $this->whereRaw("slug REGEXP '^{$slug}(-[0-9]*)?$'")->get() );
+
+        $slugFinal = ($slugCount > 0) ? "{$slug}-{$slugCount}" : $slug;
+
+        $this->attributes['slug'] = $slugFinal;
+
+    }
 }

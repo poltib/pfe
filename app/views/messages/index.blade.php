@@ -18,7 +18,7 @@
             <li class="comment">
                 <h3>Sujet : {{ $message->objet }}</h3>
                 <span>de <a href="{{ route('users.show', $message->user->slug ) }}">{{ $message->user->username }}</a> le <time>{{ $message->created_at->toFormattedDateString() }}</time></span>
-                <a href="{{ route('conv', [Auth::user()->id, $message->user->id] ) }}">Lire le message</a>
+                <a href="{{ route('messages.show', $message->id ) }}">Lire le message</a>
             </li>
         @endforeach
         </ul>

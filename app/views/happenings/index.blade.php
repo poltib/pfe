@@ -1,34 +1,13 @@
 @extends('layout')
 
 @section('container')
-<div id='mySwipe' class='swipe'>
-  <div class='swipe-wrap'>
-    <div><!-- 
-         --><h2>Super slider</h2><figure>{{ HTML::image('img/slide1.jpg'); }}</figure><!-- 
-         --><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, aperiam, officiis, saepe deleniti alias suscipit rem distinctio odio dignissimos totam cupiditate laborum recusandae nisi corporis minima ut expedita veritatis voluptas. <br><a href="#" class="button"><i class="icon-search"></i>info</a></div><!--     
-     --></div><!-- 
-     --><div><!-- 
-         --><h2>Super slider</h2><figure>{{ HTML::image('img/slide2.jpg'); }}</figure><!-- 
-         --><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita maxime quis blanditiis dolores aliquam ad voluptatem. Aliquid, reiciendis, et inventore unde totam dignissimos eveniet! Harum nihil delectus doloremque aliquid ab. <br><a href="#" class="button"><i class="icon-search"></i>info</a></div><!--     
-     --></div><!-- 
-     --><div><!-- 
-         --><h2>Super slider</h2><figure>{{ HTML::image('img/slide3.png'); }}</figure><!-- 
-         --><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, aspernatur obcaecati aut quo cum alias minus odio pariatur. Nostrum, iste culpa aut in quisquam beatae aspernatur sequi assumenda perferendis facere. <br><a href="#" class="button"><i class="icon-search"></i>info</a></div><!--     
-     --></div><!-- 
-     --><div><!-- 
-         --><h2>Super slider</h2><figure>{{ HTML::image('img/slide4.jpg'); }}</figure><!-- 
-         --><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, veniam, debitis, accusamus et labore aperiam assumenda est maxime molestiae tempore dicta quasi iure placeat modi error nihil incidunt provident ex. <br><a href="#" class="button"><i class="icon-search"></i>info</a></div><!-- 
-     --></div><!-- 
-   --></div>
-  <div class="swipeCommand">
 
-  <a href="#" onclick='mySwipe.prev()' class="prev"><</a> 
-  <a href="#" onclick='mySwipe.next()' class="next">></a>
-
-
-</div>
-</div>
     <section class="find race">
+        <ul class="secondaryNav"><!-- 
+             --><li class="selected"><a href="{{ route('happenings.index') }}"><i class="icon-pitch"></i>Courses</a></li><!--  
+             --><li><a href="{{ route('teams.index') }}"><i class="icon-users"></i>Clubs</a></li><!--  
+             --><li>{{ link_to_route('users.index','Users') }}</li>
+        </ul>
         <h2>Trouver une course</h2>
         <form action="http://pfe" method="POST">
             <fieldset>
@@ -69,8 +48,15 @@
         </form>
     </section>
     <section class="races">
-    <h2>Courses à venir</h2>
+    <h2>Liste des courses</h2>
+    <div class="monthNav">
+    <a href="#wrap1" class="prevMonth">Mois précédant</a>
+    <a href="#wrap2" class="nextMonth">Mois Suivant</a>
+    </div>
     <div class="monthWrap">
+        <a id="wrap1" class="ancre"></a> 
+        <a id="wrap2" class="ancre"></a>
+
         <div class="raceMonth">
             <ul class="races list">
                 <li class="month">
@@ -83,15 +69,15 @@
                             <div class="description">Description</div>
                             <div class="link">Liens</div>
                         </li>
-                        @foreach ( $happenings as $happening )
+                        @foreach($happenings as $happening)
                         <li>
                             <div class="name">
                                 <div class="logo">
                                     {{ HTML::image('img/logo.gif'); }}
                                 </div>
                                 <div class="coords">
-                                    <h3>{{{ $happening->name }}}</h3>
-                                    <span><a href="{{ route('users.show', $happening->user->slug) }}">{{{ $happening->user->name }}}</a></span>
+                                    <h3>{{ $happening->name }}</h3>
+                                    <span><a href="#">{{ $happening->link }}</a></span>
                                     
                                 </div>
                             </div>
@@ -104,7 +90,7 @@
                                 <p>Liège</p>
                             </div>
                             <div class="description">
-                                <p>{{ $happening->description }}}</p>
+                                <p>{{ $happening->description }}</p>
                             </div>
                             <div class="link">
                                 <a href="{{ route('happenings.show', $happening->slug) }}" class="button"><i class="icon-search"></i>info</a>
@@ -116,39 +102,6 @@
             </ul>
         </div>
     </div>
-    <a href="{{ route('happenings.index') }}" class="button">Voir toutes les courses</a>
     </section>
-    <section class="news list">
-        <h2>Actualité</h2>
-        <div class="big">
-            @foreach($posts as $post)
-                <article>
-                <a href="{{ route('posts.show', $post->slug) }}"><h3>{{ $post->title }}<span><time>{{ $post->created_at->toFormattedDateString() }}</time></span></h3></a>
-                <span>Catégories : 
-                @foreach($post->categories as $categorie)
-                    {{ $categorie->name }}
-                @endforeach
-                </span>
-                <span>Posté par {{ $post->user->username }}</span>
-                <figure><img src="{{ $post->image }}" alt=""></figure>
-                <div class="text">
-                    <p>{{ $post->post }}</p>
-                </div>
-                </article>
-            @endforeach
-        </div>
-    </section>
-    {{ HTML::script('js/swipe.js'); }}
-    <script>
-    var elem = document.getElementById('mySwipe');
-    window.mySwipe = Swipe(elem, {
-      startSlide: 1,
-      //auto: 5000,
-      continuous: true,
-      disableScroll: true,
-      stopPropagation: true,
-      callback: function(index, element) {},
-      transitionEnd: function(index, element) {}
-    });
-    </script>
+
 @stop
