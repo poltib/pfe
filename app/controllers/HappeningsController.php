@@ -1,5 +1,5 @@
 <?php
-use HappeningInterface; 
+use HappeningInterface;
 
 class HappeningsController extends BaseController {
 
@@ -83,9 +83,13 @@ class HappeningsController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($slug)
 	{
-        return View::make('happenings.edit');
+        $happening = $slug;
+
+        $eventTypes = EventType::all();
+
+        return View::make('happenings.edit', compact('happening', 'eventTypes'));
 	}
 
 	/**

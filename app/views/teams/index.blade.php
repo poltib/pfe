@@ -4,7 +4,7 @@
     <section class="find club">
         <ul class="secondaryNav"><!-- 
              --><li><a href="{{ route('happenings.index') }}"><i class="icon-pitch"></i>Courses</a></li><!--  
-             --><li class="selected"><a href="{{ route('listClubs') }}"><i class="icon-users"></i>Clubs</a></li><!--  
+             --><li class="selected"><a href="{{ route('teams.index') }}"><i class="icon-users"></i>Clubs</a></li><!--  
              --><li>{{ link_to_route('users.index','Users') }}</li>
         </ul>
         <h2>Trouver un club</h2>
@@ -46,15 +46,11 @@
     </section>
     <section class="races">
     <h2>Liste des clubs à proximité</h2>
-    <ul class="races list">
-        <li class="month">
             <h3>Liège</h3>
             <ul>
                 @foreach($teams as $team)
                     <li>{{ link_to_route('teams.show', $team->name, $team->slug) }}</li>
                 @endforeach
             </ul>
-        </li>
-    </ul>
     </section>
 @stop

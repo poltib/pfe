@@ -3,7 +3,7 @@
 @section('container')
     <section>
         <ul class="secondaryNav"><!-- 
-             --><li class="selected"><a href="{{ route('users.show', $user->id ) }}" ><i class="icon-user" ></i>Profil</a></li><!--  
+             --><li class="selected"><a href="{{ route('users.show', $user->slug ) }}" ><i class="icon-user" ></i>Profil</a></li><!--  
             -->@if(Auth::check())<!--  
             -->@if($user->id === Auth::user()->id)<!--  
              --><li><a href="{{ route('messages.index') }}"><i class="icon-chat-1" ></i>Messages</a></li><!-- 

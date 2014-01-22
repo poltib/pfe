@@ -34,8 +34,10 @@
                     -->@else<!--
                         --><li><a href="{{ route('login') }}"><i class="icon-login"></i>Connexion</a></li><!--
                     -->@endif<!--  
-                        --></li><li><a href="{{ route('logout') }}"><i class="icon-logout" ></i>Déconnexion</a></li>
-              </ul>
+                    -->@if(Auth::check())<!--
+                        --></li><li><a href="{{ route('logout') }}"><i class="icon-logout" ></i>Déconnexion</a></li><!--
+                    -->@endif<!-- 
+                 --></ul>
             </nav>
         </div>
         @if(Session::has('flash_notice'))

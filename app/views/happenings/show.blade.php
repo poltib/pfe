@@ -4,8 +4,8 @@
     <section class="show">
         <ul class="secondaryNav"><!--
             -->@if(Auth::check() && $happening->user->id === Auth::user()->id)<!--  
-             --><li><a href="{{ route('happenings.edit', $happening->id ) }}"><i class="icon-edit" ></i>Modifier la course</a></li><!--  
-             --><li><a href="{{ route('happenings.destroy', $happening->id ) }}"><i class="icon-cancel" ></i>Supprimer la course</a></li>
+             --><li><a href="{{ route('happenings.edit', $happening->slug ) }}"><i class="icon-edit" ></i>Modifier la course</a></li><!--  
+             --><li><a href="{{ route('happenings.destroy', $happening->slug ) }}"><i class="icon-cancel" ></i>Supprimer la course</a></li>
              @endif
         </ul>
         <h2>{{ $happening->name }} | <span>{{{ $happening->date->toFormattedDateString() }}}</span></h2>

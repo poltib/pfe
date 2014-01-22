@@ -1,5 +1,5 @@
 <?php
-use RaceInterface; 
+use RaceInterface;
 
 class CommentsController extends BaseController {
 

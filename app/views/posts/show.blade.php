@@ -3,7 +3,7 @@
 @section('container')
     <section class="show">
         <ul class="secondaryNav"><!-- 
-             --><li class="selected"><a href="{{ route('posts.show', $post->id ) }}" >{{ $post->title }}</a></li><!--  
+             --><li class="selected"><a href="{{ route('posts.show', $post->slug ) }}" >{{ $post->title }}</a></li><!--  
             -->@if(Auth::check() && $post->user->id === Auth::user()->id)<!--  
              --><li><a href="{{ route('posts.edit', $post->slug ) }}">Modifier "{{ $post->title }}"</a></li><!--  
              --><li><!--

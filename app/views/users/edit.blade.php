@@ -11,12 +11,12 @@
     {{ Form::label('first_name', 'Prénom') . Form::text('first_name', Auth::user()->first_name) }}
     
     {{ Form::label('name', 'Nom') . Form::text('name', Auth::user()->name) }}
+    
+    {{ Form::label('image', 'Photo de profil') . Form::file('image') }}
 
     {{ Form::label('email', 'E-mail') . Form::text('email', Auth::user()->email) }}
 
     {{ Form::label('description', 'Présentation') . Form::textarea('description', Auth::user()->description) }}
-
-    {{ Form::label('image', 'Photo de profil') . Form::file('image') }}
 
     {{ Form::hidden('id', Auth::user()->id) }}
 

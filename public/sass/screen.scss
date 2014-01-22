@@ -551,6 +551,12 @@ h2{
         margin-top: 0;
         @include box-sizing(border-box);
     }
+    [type="checkbox"]{
+        margin:0;
+        text-align: left;
+        height: 40px;
+        display:inline-block;
+    }
 
 }
 
@@ -599,6 +605,8 @@ select{
     padding:0.5em;
     background: url(../img/arrow.png) no-repeat right #eee;
     margin-bottom: 0.6em;
+    text-indent: 0.01px;
+    text-overflow: '';
 }
 select:hover{
     cursor:pointer;
@@ -615,6 +623,11 @@ select:hover{
     font-size: 1em;
     padding:0.6em;
     margin-bottom: 0.6em;
+}
+
+input[type="file"]{
+    padding: 1em 0;
+    margin-bottom: 1em;
 }
 
 input[type="date"]{
@@ -648,6 +661,19 @@ input[type="date"]{
         label{
             padding:0.55em 0;
             margin-bottom: 0.6em;
+        }
+        form:after{
+            content:"";
+            display:block;
+            clear:both;
+        }
+        a{
+            margin-top: 0.5em;
+            color:silver;
+            float: right;
+            &:hover{
+                color:black;
+            }
         }
     }
 }

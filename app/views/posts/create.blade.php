@@ -7,8 +7,7 @@
         -->@if(Auth::check())<!--  
          --><li><a href="{{ route('messages.index') }}">Messages</a></li><!-- 
          --><li><a href="{{ route('happenings.create') }}">Ajouter une course</a></li><!--  
-         --><li class="selected">{{ link_to_route('posts.create', 'Ajouter actu' ) }}</li><!--  
-         --><li>{{ link_to_route('trainings.create', 'Ajouter un entrainement') }}</li><!--  
+         --><li class="selected">{{ link_to_route('posts.create', 'Ajouter actu' ) }}</li><!-- 
          --><li>{{ link_to_route('logout', 'Déconnexion ('.Auth::user()->username.')') }}</li>
          @endif
     </ul>

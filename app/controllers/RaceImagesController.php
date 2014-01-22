@@ -1,5 +1,5 @@
 <?php
-use RaceInterface; 
+use RaceInterface;
 
 class RaceImagesController extends BaseController {
 

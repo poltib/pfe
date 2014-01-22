@@ -6,8 +6,7 @@
              --><li><a href="{{ route('users.show', Auth::user()->slug ) }}" >Profil</a></li><!--  
              --><li class="selected"><a href="{{ route('messages.index') }}">Messages</a></li><!-- 
              --><li><a href="{{ route('happenings.create') }}">Ajouter une course</a></li><!--   
-             --><li>{{ link_to_route('posts.create', 'Ajouter actu' ) }}</li><!--  
-             --><li>{{ link_to_route('trainings.create', 'Ajouter un entrainement') }}</li><!--  
+             --><li>{{ link_to_route('posts.create', 'Ajouter actu' ) }}</li><!--   
              --><li>{{ link_to_route('logout', 'Déconnexion ('.Auth::user()->username.')') }}</li>
              
         </ul>
@@ -16,6 +15,8 @@
         <figure><img src="{{ $message->user->thumb }}" alt=""></figure>
         <p>{{ $message->message }}</p>
 
+        
+        @if ( $message->user->id !== Auth::user()->id )
         <h3>Répondre</h3>
         {{ Form::open(array('route' => 'messages.store', 'method' => 'post')) }}
 
@@ -30,5 +31,7 @@
             {{ Form::submit('Répondre') }}
 
         {{ Form::token() . Form::close() }}
+        @endif
+
     </section>
 @stop

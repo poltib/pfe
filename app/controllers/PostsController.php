@@ -2,6 +2,7 @@
 use PostInterface;
 use CategorieInterface;
 
+
 class PostsController extends BaseController {
 	/**
     * PostInterface Repository
