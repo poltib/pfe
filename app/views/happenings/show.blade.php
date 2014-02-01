@@ -21,7 +21,7 @@
                 @foreach($happening->sponsors as $sponsor)
                     <li class="sponsor">
                         <figure>
-                            <img src="{{ $sponsor->thumb }}" alt="{{ $sponsor->name }}">
+                            {{ HTML::image($sponsor->thumb); }}
                             <p class="sponsorName">{{ $sponsor->name }}</p>
                         </figure>
                     </li>
@@ -90,7 +90,8 @@
             <h3><i class="icon-users" ></i>Utilisateurs participant</h3>
             <ul class="participants">
                 @foreach($happening->users as $user)
-                    <li><a href="{{ route('users.show', $user->slug ) }}"><figure><img src="{{ $user->thumb }}" alt="{{ $user->username }}"></figure></a></li>
+                    <li><a href="{{ route('users.show', $user->slug ) }}"><figure>
+                        {{ HTML::image($user->thumb); }}</figure></a></li>
                 @endforeach
             </ul>
 

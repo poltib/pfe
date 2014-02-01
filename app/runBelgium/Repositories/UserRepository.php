@@ -49,8 +49,8 @@ class UserRepository implements UserRunInterface {
 
     if($data["image"]){
         $path = Image::upload($data['image'], 'users/' . $id, true);
-        $data["image"] = 'http://pfe/'.$path['image'];
-        $data["thumb"] = 'http://pfe/'.$path['thumb'];
+        $data["image"] = $path['image'];
+        $data["thumb"] = $path['thumb'];
         $user->fill($data);
     }else{
       $user->fill(array(

@@ -34,7 +34,7 @@
             <h2><i class="icon-user" ></i>Profil de {{ $user->username }}</h2>
             <div class="thumbLink">
             @if ($user->thumb)
-                    <figure><img src="{{ $user->thumb }}" alt=""></figure>
+                    <figure>{{ HTML::image($user->thumb); }}</figure>
                 @endif
                 @if(Auth::check())
                     @if(Auth::user()->id===$user->id)

@@ -21,7 +21,7 @@
                 {{ $categorie->name }}
             @endforeach
             </span>
-            <figure class="cover"><img src="{{ $post->image }}" alt=""></figure>
+            <figure class="cover">{{ HTML::image($post->image); }}</figure>
             <p>{{ $post->post }}</p>
             @if(Auth::check())<a href="#" class="button">Suivre</a>@endif <a href="#" class="button">Partager</a></li>
         </article>
@@ -36,7 +36,7 @@
         <div class="information">
             <div class="auth">
                 <h3>L'auteur : {{ link_to_route('users.show', $post->user->username , $post->user->slug ) }}</h3>
-                <figure><img src="{{ $post->user->thumb }}" alt=""></figure>
+                <figure>{{ HTML::image($post->user->thumb); }}</figure>
                 <p>{{ $post->user->description }}</p>
             </div>
         </div>
