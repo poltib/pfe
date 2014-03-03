@@ -98,7 +98,7 @@
             <h3>Gallerie</h3>
             <ul class="participants">
                 @foreach($happening->photos as $photo)
-                    <li><figure><img src="{{ $photo->image }}" alt=""></figure></li>
+                    <li><figure><img src="{{ $photo->photo }}" alt=""></figure></li>
                 @endforeach
             </ul>
             

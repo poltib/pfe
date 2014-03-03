@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'localhost',
+	'url' => 'pfe.dev',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ return array(
 	|
 	*/
 
-	'key' => getenv('APPLICATION_KEY'),
+    'key' => 't2xgimqqZN8CgViNEe4KxfWui1SZGj99',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -108,7 +108,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 		'Gloudemans\Calendar\CalendarServiceProvider',
-		//'app\runBelgium\providers\RepositoriesServiceProvider',
+		'SportFun\Providers\RepositoriesServiceProviders',
 		
 
 	),
@@ -176,10 +176,22 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-		'Image' 		  => 'App\Facades\ImageFacade',
-		'Xml' 		  	  => 'App\Facades\XmlFacade',
+		'Image' 		  => 'SportFun\Facades\ImageFacade',
+		'Xml' 		  	  => 'SportFun\Facades\XmlFacade',
 		'Calendar'        => 'Gloudemans\Calendar\Facades\Calendar',
-
-	),
+        'Happening'       => 'SportFun\Repositories\Happening\Happening',
+        'User' 		  	  => 'SportFun\Repositories\User\User',
+        'Post' 		  	  => 'SportFun\Repositories\Post\Post',
+        'Category'        => 'SportFun\Repositories\Category\Category',
+        'Statu'           => 'SportFun\Repositories\Statu\Statu',
+        'Forum'           => 'SportFun\Repositories\Forum\Forum',
+        'Message'         => 'SportFun\Repositories\Message\Message',
+        'Team'            => 'SportFun\Repositories\Team\Team',
+        'Sponsor'         => 'SportFun\Repositories\Sponsor\Sponsor',
+        'Photo'           => 'SportFun\Repositories\Photo\Photo',
+        'Announce'        => 'SportFun\Repositories\Announce\Announce',
+        'EventType'       => 'SportFun\Repositories\EventType\EventType',
+        'Role'            => 'SportFun\Repositories\Role\Role',
+    ),
 
 );

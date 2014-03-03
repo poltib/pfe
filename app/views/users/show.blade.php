@@ -17,7 +17,7 @@
 
         <div class="user">
             <h2><i class="icon-calendar" ></i>Récentes activitées de {{ $user->username }}</h2>
-            {{ Calendar::generate($year, $month); }}
+
             <h3>Courses auquelles {{{ $user->username }}} a participé</h3>
             <h3>Entrainements réalisés en groupe</h3>
             <h3>Entrainements seul</h3>
@@ -40,7 +40,7 @@
                     @if(Auth::user()->id===$user->id)
                     <a href="{{ route('users.edit', Auth::user()->slug ) }}" class="button"><i class="icon-edit" ></i>Modifier</a>
                     @else
-                        {{ link_to_action('MessagesController@send', "Envoyer un message", $user->id) }}
+                        {{ link_to_action('SportFun\Controllers\MessagesController@send', "Envoyer un message", $user->id) }}
                     @endif
                 @endif
             </div>

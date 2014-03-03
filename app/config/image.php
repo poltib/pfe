@@ -3,7 +3,7 @@
 return array(
     'library'     => 'imagick',
     'upload_dir'  => 'uploads',
-    'upload_path' => public_path() . '/uploads/',
+    'upload_path' => public_path() . '/uploads/images',
     'quality'     => 85,
  
     'dimensions' => array(

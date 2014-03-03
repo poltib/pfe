@@ -2,11 +2,83 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c08e75ca-ae26-4024-9bc6-7525b094451e" name="Default" comment="migrations + début seeds&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/.sass-cache/b9019283aa4834f19bbf2a4bfd02d240341db9fc/screen.scssc" afterPath="$PROJECT_DIR$/public/.sass-cache/b9019283aa4834f19bbf2a4bfd02d240341db9fc/screen.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/styles/screen.css" afterPath="$PROJECT_DIR$/public/styles/screen.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/sass/screen.scss" afterPath="$PROJECT_DIR$/public/sass/screen.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/script-ck.js" afterPath="$PROJECT_DIR$/public/js/script-ck.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/script.js" afterPath="$PROJECT_DIR$/public/js/script.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/errors/403.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/errors/404.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/errors/500.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/SportFun/Repositories/EventType/EventTypeInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/SportFun/Repositories/EventType/EventTypeRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/SportFun/Interfaces/RepositoriesInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/errors/default.blade.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/.gitkeep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/BaseController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/CategoriesController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/CommentsController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/ForumsController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/HappeningsController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/HomeController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/MessagesController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/PasswordResetsController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/PostsController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/RaceImagesController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/RaceSponsorsController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/TeamsController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/TrainingsController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/UserController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/database/migrations/2013_12_18_133757_create_images_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/databaseSchemas" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/errors.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/facades/ImageFacade.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/facades/XmlFacade.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/Team.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/User.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Announce.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Category.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/EventType.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Forum.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Happening.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Interfaces/CategorieInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Interfaces/ForumInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Interfaces/HappeningInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Interfaces/MessageInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Interfaces/PostInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Interfaces/TeamInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Interfaces/TrainingInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Interfaces/UserRunInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Message.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Photo.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Post.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Repositories/CategorieRepository.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Repositories/ForumRepository.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Repositories/HappeningRepository.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Repositories/MessageRepository.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Repositories/PostRepository.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Repositories/TeamRepository.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Repositories/TrainingRepository.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Repositories/UserRepository.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Role.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Sponsor.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Statu.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/Team.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/User.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/runBelgium/providers/RepositoriesServiceProviders.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/services/Image.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/services/Xml.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/.gitignore" afterPath="$PROJECT_DIR$/app/storage/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/cache/.gitignore" afterPath="$PROJECT_DIR$/app/storage/cache/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/logs/.gitignore" afterPath="$PROJECT_DIR$/app/storage/logs/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/meta/.gitignore" afterPath="$PROJECT_DIR$/app/storage/meta/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/sessions/.gitignore" afterPath="$PROJECT_DIR$/app/storage/sessions/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/.gitignore" afterPath="$PROJECT_DIR$/app/storage/views/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/app.php" afterPath="$PROJECT_DIR$/app/config/app.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/filters.php" afterPath="$PROJECT_DIR$/app/filters.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/start/global.php" afterPath="$PROJECT_DIR$/app/start/global.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/image.php" afterPath="$PROJECT_DIR$/app/config/image.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/happenings/show.blade.php" afterPath="$PROJECT_DIR$/app/views/happenings/show.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/show.blade.php" afterPath="$PROJECT_DIR$/app/views/users/show.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bootstrap/start.php" afterPath="$PROJECT_DIR$/bootstrap/start.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pfe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,19 +101,97 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="errors.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/errors.php">
+      <file leaf-file-name="routes.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="22" selection-start="266" selection-end="266" vertical-scroll-proportion="0.18968871" vertical-offset="0" max-vertical-offset="1028">
+            <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="0.034334764" vertical-offset="0" max-vertical-offset="3507">
+              <folding>
+                <element signature="e#8#393#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HappeningsController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/SportFun/Controllers/HappeningsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="0" selection-start="258" selection-end="258" vertical-scroll-proportion="-4.285714" vertical-offset="0" max-vertical-offset="4659">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <file leaf-file-name="PostsController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/SportFun/Controllers/PostsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="74" selection-start="2647" selection-end="2647" vertical-scroll-proportion="-21.875" vertical-offset="720" max-vertical-offset="2205">
+            <state line="48" column="49" selection-start="1018" selection-end="1018" vertical-scroll-proportion="-15.428572" vertical-offset="720" max-vertical-offset="3963">
+              <folding>
+                <element signature="e#39#101#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/users/show.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="12" selection-start="973" selection-end="973" vertical-scroll-proportion="-13.714286" vertical-offset="96" max-vertical-offset="2211">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessagesController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/SportFun/Controllers/MessagesController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="42.0" vertical-offset="1176" max-vertical-offset="3843">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageRepository.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/Message/MessageRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="11" selection-start="125" selection-end="125" vertical-scroll-proportion="-3.4285715" vertical-offset="0" max-vertical-offset="2739">
+              <folding>
+                <element signature="e#48#63#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/messages/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="3.4285715" vertical-offset="96" max-vertical-offset="1539">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventTypeRepository.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/EventType/EventTypeRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="24" selection-start="318" selection-end="318" vertical-scroll-proportion="-11.142858" vertical-offset="0" max-vertical-offset="2307">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventTypeInterface.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/EventType/EventTypeInterface.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="19" selection-start="117" selection-end="117" vertical-scroll-proportion="-3.4285715" vertical-offset="0" max-vertical-offset="771">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CategoryRepository.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/Category/CategoryRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="0" selection-start="48" selection-end="48" vertical-scroll-proportion="-0.85714287" vertical-offset="0" max-vertical-offset="2475">
               <folding />
             </state>
           </provider>
@@ -60,15 +210,66 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/Team/TeamRepository.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/Sponsor/Sponsor.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/Statu/Statu.php" />
+        <option value="$PROJECT_DIR$/bootstrap/start.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/Photo/Photo.php" />
+        <option value="$PROJECT_DIR$/app/views/errors/404.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/errors/403.blade.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/Role/Role.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/Post/Post.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/Message/Message.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/Message/MessageInterface.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/Forum/ForumRepository.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/Category/CategoryInterface.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/Category/CategoryRepository.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Facades/ImageFacade.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Facades/XmlFacade.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Controllers/CategoriesController.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Controllers/ForumsController.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/Announce/Announce.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/User/UserInterface.php" />
+        <option value="$PROJECT_DIR$/app/config/image.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Interfaces/RepositoriesInterface.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/Happening/HappeningInterface.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/User/UserRepository.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/EventType/EventType.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/Forum/ForumInterface.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/Post/PostInterface.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/Team/TeamInterface.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/Team/Team.php" />
+        <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Response.php" />
+        <option value="$PROJECT_DIR$/app/views/errors/500.blade.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/Happening.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/User/User.php" />
+        <option value="$PROJECT_DIR$/app/config/app.php" />
+        <option value="$PROJECT_DIR$/app/config/database.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/Category/Category.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/Happening/HappeningRepository.php" />
+        <option value="$PROJECT_DIR$/app/start/global.php" />
+        <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/View/View.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Controllers/BaseController.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/Post/PostRepository.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/Happening/Happening.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Providers/RepositoriesServiceProviders.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/EventType/EventTypeRepository.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/EventType/EventTypeInterface.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Controllers/HappeningsController.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Controllers/PostsController.php" />
+        <option value="$PROJECT_DIR$/app/views/users/show.blade.php" />
+        <option value="$PROJECT_DIR$/app/SportFun/Repositories/Message/MessageRepository.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1280" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="x" value="4" />
+    <option name="y" value="22" />
+    <option name="width" value="1276" />
+    <option name="height" value="778" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -77,7 +278,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
@@ -96,6 +297,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -110,7 +312,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pfe" />
+              <option name="myItemId" value="www" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -120,7 +322,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pfe" />
+              <option name="myItemId" value="www" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -128,23 +330,212 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pfe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pfe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="happenings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pfe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="errors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pfe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SportFun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pfe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SportFun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Repositories" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pfe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SportFun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pfe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SportFun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Interfaces" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="FullScreen" value="true" />
-    <property name="options.lastSelected" value="appearance" />
+    <property name="FullScreen" value="false" />
+    <property name="options.lastSelected" value="preferences.keymap" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../php/dghn/www" />
+    <property name="SearchEverywhereHistory" value="" />
+    <property name="dynamic.classpath" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/views" />
+    </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
+      <option name="VM_PARAMETERS" value="" />
+      <option name="USER_CFG_CLASS" />
+      <option name="CONTEXT_PROVIDER" />
+      <method />
+    </configuration>
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="c08e75ca-ae26-4024-9bc6-7525b094451e" name="Default" comment="" />
@@ -153,16 +544,36 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="4" y="22" width="1276" height="778" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934928" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299373" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1640625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1637931" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -170,15 +581,15 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USERS">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
     </option>
   </component>
@@ -192,41 +603,331 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/routes.php</url>
-          <line>38</line>
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="3" />
+      <option name="time" value="7" />
     </breakpoint-manager>
   </component>
+  <component name="XPathView.XPathProjectComponent">
+    <history />
+    <find-history>
+      <element expression="ReflectionClass" />
+    </find-history>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/errors.php">
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/Role/Role.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="22" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1083" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/Sponsor/Sponsor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1035" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/Statu/Statu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="939" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/Team/TeamInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="54" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0" vertical-offset="96" max-vertical-offset="144" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/Team/TeamRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="27" selection-start="281" selection-end="281" vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="2256" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="118" column="33" selection-start="4229" selection-end="4229" vertical-scroll-proportion="0.72103006" vertical-offset="2160" max-vertical-offset="30891" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Response.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="6" selection-start="209" selection-end="209" vertical-scroll-proportion="0.13733906" vertical-offset="0" max-vertical-offset="3291" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/Team/Team.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1467" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/errors/500.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="18" selection-start="60" selection-end="60" vertical-scroll-proportion="-2.5714285" vertical-offset="0" max-vertical-offset="795" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/User/UserRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="3" selection-start="2324" selection-end="2327" vertical-scroll-proportion="-23.25" vertical-offset="1701" max-vertical-offset="3051" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/User/UserSportInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="919" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/ClassLoader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-12.188841" vertical-offset="8520" max-vertical-offset="9219" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_psr4.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="967" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/Announce/Announce.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="49" selection-end="100" vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="360" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/StatusTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1063" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/SlugSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2095" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.lock">
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-2.88" vertical-offset="2016" max-vertical-offset="57148" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1611" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="32" selection-start="1817" selection-end="1817" vertical-scroll-proportion="0.0" vertical-offset="1416" max-vertical-offset="3024" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/User/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="51" selection-start="568" selection-end="568" vertical-scroll-proportion="0.0" vertical-offset="480" max-vertical-offset="3192" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/start/local.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="3" selection-start="10" selection-end="10" vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="96" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/local/cache.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="847" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/image.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="336" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="500" column="31" selection-start="10540" selection-end="10540" vertical-scroll-proportion="0.40200287" vertical-offset="11287" max-vertical-offset="69339">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/Happening/HappeningInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="98" selection-end="98" vertical-scroll-proportion="-3.4285715" vertical-offset="0" max-vertical-offset="867">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/Post/Post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="45" selection-end="45" vertical-scroll-proportion="-1.7142857" vertical-offset="0" max-vertical-offset="1275" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Interfaces/RepositoriesInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="33" selection-start="171" selection-end="171" vertical-scroll-proportion="0.20600858" vertical-offset="0" max-vertical-offset="915">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/Happening/HappeningRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="33" selection-start="83" selection-end="83" vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="3384">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/View/View.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="6" selection-start="344" selection-end="344" vertical-scroll-proportion="0.13733906" vertical-offset="0" max-vertical-offset="9891" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/View.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="6" selection-start="96" selection-end="96" vertical-scroll-proportion="0.17167382" vertical-offset="0" max-vertical-offset="1011" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/Category/Category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="51" selection-start="100" selection-end="100" vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="408">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/Post/PostRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="6" selection-start="290" selection-end="290" vertical-scroll-proportion="0.0" vertical-offset="336" max-vertical-offset="2304">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Controllers/BaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="100" selection-end="100" vertical-scroll-proportion="0.0" vertical-offset="96" max-vertical-offset="528">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/start/global.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="0" selection-start="1597" selection-end="1597" vertical-scroll-proportion="0.0" vertical-offset="1176" max-vertical-offset="2688">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4663">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/Happening/Happening.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="51" selection-start="923" selection-end="923" vertical-scroll-proportion="-10.035714" vertical-offset="607" max-vertical-offset="2331">
+          <folding>
+            <element signature="e#50#101#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="167" selection-end="167" vertical-scroll-proportion="-6.857143" vertical-offset="0" max-vertical-offset="3891">
+          <folding>
+            <element signature="e#39#89#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="177" column="30" selection-start="7029" selection-end="7060" vertical-scroll-proportion="-0.85714287" vertical-offset="4224" max-vertical-offset="5403">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/EventType/EventType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="47" selection-start="47" selection-end="47" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="987">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Providers/RepositoriesServiceProviders.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="121" selection-start="1611" selection-end="1611" vertical-scroll-proportion="-8.571428" vertical-offset="600" max-vertical-offset="1635">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/Category/CategoryInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="159" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="843">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/Category/CategoryRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="48" selection-end="48" vertical-scroll-proportion="-0.85714287" vertical-offset="0" max-vertical-offset="2475">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/EventType/EventTypeRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="24" selection-start="318" selection-end="318" vertical-scroll-proportion="-11.142858" vertical-offset="0" max-vertical-offset="2307">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/EventType/EventTypeInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="19" selection-start="117" selection-end="117" vertical-scroll-proportion="-3.4285715" vertical-offset="0" max-vertical-offset="771">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Controllers/HappeningsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="258" selection-end="258" vertical-scroll-proportion="-4.285714" vertical-offset="0" max-vertical-offset="4659">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Controllers/PostsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="49" selection-start="1018" selection-end="1018" vertical-scroll-proportion="-15.428572" vertical-offset="720" max-vertical-offset="3963">
+          <folding>
+            <element signature="e#39#101#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="12" selection-start="973" selection-end="973" vertical-scroll-proportion="-13.714286" vertical-offset="96" max-vertical-offset="2211">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Controllers/MessagesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="42.0" vertical-offset="1176" max-vertical-offset="3843">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/SportFun/Repositories/Message/MessageRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="11" selection-start="125" selection-end="125" vertical-scroll-proportion="-3.4285715" vertical-offset="0" max-vertical-offset="2739">
+          <folding>
+            <element signature="e#48#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/messages/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="3.4285715" vertical-offset="96" max-vertical-offset="1539">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="0" selection-start="1440" selection-end="1440" vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="2205">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="74" selection-start="2647" selection-end="2647" vertical-scroll-proportion="-21.875" vertical-offset="720" max-vertical-offset="2205">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/errors.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="22" selection-start="266" selection-end="266" vertical-scroll-proportion="0.18968871" vertical-offset="0" max-vertical-offset="1028">
-          <folding />
+        <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="0.034334764" vertical-offset="0" max-vertical-offset="3507">
+          <folding>
+            <element signature="e#8#393#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

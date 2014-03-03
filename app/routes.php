@@ -1,12 +1,5 @@
 <?php
 
-App::bind('UserRunInterface', 'UserRepository');
-App::bind('HappeningInterface', 'HappeningRepository');
-App::bind('TeamInterface', 'TeamRepository');
-App::bind('MessageInterface', 'MessageRepository');
-App::bind('PostInterface', 'PostRepository');
-App::bind('CategorieInterface', 'CategorieRepository');
-App::bind('ForumInterface', 'ForumRepository');
 
 /*
 |--------------------------------------------------------------------------
@@ -26,12 +19,7 @@ App::bind('ForumInterface', 'ForumRepository');
 // });
 
 
-Route::get('/', array('as' => 'home', 'uses' => 'HappeningsController@home'));
-
-Route::get('/404', array('as'=>'404', function()
-{
-    return View::make('404')->with('title', '404 not found');
-}));
+Route::get('/', array('as' => 'home', 'uses' => 'SportFun\Controllers\HappeningsController@home'));
 
 Route::post('/', array('as'=>'searchRace', function()
 {
@@ -52,22 +40,24 @@ Route::post('/clubs', array('as'=>'searchClubs', function()
 
 /*--------------------------------Users--------------------------------*/
 
-Route::resource('users','UserController');
+Route::resource('users','SportFun\Controllers\UserController');
 
-Route::get('logout', array('as' => 'logout', 'uses' => 'UserController@logout'))->before('auth');
+Route::get('logout', array('as' => 'logout', 'uses' => 'SportFun\Controllers\UserController@logout'))->before('auth');
 
-Route::get('login', array('as' => 'login', 'uses' => 'UserController@login'))->before('guest');
+Route::get('login', array('as' => 'login', 'uses' => 'SportFun\Controllers\UserController@login'))->before('guest');
 
-Route::post('login', array('as' => 'connection', 'uses' => 'UserController@connection'))->before('guest');
+Route::post('login', array('as' => 'connection', 'uses' => 'SportFun\Controllers\UserController@connection'))->before('guest');
 
-Route::post('raceUsers/{slug}', array('as' => 'particip', 'uses' => 'UserController@raceParticip'));
+Route::post('raceUsers/{slug}', array('as' => 'particip', 'uses' => 'SportFun\Controllers\UserController@raceParticip'));
 
-Route::post('raceUsersDestroy/{slug}', array('as' => 'dontParticip', 'uses' => 'UserController@raceDontParticip'));
+Route::post('raceUsersDestroy/{slug}', array('as' => 'dontParticip', 'uses' => 'SportFun\Controllers\UserController@raceDontParticip'));
 
 // Password Resets
-Route::get('password_resets/reset/{token}', 'PasswordResetsController@reset');
-Route::post('password_resets/reset/{token}', 'PasswordResetsController@postReset');
-Route::resource('password_resets', 'PasswordResetsController', ['only' => ['create', 'store']]);
+Route::get('password_resets/reset/{token}', 'SportFun\Controllers\PasswordResetsController@reset');
+
+Route::post('password_resets/reset/{token}', 'SportFun\Controllers\PasswordResetsController@postReset');
+
+Route::resource('password_resets', 'SportFun\Controllers\PasswordResetsController', ['only' => ['create', 'store']]);
 
 
 /*--------------------------------Others--------------------------------*/
@@ -77,37 +67,34 @@ Route::get('/contact', array('as'=>'contact', function()
     return View::make('contact.index');
 }));
 
+//Route::resource('trainings', 'SportFun\Controllers\TrainingsController');
 
+Route::resource('happenings', 'SportFun\Controllers\HappeningsController');
 
+//Route::get('/download/{path}', 'SportFun\Controllers\HappeningsController@getDownload');
 
-Route::resource('trainings', 'TrainingsController');
-
-Route::resource('happenings', 'HappeningsController');
-
-Route::get('/download/{path}', 'HappeningsController@getDownload');
-
-Route::resource('comments', 'CommentsController');
+//Route::resource('comments', 'SportFun\Controllers\CommentsController');
 
 //Route::resource('raceUsers', 'RaceUsersController');
 
-Route::resource('raceImages', 'RaceImagesController');
+//Route::resource('raceImages', 'SportFun\Controllers\RaceImagesController');
 
-Route::resource('raceSponsors', 'RaceSponsorsController');
+//Route::resource('raceSponsors', 'SportFun\Controllers\RaceSponsorsController');
 
-Route::resource('posts', 'PostsController');
+Route::resource('posts', 'SportFun\Controllers\PostsController');
 
-Route::resource('forums', 'ForumsController');
+Route::resource('forums', 'SportFun\Controllers\ForumsController');
 
-Route::get('messages/send/{id}', 'MessagesController@send');
+Route::get('messages/send/{id}', 'SportFun\Controllers\MessagesController@send');
 
-Route::get('messages/conv/{id}/{from}', array( 'as' => 'conv', 'uses' => 'MessagesController@conv' ));
+Route::get('messages/conv/{id}/{from}', array( 'as' => 'conv', 'uses' => 'SportFun\Controllers\MessagesController@conv' ));
 
-Route::resource('messages', 'MessagesController');
+Route::resource('messages', 'SportFun\Controllers\MessagesController');
 
 
-Route::resource('categories', 'CategoriesController');
+Route::resource('categories', 'SportFun\Controllers\CategoriesController');
 
-Route::resource('teams', 'TeamsController');
+Route::resource('teams', 'SportFun\Controllers\TeamsController');
 
 
 Route::bind('happenings',function($value,$route)

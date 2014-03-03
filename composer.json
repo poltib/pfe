@@ -12,15 +12,13 @@
 	"autoload": {
 		"classmap": [
 			"app/commands",
-			"app/controllers",
 			"app/database/migrations",
 			"app/database/seeds",
-			"app/tests/TestCase.php",
-			"app/services",
-			"app/facades",
-			"app/runBelgium",
-			"app/errors.php"
-		]
+			"app/tests/TestCase.php"
+		],
+		"psr-4": {
+            "SportFun\\": "app/SportFun"
+        }
 	},
 	"scripts": {
 		"post-install-cmd": [
