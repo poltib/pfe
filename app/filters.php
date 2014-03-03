@@ -85,56 +85,56 @@ Route::filter('csrf', function()
 /**
  * General HttpException handler
  */
-App::error( function(Symfony\Component\HttpKernel\Exception\HttpException $e, $code)
-{
-  $headers = $e->getHeaders();
+// App::error( function(Symfony\Component\HttpKernel\Exception\HttpException $e, $code)
+// {
+//   $headers = $e->getHeaders();
  
-  switch($code)
-  {
-    case 401:
-      $default_message = 'Invalid API key';
-      $headers['WWW-Authenticate'] = 'Basic realm="CRM REST API"';
-    break;
+//   switch($code)
+//   {
+//     case 401:
+//       $default_message = 'Invalid API key';
+//       $headers['WWW-Authenticate'] = 'Basic realm="CRM REST API"';
+//     break;
  
-    case 403:
-      $default_message = 'Insufficient privileges to perform this action';
-    break;
+//     case 403:
+//       $default_message = 'Insufficient privileges to perform this action';
+//     break;
  
-    case 404:
-      $default_message = 'The requested resource was not found';
-    break;
+//     case 404:
+//       $default_message = 'The requested resource was not found';
+//     break;
  
-    default:
-      $default_message = 'An error was encountered';
-  }
+//     default:
+//       $default_message = 'An error was encountered';
+//   }
  
-  return Response::json(array(
-    'error' => $e->getMessage() ?: $default_message
-  ), $code, $headers);
-});
+//   return Response::json(array(
+//     'error' => $e->getMessage() ?: $default_message
+//   ), $code, $headers);
+// });
  
-/**
- * Permission Exception Handler
- */
-App::error(function(PermissionException $e, $code)
-{
-  return Redirect::to('/')
-		->with('flash_notice', $e->getMessage());
-});
+// /**
+//  * Permission Exception Handler
+//  */
+// App::error(function(PermissionException $e, $code)
+// {
+//   return Redirect::to('/')
+// 		->with('flash_notice', $e->getMessage());
+// });
  
-/**
- * Validation Exception Handler
- */
-App::error(function(ValidationException $e, $code)
-{
-  return Response::json($e->getMessages(), $code);
-});
+// /**
+//  * Validation Exception Handler
+//  */
+// App::error(function(ValidationException $e, $code)
+// {
+//   return Response::json($e->getMessages(), $code);
+// });
  
-/**
- * Not Found Exception Handler
- */
-App::error(function(NotFoundException $e)
-{
-	return Redirect::to('404')
-		->with('flash_notice', $e->getMessage());
-});
+// /**
+//  * Not Found Exception Handler
+//  */
+// App::error(function(NotFoundException $e)
+// {
+// 	return Redirect::to('404')
+// 		->with('flash_notice', $e->getMessage());
+// });
