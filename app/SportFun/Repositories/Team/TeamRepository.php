@@ -4,10 +4,10 @@ class TeamRepository implements TeamInterface {
  
   public function findById($id)
   {
-    $post = Team::findOrFail($id);
+    $team = Team::findOrFail($id);
 
-    if(!$post) throw new NotFoundException('Team Not Found');
-    return $post;
+    if(!$team) throw new NotFoundException('Team Not Found');
+    return $team;
   }
  
   public function findAll()
@@ -20,27 +20,9 @@ class TeamRepository implements TeamInterface {
     $this->validation = Validator::make($data, Team::$rules);
     if($this->validation->passes())
     {
-      $cat = $data['categories'];
-      if($data["photo"]){
-          $pictureName = $data['photo']->getClientOriginalName();
-          Image::upload($data['photo'], 'posts/' . $data['title'], true);
-          $data["photo"] = 'http://pfe/uploads/posts/'.$data['title'].'/600x400/'.$pictureName;
-          $data["thumb"] = 'http://pfe/uploads/posts/'.$data['title'].'/100x100_crop/'.$pictureName;
-      }
       Team::create(array(
-          'title' => $data['title'],
-          'post' => $data['post'],
-          'user_id' => $data['user_id'],
-          'image' => $data["photo"],
-          'thumb' => $data["thumb"]
+
       ));
-
-      $newPost = Team::orderBy('created_at', 'desc')->first();
-
-      for($i=0; $i <= count($cat)-1; $i++){
-          $newPost->categories()->attach($newPost->id, array('categorie_id'=> $cat[$i]));
-      }
-
       return array( 'validation' => true);
     }
     return array( 
@@ -52,35 +34,30 @@ class TeamRepository implements TeamInterface {
  
   public function update($id, $data)
   {
-    $post = $this->findById($id);
-    $cat = $data['categories'];
+    $team = $this->findById($id);
 
     if($data["photo"]){
         $pictureName = $data['photo']->getClientOriginalName();
-        Image::upload($data['photo'], 'posts/' . $id, true);
-        $data["photo"] = 'http://pfe/uploads/posts/'.$id.'/600x400/'.$pictureName;
-        $data["thumb"] = 'http://pfe/uploads/posts/'.$id.'/100x100_crop/'.$pictureName;
-        $post->fill($data);
+        Image::upload($data['photo'], 'teams/' . $id, true);
+        $data["photo"] = 'http://pfe/uploads/teams/'.$id.'/600x400/'.$pictureName;
+        $data["thumb"] = 'http://pfe/uploads/teams/'.$id.'/100x100_crop/'.$pictureName;
+        $team->fill($data);
     }else{
-      $post->fill(array(
+      $team->fill(array(
           'title' => $data['title'],
-          'post' => $data['post']
+          'team' => $data['team']
         ));
     }
 
-    for($i=0; $i <= count($cat)-1; $i++){
-        $post->categories()->attach($id, array('categorie_id'=> $cat[$i]));
-    }
-
-    $this->validate($post->toArray());
-    $post->save();
-    return $post;
+    $this->validate($team->toArray());
+    $team->save();
+    return $team;
   }
  
   public function destroy($id)
   {
-    $user = $this->findById($id);
-    $user->delete();
+    $team = $this->findById($id);
+    $team->delete();
     return true;
   }
  

@@ -22,11 +22,7 @@ class CategoryRepository implements CategoryInterface
     if($this->validation->passes())
     {
       Category::create(
-        array(
-            'username'=>$data['username'],
-            'email'=>$data['email'],
-            'password'=>Hash::make($data['password'])
-            ));
+        array( ));
 
       return array( 'validation' => true);
     }
@@ -39,30 +35,19 @@ class CategoryRepository implements CategoryInterface
  
   public function update($id, $data)
   {
-    $user = $this->findById($id);
+    $category = $this->findById($id);
 
-    if($data["photo"]){
-        $pictureName = $data['photo']->getClientOriginalName();
-        Image::upload($data['photo'], 'users/' . $id, true);
-        $data["photo"] = 'http://pfe/uploads/users/'.$id.'/600x400/'.$pictureName;
-        $data["thumbs"] = 'http://pfe/uploads/users/'.$id.'/100x100_crop/'.$pictureName;
-        $user->fill($data);
-    }else{
-      $user->fill(array(
-          'username' => $data['username'],
-          'first_name' => $data['first_name'],
-          'email' => $data['email']
-        ));
-    }
-    $this->validate($user->toArray());
-    $user->save();
-    return $user;
+    $category->fill(array());
+
+    $this->validate($category->toArray());
+    $category->save();
+    return $category;
   }
  
   public function destroy($id)
   {
-    $user = $this->findById($id);
-    $user->delete();
+    $category = $this->findById($id);
+    $category->delete();
     return true;
   }
  

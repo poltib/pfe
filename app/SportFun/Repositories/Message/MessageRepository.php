@@ -11,7 +11,6 @@ class MessageRepository implements MessageInterface
   {
     $message = Message::findOrFail($id);
 
-    if(!$message) throw new NotFoundException('Message Not Found');
     return $message;
   }
 
@@ -45,7 +44,7 @@ class MessageRepository implements MessageInterface
           'from' => $data['from']
             ));
       $newMessage = Message::orderBy('created_at', 'desc')->first();
-      $newMessage->to()->attach(Input::get('user_id'));
+      $newMessage->to()->attach($data['to']);
 
       return array( 'validation' => true);
     }
@@ -63,11 +62,7 @@ class MessageRepository implements MessageInterface
 
   public function send($data)
   {
-    $user = array(
-        'username' => $data['username'],
-        'password' => $data['password']
-    );
-    return Auth::attempt($user);
+
   }
 
 

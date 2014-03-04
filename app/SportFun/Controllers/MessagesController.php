@@ -62,7 +62,14 @@ class MessagesController extends BaseController
         
         // if ($validation->passes())
         // {
-        $this->message->store( Input::all() );
+        $data = [
+            'objet' => Input::get('objet'),
+            'message' => Input::get('message'),
+            'from' => Input::get('from'),
+            'to' => Input::get('user_id')
+        ];
+
+        $this->message->store($data);
 
             return Redirect::route('messages.index')
             ->with('flash_notice', 'The new message has been send');
@@ -130,7 +137,7 @@ class MessagesController extends BaseController
 	 */
 	public function destroy($id)
 	{
-		//
+		$this->message->destroy($id);
 	}
 
 }

@@ -7,7 +7,7 @@ class ForumRepository implements ForumInterface
   {
     $post = Forum::findOrFail($id);
 
-    if(!$post) throw new NotFoundException('Categorie Not Found');
+    if(!$post) throw new NotFoundException('Forum Not Found');
     return $post;
   }
  
@@ -22,11 +22,7 @@ class ForumRepository implements ForumInterface
     if($this->validation->passes())
     {
       Forum::create(
-        array(
-            'username'=>$data['username'],
-            'email'=>$data['email'],
-            'password'=>Hash::make($data['password'])
-            ));
+        array());
 
       return array( 'validation' => true);
     }
@@ -39,30 +35,19 @@ class ForumRepository implements ForumInterface
  
   public function update($id, $data)
   {
-    $user = $this->findById($id);
+    $forum = $this->findById($id);
 
-    if($data["photo"]){
-        $pictureName = $data['photo']->getClientOriginalName();
-        Image::upload($data['photo'], 'users/' . $id, true);
-        $data["photo"] = 'http://pfe/uploads/users/'.$id.'/600x400/'.$pictureName;
-        $data["thumbs"] = 'http://pfe/uploads/users/'.$id.'/100x100_crop/'.$pictureName;
-        $user->fill($data);
-    }else{
-      $user->fill(array(
-          'username' => $data['username'],
-          'first_name' => $data['first_name'],
-          'email' => $data['email']
-        ));
-    }
-    $this->validate($user->toArray());
-    $user->save();
-    return $user;
+    $forum->fill(array());
+
+    $this->validate($forum->toArray());
+    $forum->save();
+    return $forum;
   }
  
   public function destroy($id)
   {
-    $user = $this->findById($id);
-    $user->delete();
+    $forum = $this->findById($id);
+    $forum->delete();
     return true;
   }
  
