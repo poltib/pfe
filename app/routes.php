@@ -1,17 +1,5 @@
 <?php
 
-
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
-*/
-
 // Event::listen('illuminate.query', function($sql)
 // {
 //     var_dump($sql);
@@ -20,23 +8,6 @@
 
 
 Route::get('/', array('as' => 'home', 'uses' => 'SportFun\Controllers\HappeningsController@home'));
-
-Route::post('/', array('as'=>'searchRace', function()
-{
-    $pays = Input::get('pays');
-    $ville = Input::get('ville');
-    $dist = Input::get('distance'); 
-    return View::make('race.search')->with(array('pays'=>$pays, 'ville'=>$ville, 'distance'=>$dist));
-}));
-
-
-Route::post('/clubs', array('as'=>'searchClubs', function()
-{
-    $pays = Input::get('pays');
-    $ville = Input::get('ville');
-    $dist = Input::get('entrainement');
-    return View::make('club.search')->with(array('pays'=>$pays, 'ville'=>$ville, 'entrainement'=>$dist));
-}));
 
 /*--------------------------------Users--------------------------------*/
 
@@ -67,19 +38,9 @@ Route::get('/contact', array('as'=>'contact', function()
     return View::make('contact.index');
 }));
 
-//Route::resource('trainings', 'SportFun\Controllers\TrainingsController');
-
 Route::resource('happenings', 'SportFun\Controllers\HappeningsController');
 
 //Route::get('/download/{path}', 'SportFun\Controllers\HappeningsController@getDownload');
-
-//Route::resource('comments', 'SportFun\Controllers\CommentsController');
-
-//Route::resource('raceUsers', 'RaceUsersController');
-
-//Route::resource('raceImages', 'SportFun\Controllers\RaceImagesController');
-
-//Route::resource('raceSponsors', 'SportFun\Controllers\RaceSponsorsController');
 
 Route::resource('posts', 'SportFun\Controllers\PostsController');
 

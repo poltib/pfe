@@ -1,7 +1,7 @@
 <?php namespace SportFun\Controllers;
 
-use SportFun\Repositories\Post\PostInterface as PostInterface;
-use SportFun\Repositories\Category\CategoryInterface as CategoryInterface;
+use SportFun\Repositories\PostInterface as PostInterface;
+use SportFun\Repositories\CategoryInterface as CategoryInterface;
 use \View;
 use \Input;
 use \Redirect;

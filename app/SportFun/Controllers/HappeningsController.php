@@ -1,8 +1,8 @@
 <?php namespace SportFun\Controllers;
 
-use SportFun\Repositories\Happening\HappeningInterface as HappeningInterface;
-use SportFun\Repositories\Post\PostInterface as PostInterface;
-use SportFun\Repositories\EventType\EventTypeInterface as EventTypeInterface;
+use SportFun\Repositories\HappeningInterface as HappeningInterface;
+use SportFun\Repositories\PostInterface as PostInterface;
+use SportFun\Repositories\EventTypeInterface as EventTypeInterface;
 use SportFun\Controllers\BaseController;
 use \View;
 use \Input;

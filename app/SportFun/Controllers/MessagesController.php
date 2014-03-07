@@ -1,6 +1,6 @@
 <?php namespace SportFun\Controllers;
 
-use SportFun\Repositories\Message\MessageInterface as MessageInterface;
+use SportFun\Repositories\MessageInterface as MessageInterface;
 
 use \View;
 use \Input;

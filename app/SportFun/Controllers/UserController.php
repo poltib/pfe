@@ -1,6 +1,6 @@
 <?php namespace SportFun\Controllers;
 
-use SportFun\Repositories\User\UserSportInterface;
+use SportFun\Repositories\UserSportInterface;
 use \View;
 use \Input;
 use \Auth;

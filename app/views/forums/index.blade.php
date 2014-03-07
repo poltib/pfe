@@ -14,7 +14,6 @@
         <h2>forums</h2>
 
 
-        {{{ Auth::user()->receiver }}}
-        
+
     </section>
 @stop

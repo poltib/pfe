@@ -1,6 +1,8 @@
-<?php SportFun\Controllers;
+<?php namespace SportFun\Controllers;
 
-use SportFun\Repositories\Forum\ForumInterface as ForumInterface;
+use SportFun\Repositories\CategoryInterface;
+use SportFun\Repositories\ForumInterface as ForumInterface;
+use SportFun\Repositories\Category as Category;
 use \View;
 use \Input;
 use \Redirect;
@@ -13,11 +15,17 @@ class ForumsController extends BaseController
     protected $forum;
 
     /**
+     * ForumInterface Repository
+     */
+    protected $category;
+
+    /**
     * Inject the ForumInterface Repository
     */
-    public function __construct(ForumInterface $forum)
+    public function __construct(ForumInterface $forum, CategoryInterface $category)
     {
         $this->forum = $forum;
+        $this->category = $category;
     }
 
     /**
@@ -39,7 +47,9 @@ class ForumsController extends BaseController
      */
     public function create()
     {
-        return View::make('forums.create');
+        $categories = $this->category->findAll();
+
+        return View::make('forums.create', compact('categories'));
     }
 
     /**

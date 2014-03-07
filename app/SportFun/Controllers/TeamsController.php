@@ -1,6 +1,6 @@
 <?php namespace SportFun\Controllers;
 
-use SportFun\Repositories\Team\TeamInterface as TeamInterface;
+use SportFun\Repositories\TeamInterface as TeamInterface;
 use \View;
 use \Input;
 use \Redirect;
